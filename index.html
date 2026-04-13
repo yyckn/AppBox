@@ -460,8 +460,8 @@
                 const groupKey = plat.toLowerCase();
                 if (!dlGroups[groupKey]) dlGroups[groupKey] = { displayName: plat, items: [] };
                 dlGroups[groupKey].items.push({ 
-                    ver: (parts[1] || '').trim(), text: (parts[2] || '下载').trim(), 
-                    color: (parts[3] || '#0078D7').trim(), link: (parts.slice(4).join(',') || '#').trim() 
+                    ver: (parts[1] || '').trim(), text: (parts[2] || '').trim(), 
+                    color: (parts[3] || '').trim(), link: (parts.slice(4).join(',') || '#').trim() 
                 });
             });
 

@@ -1,0 +1,152 @@
+[
+    {
+        "name": "哔哩哔哩",
+        "author": "bilibili",
+        "type": "应用",
+        "logo": "https://static.pc.yyb.qq.com/icon/a35d1928bee38ea4d4ea99447de9677a.png?imageMogr2/format/webp",
+        "description": "你想看的都在这里！",
+        "media": [
+            "image,https://pp.myapp.com/ma_pic2/0/shot_73622_1_1775808801/0",
+            "image,https://pp.myapp.com/ma_pic2/0/shot_73622_2_1775808801/0",
+            "image,https://pp.myapp.com/ma_pic2/0/shot_73622_3_1776071173/0",
+            "image,https://pp.myapp.com/ma_pic2/0/shot_73622_4_1776071173/0"
+        ],
+        "platforms": [
+            "Windows",
+            "Android",
+            "Android TV",
+            "iOS",
+            "iPadOS",
+            "MacOS"
+        ],
+        "groupTags": [
+            "视频"
+        ],
+        "featureTags": [
+            "官方"
+        ],
+        "languages": [
+            "简体中文"
+        ],
+        "downloads": [
+            "Windows,x64,官网下载,#fb88a5,https://dl.hdslb.com/mobile/fixed/bili_win/bili_win-install.exe",
+            "Android,64位,官网下载,#fb88a5,https://dl.hdslb.com/mobile/latest/android64/iBiliPlayer-bili.apk",
+            "Windows,x64,Get it from Microsoft Store,#000000,https://apps.microsoft.com/detail/XPDDVC6XTQQKMM?hl=zh-Hans-CN&gl=CN",
+            "Android,32位,官网下载,#fb88a5,https://dl.hdslb.com/mobile/latest/iBiliPlayer-bili.apk"
+        ],
+        "requirements": [
+            "系统,Windows 10及以上，Android 7及以上"
+        ],
+        "misc": []
+    },
+    {
+        "name": "BewlyCat",
+        "author": "keleus",
+        "type": "网页插件",
+        "logo": "https://store-images.s-microsoft.com/image/apps.10160.4f0f020d-59a5-4490-bd7e-c9dc27b97c3f.c76c40e6-ec2c-40a5-a336-68812a08f274.2e15523f-f5f8-485e-b2e3-329bd72b4f99?mode=scale&h=100&q=90&w=100",
+        "description": "用于美化Bilibili网页的插件。此项目基于BewlyBewly开发，并在其基础上进行功能扩充和调整，并合并了一些其他拓展的功能。",
+        "media": [],
+        "platforms": [
+            "Chrome,Firefox"
+        ],
+        "groupTags": [
+            "美化"
+        ],
+        "featureTags": [
+            "开源"
+        ],
+        "languages": [
+            "简体中文"
+        ],
+        "downloads": [
+            ",,Github Release,#0d1117,https://github.com/keleus/BewlyCat/releases/latest",
+            ",,Microsoft Edge 扩展商店,#000000,https://microsoftedge.microsoft.com/addons/detail/bewlycat/aaammfjdfifgnfnbflolojihjfhdploj"
+        ],
+        "requirements": [],
+        "misc": []
+    },
+    {
+        "name": "HEU_KMS_Activator",
+        "author": "zbezj",
+        "type": "应用",
+        "logo": "",
+        "description": "提供多种方式激活Windows、Office，另外提供切换Windows版本等额外功能。",
+        "media": [
+            "image,https://www.aichunjing.cn/wp-content/uploads/2024/02/66ff7c6c9efc2121f9e416e9b981b971.png",
+            "image,http://www.aichunjing.cn/wp-content/uploads/2024/02/099f70ddd77aeb4d8fc30524cf84f596.gif"
+        ],
+        "platforms": [
+            "Windows"
+        ],
+        "groupTags": [
+            "工具"
+        ],
+        "featureTags": [
+            "便携版"
+        ],
+        "languages": [],
+        "downloads": [
+            ",,Github Release,#000000,https://github.com/zbezj/HEU_KMS_Activator/releases/lastest"
+        ],
+        "requirements": [],
+        "misc": []
+    },
+    {
+        "name": "Office Tool Plus",
+        "author": "Yerong",
+        "type": "应用",
+        "logo": "https://www.officetool.plus/images/office-tool-plus-logo-large.webp",
+        "description": "Office Tool Plus 是一个强大且实用的 Office 部署工具。\n\nOffice Tool Plus 基于 Office 部署工具制作，可以很方便的部署 Office，其内置 Downloader 引擎可帮助您更快地下载 Office。你也可以使用 Office Tool Plus 的其他功能、小工具快捷、方便地激活和管理 Office 哦！\n\n支持下列产品：\n\nMicrosoft 365\nOffice 2016, 2019, 2021, 2024\nVisio 2016, 2019, 2021, 2024 & Visio Online Plan 2\nProject 2016, 2019, 2021, 2024 & Project Online Desktop Client\n无论你是个体还是团队，Office Tool Plus 都是你的得力小助手。\n\n功能：\n创建 Office 安装配置，支持导出到本地，或从本地或网络位置导入。\n下载 Office，支持所有通道的 Office，支持所有的 Office 语言。\n安装 Office，支持对现有的 Office 进行修改，例如产品、语言、应用程序的安装与卸载。\n创建 Office ISO，支持默认安装配置、静默安装配置、扩展安装脚本。\n激活 Office，支持在线激活、电话激活、KMS 激活。\n支持 Office 授权管理，包括许可证管理，密钥管理以及 KMS 管理。\n修改 Office 更新通道，支持在不重装 Office 的情况下升级/降级 Office.\n移除 Office，在 Office 无法正常卸载的情况下强制移除 Office，支持 Office 2003 - Office 最新版本。\n内置 Office 工具箱，包括重置设置，修复安装问题，修复激活问题等。\n转换 Office 文档，基于 Office COM，稳定、快速、可靠。\n自定义主题，打造你自己的专属 Office Tool Plus。",
+        "media": [
+            "image,https://otp.landian.vip/assets/images/zh-cn/hero-deploy.webp"
+        ],
+        "platforms": [
+            "Windows"
+        ],
+        "groupTags": [],
+        "featureTags": [],
+        "languages": [
+            "العربية (ليبيا),Deutsch (Deutschland),English (United Kingdom),English (United States),magyar (Magyarország),Bahasa Indonesia (Indonesia),italiano (Italia),日本語 (日本),한국어 (대한민국),မြန်မာ (မြန်မာ),Nederlands (Nederland),polski (Polska),português (Brasil),pусский (Россия),ไทย (ไทย),Türkçe (Türkiye),українська (Україна),Tiếng Việt (Việt Nam),繁體中文 (台灣),粵語 (廣東)"
+        ],
+        "downloads": [
+            ",x64/arm64,官网下载,#0d6efd,https://www.officetool.plus/zh-cn/introduction/download.html",
+            ",,Github Release,#000000,https://github.com/YerongAI/Office-Tool/releases/"
+        ],
+        "requirements": [
+            "前置框架,需要系统有.Net10，下载链接：【x64】https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-x64.exe，【arm64】https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-arm64.exe"
+        ],
+        "misc": [
+            "官网,https://www.officetool.plus/zh-cn/"
+        ]
+    },
+    {
+        "name": "Piliplus",
+        "author": "HChaZZY",
+        "type": "应用",
+        "logo": "https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/images/logo/logo.png",
+        "description": "使用Flutter开发的BiliBili第三方客户端",
+        "media": [
+            "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/510shots_so.png",
+            "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/174shots_so.png",
+            "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/850shots_so.png",
+            "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/main_screen.png"
+        ],
+        "platforms": [
+            "Android",
+            "Windows",
+            "Linux",
+            "iOS",
+            "iPad"
+        ],
+        "groupTags": [],
+        "featureTags": [
+            "开源"
+        ],
+        "languages": [],
+        "downloads": [
+            ",,Github Release,#000000,https://github.com/bggRGjQaUbCoE/PiliPlus/releases/"
+        ],
+        "requirements": [],
+        "misc": []
+    }
+]
