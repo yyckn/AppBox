@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppBox</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'MiSans VF', 'MiSans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        :root {
+            --primary: #0067c0;
+            --bg-color: #f7f7f7;
+            --sidebar-bg: #f3f3f3;
+            --text-main: #333333;
+            --text-muted: #6b7280;
+            --border-color: #e7e7e7;
+            --danger: #f02525;
+            --main-text: #000000;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe Fluent Icons', 'MiSans VF', 'MiSans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+        body { display: flex; height: 100vh; background-color: var(--bg-color); color: var(--text-main); }
+        
+        /* 侧边栏 */
+        .sidebar { width: 320px; background-color: var(--sidebar-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 20px 15px 0 15px; flex-shrink: 0; }
+        .logo { font-size: 18px; font-weight: 500; color: var(--main-text); margin-bottom: 20px; text-align: left; cursor: pointer; }
+        .search-box { margin-bottom: 10px; }
+        .search-box input { width: 100%; padding: 0px 12px; line-height: 34px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; }
+        
+        /* 导航栏与动画胶囊指示器 */
+        .nav-container { 
+            position: relative; 
+            flex-grow: 1; 
+            overflow-y: auto; 
+            display: flex; 
+            flex-direction: column; 
+            margin-right: -5px; 
+            padding-right: 5px; 
+        }
+        .nav-indicator {
+            position: absolute;
+            left: 0px;
+            top: 0;
+            width: 4px;
+            height: 16px;
+            background-color: var(--primary);
+            border-radius: 4px;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.2s;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .nav-btn { 
+            display: block; 
+            width: 100%;
+            height: 36px;
+            padding: 10px 10px 10px 12px;
+            margin-bottom: 4px; 
+            background-color: #00000000;
+            border: none; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            text-align: left; 
+            font-size: 14px; 
+            color: var(--text-main);
+            transition: background-color 0.2s; 
+            position: relative;
+        }
+        .nav-btn:hover { background-color: #e2e2e2; }
+        .nav-btn.active { 
+            background-color: #ececec;
+        }
+        
+        /* 主内容区 */
+        .main-content { flex-grow: 1; padding: 30px; overflow-y: auto; }
+        .page { display: none; animation: fadeIn 0.3s; }
+        .page.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 卡片网格 */
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        .app-card { background: white; border-radius: 8px; padding: 15px; border: 1px solid #e5e5e5; display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.2s; cursor: pointer; }
+        .app-card:hover { transform: translateY(-3px);}
+        .app-icon { width: 64px; height: 64px; border-radius: 10px; margin-bottom: 8px; object-fit: cover; }
+        .app-name { font-size: 18px; font-weight: 500; margin-bottom: 5px; }
+        .app-type { font-size: 12px; color: var(--primary); background: #e0f2fe; padding: 2px 8px; border-radius: 12px; margin-bottom: 10px; }
+        .app-tags { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; }
+        .app-tag { font-size: 13px; background: #f3f4f6; color: var(--text-muted); padding: 2px 6px; border-radius: 5px; }
+
+        /* 设置 & 列表管理 */
+        .settings-section { padding: 0px; margin-bottom: 20px; }
+        .settings-section h2 { margin-bottom: 15px; font-size: 18px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        .btn { height: 36px; min-width: 36px; padding: 0 14px; border: none; border-radius: 5px; cursor: pointer; color: white; background-color: var(--primary); transition: opacity 0.2s; margin-right: 10px; font-size: 14px; }
+        .btn:hover { opacity: 0.9; }
+        .btn-danger { background-color: var(--danger); }
+        .btn-secondary { background-color: var(--text-muted); }
+        .btn-small { padding: 4px 8px; font-size: 12px; }
+        .manage-list { width: 100%; border-collapse: collapse; }
+        .manage-list th, .manage-list td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border-color); }
+        .manage-list img { width: 32px; height: 32px; border-radius: 6px; vertical-align: middle; margin-right: 10px; object-fit: cover; }
+
+        /* 表单页面样式 (单列) */
+        .form-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 5px; }
+        .form-container { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
+        .form-group { background: #fafafa; padding: 15px; border-radius: 8px; border: 1px solid #f0f0f0; }
+        .form-label { display: flex; justify-content: space-between; align-items: center; font-weight: bold; margin-bottom: 10px; font-size: 14px; color: #111; }
+        .form-control { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; font-size: 14px; }
+        .form-control:focus { border-color: var(--primary); }
+        textarea.form-control { resize: vertical; min-height: 100px; }
+        
+        /* 动态列表样式 & 多列输入框 */
+        .dynamic-list { display: flex; flex-direction: column; gap: 8px; }
+        .dynamic-item { display: flex; gap: 10px; align-items: center; }
+        .dynamic-item input[type="text"] { flex-grow: 1; }
+        
+        .multi-col-grid { display: grid; gap: 8px; align-items: center; }
+        .grid-downloads { grid-template-columns: 1fr 1fr 1.5fr 1fr 2fr auto; }
+        .grid-reqs { grid-template-columns: 1fr 3fr auto; }
+        .grid-misc { grid-template-columns: 1fr 3fr auto; }
+
+        /* 详情页样式 */
+        .details-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: relative; max-width: 1000px; margin: 0 auto; }
+        .details-top { display: flex; gap: 30px; margin-bottom: 30px; }
+        .details-logo { width: 120px; height: 120px; border-radius: 20px; object-fit: cover; background-color: #f7f7f7; }
+        .details-info { flex-grow: 1; display: flex; flex-direction: column; gap: 12px; }
+        .details-title { font-size: 28px; font-weight: 500; color: var(--text-main); margin: 0; }
+        .details-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .details-label { font-size: 15px; color: var(--text-muted); width: 40px; flex-shrink: 0; }
+        .details-edit-btn { position: absolute; top: 30px; right: 30px; }
+        
+        .dl-btn { padding: 0px 16px; height: 36px; border-radius: 0px 5px 5px 0px; text-decoration: none; color: white; font-weight: bold; font-size: 13px; transition: opacity 0.2s; display: inline-flex; align-items: center; gap: 5px; }
+        .dl-btn:hover { opacity: 0.8; }
+        .dl-plat-label { font-weight: bold; color: #444; min-width: 70px; }
+        
+        .details-body h3 { font-size: 18px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin: 25px 0 15px 0; color: var(--text-main); }
+        .details-desc { line-height: 1.6; color: #444; white-space: pre-wrap; font-size: 15px; }
+        .details-media { display: flex; flex-wrap: wrap; gap: 15px; }
+        .media-item { max-width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .media-link { display: inline-block; padding: 10px 15px; background: #f3f4f6; border-radius: 6px; color: var(--primary); text-decoration: none; }
+        .req-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .req-table td { padding: 8px 12px; border: 1px solid var(--border-color); }
+        .req-table td:first-child { background: #fafafa; font-weight: bold; width: 150px; color: #555; }
+
+        /* 模态框 */
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 1000; }
+        .modal { background: white; padding: 25px; border-radius: 8px; width: 400px; text-align: center; }
+        .modal .btn-group { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        #fileInput { display: none; }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo" onclick="handleNavClick('all')">AppBox</div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="在此输入应用名称开始搜索" oninput="filterApps()">
+        </div>
+        
+        <div class="nav-container" id="navContainer">
+            <div id="navIndicator" class="nav-indicator"></div>
+            <div id="navButtons"></div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div id="page-home" class="page active">
+            <div class="app-grid" id="appGrid"></div>
+        </div>
+
+        <div id="page-details" class="page">
+            <div class="settings-section" style="margin-bottom: 10px;">
+                <button class="btn btn-secondary btn-small" onclick="switchPage('home')">&#xE72B;</button>
+            </div>
+            <div class="details-container" id="detailsContainer"></div>
+        </div>
+
+        <div id="page-settings" class="page">
+            <div class="settings-section">
+                <h2>数据管理</h2>
+                <input type="file" id="fileInput" accept=".json" onchange="handleFileSelect(event)">
+                <button class="btn" onclick="document.getElementById('fileInput').click()">导入JSON文件</button>
+                <button class="btn btn-secondary" onclick="exportData()">导出为JSON文件</button>
+            </div>
+            <div class="settings-section">
+                <h2>软件管理</h2>
+                <button class="btn" onclick="openAppForm()">新增软件</button>
+                <button class="btn" onclick="switchPage('manage')">管理软件列表</button>
+            </div>
+        </div>
+
+        <div id="page-manage" class="page">
+            <div class="settings-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h2 style="margin: 0; border: none; padding: 0;">软件列表</h2>
+                    <button class="btn btn-secondary" onclick="switchPage('settings')">返回设置</button>
+                </div>
+                <table class="manage-list">
+                    <thead><tr><th>图标与名称</th><th>类型</th><th>操作</th></tr></thead>
+                    <tbody id="manageTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="page-form" class="page">
+            <div class="settings-section">
+                <div class="form-header">
+                    <h2 id="formTitle" style="margin:0; border:none; padding:0;">新增软件</h2>
+                    <div>
+                        <button class="btn btn-secondary" onclick="cancelForm()">取消</button>
+                        <button class="btn" onclick="saveAppForm()">保存数据</button>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <div class="form-group"><div class="form-label">应用名称（必填）</div><input type="text" id="f-name" class="form-control" placeholder="如：哔哩哔哩"></div>
+                    <div class="form-group"><div class="form-label">类型（必填）</div><input type="text" id="f-type" class="form-control" placeholder="应用/游戏/网页插件/office插件"></div>
+                    <div class="form-group"><div class="form-label">LOGO</div><input type="text" id="f-logo" class="form-control" placeholder="请填写以https://开头的图片链接"></div>
+                    <div class="form-group"><div class="form-label">介绍</div><textarea id="f-desc" class="form-control" placeholder="简单介绍一下这个应用"></textarea></div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">介绍视频/图片<button class="btn btn-small" onclick="addDynamicItem('list-media', '', '类型,链接')">+ 添加媒体</button></div>
+                        <div id="list-media" class="dynamic-list"></div>
+                        <small style="color: var(--text-muted); font-size: 12px;">格式: video/image,链接</small>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">支持平台 <button class="btn btn-small" onclick="addDynamicItem('list-platforms', '', '如: Windows')">+ 添加平台</button></div>
+                        <div id="list-platforms" class="dynamic-list"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">分组<button class="btn btn-small" onclick="addDynamicItem('list-groupTags', '', '如: 音乐、工具')">+ 添加分组</button></div>
+                        <div id="list-groupTags" class="dynamic-list"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">标签<button class="btn btn-small" onclick="addDynamicItem('list-featureTags', '', '如: 开源、便携版')">+ 添加标签</button></div>
+                        <div id="list-featureTags" class="dynamic-list"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">安装要求 <button class="btn btn-small" onclick="addReqItem()">+ 添加要求</button></div>
+                        <div id="list-reqs" class="dynamic-list"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">支持的语言 <button class="btn btn-small" onclick="addDynamicItem('list-langs', '', '如: zh-CN')">+ 添加语言</button></div>
+                        <div id="list-langs" class="dynamic-list"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">下载链接<button class="btn btn-small" onclick="addDownloadItem()">+ 添加下载按钮</button></div>
+                        <div id="list-downloads" class="dynamic-list"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">杂项<button class="btn btn-small" onclick="addMiscItem()">+ 添加杂项</button></div>
+                        <div id="list-misc" class="dynamic-list"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="importModal">
+        <div class="modal">
+            <h3>检测到 JSON 数据</h3>
+            <p>请选择导入方式：</p>
+            <div class="btn-group">
+                <button class="btn" onclick="executeImport('overwrite')">覆盖原有</button>
+                <button class="btn" onclick="executeImport('merge')">合并数据</button>
+                <button class="btn btn-secondary" onclick="closeModal('importModal')">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let appData = JSON.parse(localStorage.getItem('appbox_data')) || [];
+        let currentImportData = null;
+        let currentNav = 'all'; // 记录当前激活的导航菜单项
+        let currentEditingIndex = null;
+        let previousPage = 'home'; 
+
+        function init() {
+            renderSidebarTypes();
+            // 初始化时默认激活“全部应用”
+            handleNavClick('all');
+        }
+
+        function switchPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + pageId).classList.add('active');
+            if(pageId === 'manage') renderManageList();
+            if(pageId === 'home') { previousPage = 'home'; renderAppGrid(); }
+        }
+
+        // --- 全新的侧边栏导航逻辑 ---
+        
+        // 仅在数据变更时重新渲染按钮结构
+        function renderSidebarTypes() {
+            const navButtons = document.getElementById('navButtons');
+            const types = [...new Set(appData.map(app => app.type || '未分类'))];
+            
+            // 将设置与分类列表放在一起
+            let html = `
+                <button class="nav-btn ${currentNav === 'settings' ? 'active' : ''}" onclick="handleNavClick('settings', this)">&#xE713;&nbsp;&nbsp;设置</button>
+                <button class="nav-btn ${currentNav === 'all' ? 'active' : ''}" onclick="handleNavClick('all', this)">&#xE71D;&nbsp;&nbsp;全部应用</button>
+            `;
+            types.forEach(type => { 
+                html += `<button class="nav-btn ${currentNav === type ? 'active' : ''}" onclick="handleNavClick('${type}', this)">${type}</button>`; 
+            });
+            
+            navButtons.innerHTML = html;
+            // 等待 DOM 挂载完成后移动药丸指示器
+            setTimeout(moveIndicator, 50);
+        }
+
+        // 处理导航点击与药丸移动
+        function handleNavClick(target, btnElement = null) {
+            currentNav = target;
+            
+            // 移除所有高亮
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // 如果不是直接点击按钮触发的（例如点击 Logo），则主动寻找对应的 DOM
+            if (!btnElement) {
+                btnElement = document.querySelector(`button[onclick*="'${target}'"]`);
+            }
+            if (btnElement) {
+                btnElement.classList.add('active');
+            }
+            
+            // 移动药丸指示器
+            moveIndicator();
+
+            // 页面路由控制
+            if (target === 'settings') {
+                switchPage('settings');
+            } else {
+                document.getElementById('searchInput').value = ''; // 清空搜索框
+                switchPage('home'); // 回到首页并触发 renderAppGrid
+            }
+        }
+
+        // 核心：计算指示器的高度并执行平滑位移
+        function moveIndicator() {
+            const activeBtn = document.querySelector('.nav-btn.active');
+            const indicator = document.getElementById('navIndicator');
+            
+            if (activeBtn && indicator) {
+                // 将药丸垂直居中对齐到按钮内部 (按钮高度 - 药丸高度14)/2
+                const topPos = activeBtn.offsetTop + (activeBtn.offsetHeight - 14) / 2;
+                indicator.style.transform = `translateY(${topPos}px)`;
+                indicator.style.opacity = '1';
+            } else if (indicator) {
+                indicator.style.opacity = '0';
+            }
+        }
+
+        function filterApps() {
+            switchPage('home');
+            renderAppGrid();
+        }
+
+        function renderAppGrid() {
+            const grid = document.getElementById('appGrid');
+            const keyword = document.getElementById('searchInput').value.toLowerCase();
+            grid.innerHTML = '';
+            
+            let filteredApps = appData.map((app, index) => ({...app, _originalIndex: index})) 
+                                      .filter(app => {
+                                          // 当导航不为 settings 且不为 all 时，视为类型过滤
+                                          const matchType = (currentNav === 'all' || currentNav === 'settings') || app.type === currentNav;
+                                          const matchSearch = app.name.toLowerCase().includes(keyword) || (app.description && app.description.toLowerCase().includes(keyword));
+                                          return matchType && matchSearch;
+                                      });
+
+            if(filteredApps.length === 0) { grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999; margin-top: 50px;">暂无应用。</p>'; return; }
+
+            filteredApps.forEach(app => {
+                const tagsHtml = (app.groupTags || []).map(tag => `<span class="app-tag">${tag}</span>`).join('');
+                const card = document.createElement('div');
+                card.className = 'app-card';
+                card.onclick = () => showAppDetails(app._originalIndex);
+                card.innerHTML = `
+                    <img src="${app.logo || 'https://via.placeholder.com/64'}" class="app-icon" onerror="this.src='https://via.placeholder.com/64'">
+                    <div class="app-name">${app.name || '未知应用'}</div>
+                    <div class="app-type">${app.type || '未分类'}</div>
+                    <div class="app-tags">${tagsHtml}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // --- 软件详情页逻辑 ---
+        function showAppDetails(index) {
+            previousPage = 'details'; 
+            const app = appData[index];
+            const container = document.getElementById('detailsContainer');
+            
+            const groupHtml = (app.groupTags || []).map(t => `<span class="app-tag">${t}</span>`).join('') || '<span style="color:#aaa; font-size:12px;">无</span>';
+            const featureHtml = (app.featureTags || []).map(t => `<span class="app-tag" style="background:#e0f2fe; color:var(--primary);">${t}</span>`).join('') || '<span style="color:#aaa; font-size:12px;">无</span>';
+            const platHtml = (app.platforms || []).join(' / ') || '未指定';
+            const langHtml = (app.languages || []).join(', ') || '未指定';
+            
+            let dlHtml = '';
+            const dlGroups = {};
+            
+            (app.downloads || []).forEach(dlStr => {
+                const parts = dlStr.split(',');
+                let plat = (parts[0] || '').trim();
+                if (!plat) plat = '未分类';
+                const ver = (parts[1] || '').trim();
+                const text = (parts[2] || '下载').trim();
+                const color = (parts[3] || '#0078D7').trim();
+                const link = (parts.slice(4).join(',') || '#').trim();
+                
+                const groupKey = plat.toLowerCase();
+                if (!dlGroups[groupKey]) dlGroups[groupKey] = { displayName: plat, items: [] };
+                dlGroups[groupKey].items.push({ ver, text, color, link });
+            });
+
+            const groupKeys = Object.keys(dlGroups);
+            if (groupKeys.length > 0) {
+                dlHtml = '<div style="display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 5px;">';
+                groupKeys.forEach(key => {
+                    const group = dlGroups[key];
+                    let buttonsHtml = '';
+                    group.items.forEach((item) => {
+                        buttonsHtml += `
+                            <div style="display: inline-flex; align-items: center; margin-right: 15px;">
+                                ${item.ver ? `<span class="app-tag" style="background: #dcdcdc; color: #4b5563; padding: 0px 8px 4px 8px; line-height: 32px; border-radius: 5px 0px 0px 5px; ">${item.ver}</span>` : ''}
+                                <a href="${item.link}" target="_blank" class="dl-btn" style="background-color: ${item.color};">
+                                    &#xE896; ${item.text}
+                                </a>
+                            </div>
+                        `;
+                    });
+                    dlHtml += `<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;"><span class="dl-plat-label">${group.displayName}:</span>${buttonsHtml}</div>`;
+                });
+                dlHtml += '</div>';
+            } else {
+                dlHtml = '<span style="color:#aaa; font-size:12px; margin-top: 5px;">暂无下载链接</span>';
+            }
+
+            let mediaHtml = '';
+            (app.media || []).forEach(mStr => {
+                const type = mStr.split(',')[0].trim().toLowerCase();
+                const url = mStr.substring(mStr.indexOf(',') + 1).trim();
+                if(!url) return;
+                if(type === 'image') {
+                    mediaHtml += `<img src="${url}" class="media-item" style="max-height: 300px;" onerror="this.style.display='none'">`;
+                } else if(type === 'video') {
+                    mediaHtml += `<a href="${url}" target="_blank" class="media-link">🎬 观看介绍视频</a>`;
+                } else {
+                    mediaHtml += `<a href="${url}" target="_blank" class="media-link">🔗 访问媒体链接</a>`;
+                }
+            });
+
+            let reqHtml = '';
+            if(app.requirements && app.requirements.length > 0) {
+                reqHtml = `<table class="req-table"><tbody>`;
+                app.requirements.forEach(req => {
+                    const parts = req.split(',');
+                    reqHtml += `<tr><td>${parts[0]||'未知要求'}</td><td>${parts.slice(1).join(',')||'-'}</td></tr>`;
+                });
+                reqHtml += `</tbody></table>`;
+            } else {
+                reqHtml = '<p style="color:#aaa; font-size:13px;">无特定要求</p>';
+            }
+
+            let miscHtml = '';
+            if(app.misc && app.misc.length > 0) {
+                miscHtml = `<table class="req-table"><tbody>`;
+                app.misc.forEach(m => {
+                    const parts = m.split(',');
+                    let title = parts[0] || '其他';
+                    let content = parts.slice(1).join(',') || '-';
+                    if(content.startsWith('http')) {
+                        content = `<a href="${content}" target="_blank" style="color: var(--primary); text-decoration: none;">${content}</a>`;
+                    }
+                    miscHtml += `<tr><td>${title}</td><td>${content}</td></tr>`;
+                });
+                miscHtml += `</tbody></table>`;
+            }
+
+            container.innerHTML = `
+                <button class="btn details-edit-btn" onclick="openAppForm(${index})">✏️ 编辑</button>
+                <div class="details-top">
+                    <img src="${app.logo || 'https://via.placeholder.com/120'}" class="details-logo" onerror="this.src='https://via.placeholder.com/120'">
+                    <div class="details-info">
+                        <h1 class="details-title">${app.name}</h1>
+                        <div class="details-row"><div class="details-label">类型:</div> <strong>${app.type}</strong></div>
+                        <div class="details-row"><div class="details-label">分组:</div> ${groupHtml}</div>
+                        <div class="details-row"><div class="details-label">特点:</div> ${featureHtml}</div>
+                        <div class="details-row"><div class="details-label">平台:</div> <span style="font-size:14px; color:#444;">${platHtml}</span></div>
+                        <div class="details-row" style="align-items: flex-start;"><div class="details-label" style="margin-top: 8px;">下载:</div> ${dlHtml}</div>
+                    </div>
+                </div>
+                <div class="details-body">
+                    <h3>📝 软件介绍</h3>
+                    <div class="details-desc">${app.description || '<span style="color:#aaa;">暂无介绍</span>'}</div>
+                    ${mediaHtml ? `<h3>🖼️ 媒体展示</h3><div class="details-media">${mediaHtml}</div>` : ''}
+                    <h3>⚙️ 安装要求</h3>
+                    ${reqHtml}
+                    <h3>🌐 支持语言</h3>
+                    <p style="font-size:14px; color:#444;">${langHtml}</p>
+                    ${miscHtml ? `<h3>🧩 其他信息</h3>${miscHtml}` : ''}
+                </div>
+            `;
+            
+            switchPage('details');
+        }
+
+
+        // --- 表单相关逻辑 ---
+
+        function addDynamicItem(containerId, value = '', placeholder = '') {
+            const container = document.getElementById(containerId);
+            const div = document.createElement('div');
+            div.className = 'dynamic-item';
+            div.innerHTML = `<input type="text" class="form-control" value="${value}" placeholder="${placeholder}"><button class="btn btn-danger btn-small" onclick="this.parentElement.remove()" style="margin:0;">&#xE894;</button>`;
+            container.appendChild(div);
+        }
+
+        function addDownloadItem(plat='', ver='', text='下载', color='#0078D7', link='') {
+            const container = document.getElementById('list-downloads');
+            const div = document.createElement('div');
+            div.className = 'dynamic-item multi-col-grid grid-downloads';
+            div.innerHTML = `
+                <input type="text" class="form-control dl-plat" value="${plat}" placeholder="平台 (如 Windows)">
+                <input type="text" class="form-control dl-ver" value="${ver}" placeholder="版本 (如 x64)">
+                <input type="text" class="form-control dl-text" value="${text}" placeholder="按钮文字">
+                <input type="text" class="form-control dl-color" value="${color}" placeholder="颜色 (如 #0078D7)">
+                <input type="text" class="form-control dl-link" value="${link}" placeholder="下载链接 (https://...)">
+                <button class="btn btn-danger btn-small" onclick="this.parentElement.remove()" style="margin:0;">&#xE894;</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function addReqItem(label='', content='') {
+            const container = document.getElementById('list-reqs');
+            const div = document.createElement('div');
+            div.className = 'dynamic-item multi-col-grid grid-reqs';
+            div.innerHTML = `
+                <input type="text" class="form-control req-label" value="${label}" placeholder="标签 (如 gpu)">
+                <input type="text" class="form-control req-content" value="${content}" placeholder="内容 (如 RTX4060)">
+                <button class="btn btn-danger btn-small" onclick="this.parentElement.remove()" style="margin:0;">&#xE894;</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function addMiscItem(title='', content='') {
+            const container = document.getElementById('list-misc');
+            const div = document.createElement('div');
+            div.className = 'dynamic-item multi-col-grid grid-misc';
+            div.innerHTML = `
+                <input type="text" class="form-control misc-title" value="${title}" placeholder="标题 (如 官方教程)">
+                <input type="text" class="form-control misc-content" value="${content}" placeholder="内容">
+                <button class="btn btn-danger btn-small" onclick="this.parentElement.remove()" style="margin:0;">&#xE894;</button>
+            `;
+            container.appendChild(div);
+        }
+
+        function getDynamicValues(containerId) {
+            return Array.from(document.getElementById(containerId).querySelectorAll('input')).map(input => input.value.trim()).filter(val => val !== '');
+        }
+
+        function getDownloadsData() {
+            return Array.from(document.querySelectorAll('#list-downloads .grid-downloads')).map(item => {
+                const p = item.querySelector('.dl-plat').value.trim();
+                const v = item.querySelector('.dl-ver').value.trim();
+                const t = item.querySelector('.dl-text').value.trim();
+                let c = item.querySelector('.dl-color').value.trim();
+                const l = item.querySelector('.dl-link').value.trim();
+                if(!p && !l) return null; 
+                if(!c) c = '#0078D7'; 
+                return `${p},${v},${t},${c},${l}`;
+            }).filter(Boolean);
+        }
+
+        function getReqsData() {
+            return Array.from(document.querySelectorAll('#list-reqs .grid-reqs')).map(item => {
+                const label = item.querySelector('.req-label').value.trim();
+                const content = item.querySelector('.req-content').value.trim();
+                if(!label) return null;
+                return `${label},${content}`;
+            }).filter(Boolean);
+        }
+
+        function getMiscData() {
+            return Array.from(document.querySelectorAll('#list-misc .grid-misc')).map(item => {
+                const title = item.querySelector('.misc-title').value.trim();
+                const content = item.querySelector('.misc-content').value.trim();
+                if(!title && !content) return null;
+                return `${title},${content}`;
+            }).filter(Boolean);
+        }
+
+        function cancelForm() {
+            if(previousPage === 'details' && currentEditingIndex !== null) {
+                showAppDetails(currentEditingIndex);
+            } else if (previousPage === 'manage') {
+                switchPage('manage');
+            } else {
+                switchPage('home');
+            }
+        }
+
+        function openAppForm(index = null) {
+            currentEditingIndex = index;
+            document.getElementById('formTitle').innerText = index === null ? '新增软件' : '编辑软件';
+            if(index === null) previousPage = 'manage'; 
+            
+            document.getElementById('f-name').value = '';
+            document.getElementById('f-type').value = '';
+            document.getElementById('f-logo').value = '';
+            document.getElementById('f-desc').value = '';
+            ['list-media', 'list-platforms', 'list-groupTags', 'list-featureTags', 'list-langs', 'list-downloads', 'list-reqs', 'list-misc'].forEach(id => document.getElementById(id).innerHTML = '');
+
+            if (index !== null) {
+                const app = appData[index];
+                document.getElementById('f-name').value = app.name || '';
+                document.getElementById('f-type').value = app.type || '';
+                document.getElementById('f-logo').value = app.logo || '';
+                document.getElementById('f-desc').value = app.description || '';
+
+                (app.media || []).forEach(val => addDynamicItem('list-media', val, '类型,链接'));
+                (app.platforms || []).forEach(val => addDynamicItem('list-platforms', val));
+                (app.groupTags || []).forEach(val => addDynamicItem('list-groupTags', val));
+                (app.featureTags || []).forEach(val => addDynamicItem('list-featureTags', val));
+                (app.languages || []).forEach(val => addDynamicItem('list-langs', val));
+                
+                (app.downloads || []).forEach(dl => {
+                    const parts = dl.split(',');
+                    addDownloadItem(parts[0]||'', parts[1]||'', parts[2]||'', parts[3]||'#0078D7', parts.slice(4).join(',')||'');
+                });
+                
+                (app.requirements || []).forEach(req => {
+                    const parts = req.split(',');
+                    addReqItem(parts[0]||'', parts.slice(1).join(',')||'');
+                });
+
+                (app.misc || []).forEach(m => {
+                    const parts = m.split(',');
+                    addMiscItem(parts[0]||'', parts.slice(1).join(',')||'');
+                });
+
+            } else {
+                addDownloadItem('Windows', 'x64', '立即下载', '#0078D7', '');
+                addReqItem('系统', 'Windows 10 或以上');
+            }
+
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-form').classList.add('active');
+        }
+
+        function saveAppForm() {
+            const name = document.getElementById('f-name').value.trim();
+            const type = document.getElementById('f-type').value.trim();
+            if (!name || !type) { alert("App名字和类型是必填项！"); return; }
+
+            const newApp = {
+                name: name, type: type,
+                logo: document.getElementById('f-logo').value.trim(),
+                description: document.getElementById('f-desc').value.trim(),
+                media: getDynamicValues('list-media'),
+                platforms: getDynamicValues('list-platforms'),
+                groupTags: getDynamicValues('list-groupTags'),
+                featureTags: getDynamicValues('list-featureTags'),
+                languages: getDynamicValues('list-langs'),
+                downloads: getDownloadsData(),
+                requirements: getReqsData(),
+                misc: getMiscData()
+            };
+
+            if (currentEditingIndex === null) {
+                appData.push(newApp);
+            } else {
+                appData[currentEditingIndex] = newApp;
+            }
+
+            localStorage.setItem('appbox_data', JSON.stringify(appData));
+            renderSidebarTypes(); // 增加数据后重新渲染侧边栏（包含新增的类型）
+            
+            if (previousPage === 'details' && currentEditingIndex !== null) {
+                showAppDetails(currentEditingIndex);
+            } else {
+                switchPage('manage');
+            }
+        }
+
+        // --- 管理与导入导出逻辑 ---
+        function renderManageList() {
+            previousPage = 'manage';
+            const tbody = document.getElementById('manageTableBody');
+            tbody.innerHTML = '';
+            if(appData.length === 0) { tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #999;">暂无数据</td></tr>'; return; }
+            appData.forEach((app, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><img src="${app.logo || 'https://via.placeholder.com/32'}" onerror="this.src='https://via.placeholder.com/32'">${app.name || '未命名'}</td>
+                    <td>${app.type || '无'}</td>
+                    <td>
+                        <button class="btn btn-small" onclick="openAppForm(${index})">&#xE70F; 编辑</button>
+                        <button class="btn btn-danger btn-small" onclick="deleteSoftware(${index})">&#xE894; 删除</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function deleteSoftware(index) {
+            if(confirm(`确定要删除软件 "${appData[index].name}" 吗？`)) {
+                appData.splice(index, 1);
+                localStorage.setItem('appbox_data', JSON.stringify(appData));
+                renderManageList(); 
+                renderSidebarTypes(); // 删除可能影响类型列表
+            }
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if (!Array.isArray(parsed)) throw new Error("Root not array");
+                    currentImportData = parsed;
+                    document.getElementById('importModal').style.display = 'flex';
+                } catch (err) { alert("JSON 格式错误！"); }
+            };
+            reader.readAsText(file);
+            event.target.value = ''; 
+        }
+
+        function executeImport(mode) {
+            if (mode === 'overwrite') appData = currentImportData;
+            else if (mode === 'merge') appData = appData.concat(currentImportData);
+            localStorage.setItem('appbox_data', JSON.stringify(appData));
+            closeModal('importModal'); 
+            init();
+        }
+
+        function exportData() {
+            if (appData.length === 0) return alert("暂无数据可导出！");
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(new Blob([JSON.stringify(appData, null, 4)], { type: "application/json" }));
+            a.download = "AppBox_Data.json"; a.click();
+        }
+
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
