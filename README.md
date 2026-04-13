@@ -1,4 +1,4 @@
-### AppBox
+# AppBox
 一个在线软件资源解析平台
 在线访问：http://appbox.yyckn.fuwaki.icu/
 
