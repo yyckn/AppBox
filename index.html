@@ -77,38 +77,42 @@
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* 大标题样式 */
+        .page-title { font-size: 24px; font-weight: 400; margin-bottom: 15px; color: var(--text-main); }
+
         /* 卡片网格 */
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
         .app-card { background: white; border-radius: 8px; padding: 15px; border: 1px solid #e5e5e5; display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.2s; cursor: pointer; }
         .app-card:hover { transform: translateY(-3px);}
         .app-icon { width: 64px; height: 64px; border-radius: 10px; margin-bottom: 8px; object-fit: cover; }
-        .app-name { font-size: 18px; font-weight: 500; margin-bottom: 5px; }
+        .app-name { font-size: 16px; font-weight: 500; margin-bottom: 5px; }
         .app-type { font-size: 12px; color: var(--primary); background: #e0f2fe; padding: 2px 8px; border-radius: 12px; margin-bottom: 10px; }
         .app-tags { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; }
-        .app-tag { font-size: 13px; background: #f3f4f6; color: var(--text-muted); padding: 2px 6px; border-radius: 5px; }
+        .app-tag { font-size: 12px; background: #ececec; color: var(--text-muted); padding: 2px 8px; border-radius: 5px; display: inline-block; }
 
         /* 设置 & 列表管理 */
-        .settings-section { padding: 0px; margin-bottom: 20px; }
-        .settings-section h2 { margin-bottom: 15px; font-size: 18px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
-        .btn { height: 36px; min-width: 36px; padding: 0 14px; border: none; border-radius: 5px; cursor: pointer; color: white; background-color: var(--primary); transition: opacity 0.2s; margin-right: 10px; font-size: 14px; }
+        .settings-section { padding: 0px; margin-bottom: 15px;}
+        .settings-section h2 { font-size: 15px; padding-bottom: 10px; font-weight: 500; }
+        .btn { height: 36px; min-width: 36px; padding: 0 10px; border: none; border-radius: 5px; cursor: pointer; color: white; background-color: var(--primary); transition: opacity 0.2s; margin-right: 10px; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
         .btn:hover { opacity: 0.9; }
         .btn-danger { background-color: var(--danger); }
         .btn-secondary { background-color: var(--text-muted); }
         .btn-small { padding: 4px 8px; font-size: 12px; }
-        .manage-list { width: 100%; border-collapse: collapse; }
-        .manage-list th, .manage-list td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border-color); }
+        .manage-list { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); }
+        .manage-list th { background: #fafafa; font-weight: 600; color: #555; }
+        .manage-list th, .manage-list td { text-align: left; padding: 12px 15px; border-bottom: 1px solid var(--border-color); }
+        .manage-list tr:last-child td { border-bottom: none; }
         .manage-list img { width: 32px; height: 32px; border-radius: 6px; vertical-align: middle; margin-right: 10px; object-fit: cover; }
 
-        /* 表单页面样式 (单列) */
+        /* 表单页面样式 */
         .form-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 5px; }
         .form-container { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
         .form-group { background: #fafafa; padding: 15px; border-radius: 8px; border: 1px solid #f0f0f0; }
-        .form-label { display: flex; justify-content: space-between; align-items: center; font-weight: bold; margin-bottom: 10px; font-size: 14px; color: #111; }
+        .form-label { display: flex; justify-content: space-between; align-items: center; font-weight: 500; margin-bottom: 10px; font-size: 14px; color: #111; }
         .form-control { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; font-size: 14px; }
         .form-control:focus { border-color: var(--primary); }
         textarea.form-control { resize: vertical; min-height: 100px; }
         
-        /* 动态列表样式 & 多列输入框 */
         .dynamic-list { display: flex; flex-direction: column; gap: 8px; }
         .dynamic-item { display: flex; gap: 10px; align-items: center; }
         .dynamic-item input[type="text"] { flex-grow: 1; }
@@ -118,27 +122,39 @@
         .grid-reqs { grid-template-columns: 1fr 3fr auto; }
         .grid-misc { grid-template-columns: 1fr 3fr auto; }
 
-        /* 详情页样式 */
-        .details-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: relative; max-width: 1000px; margin: 0 auto; }
-        .details-top { display: flex; gap: 30px; margin-bottom: 30px; }
+        /* 详情页全新的卡片分离样式 */
+        .details-container { background: transparent; padding: 0; position: relative; max-width: 1000px; margin: 0 auto; }
+        
+        /* 详情页顶部操作栏 */
+        .details-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        
+        /* 顶部区块卡片 */
+        .details-top-card { display: flex; gap: 30px; margin-bottom: 20px; position: relative; }
         .details-logo { width: 120px; height: 120px; border-radius: 20px; object-fit: cover; background-color: #f7f7f7; }
-        .details-info { flex-grow: 1; display: flex; flex-direction: column; gap: 12px; }
+        .details-info { flex-grow: 1; display: flex; flex-direction: column; gap: 8px; }
         .details-title { font-size: 28px; font-weight: 500; color: var(--text-main); margin: 0; }
-        .details-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-        .details-label { font-size: 15px; color: var(--text-muted); width: 40px; flex-shrink: 0; }
-        .details-edit-btn { position: absolute; top: 30px; right: 30px; }
+        .details-author { font-size: 13px; color: var(--text-muted); cursor: pointer; text-decoration: none; margin-bottom: 5px; }
+        .details-author:hover { color: var(--primary); text-decoration: underline; }
         
-        .dl-btn { padding: 0px 16px; height: 36px; border-radius: 0px 5px 5px 0px; text-decoration: none; color: white; font-weight: bold; font-size: 13px; transition: opacity 0.2s; display: inline-flex; align-items: center; gap: 5px; }
+        .details-row { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 2px; }
+        .details-label { font-size: 12px; color: var(--text-muted); flex-shrink: 0; }
+        
+        .dl-btn { padding: 0px 16px; height: 32px; border-radius: 0px 5px 5px 0px; text-decoration: none; color: white; font-weight: bold; font-size: 13px; transition: opacity 0.2s; display: inline-flex; align-items: center; gap: 5px; }
         .dl-btn:hover { opacity: 0.8; }
-        .dl-plat-label { font-weight: bold; color: #444; min-width: 70px; }
+        .dl-plat-label { font-weight: 500; color: #444; min-width: 80px; }
         
-        .details-body h3 { font-size: 18px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin: 25px 0 15px 0; color: var(--text-main); }
-        .details-desc { line-height: 1.6; color: #444; white-space: pre-wrap; font-size: 15px; }
+        /* 详情页主体模块卡片 */
+        .detail-card { margin-bottom: 5px; background: white; border: 1px solid var(--border-color); border-radius: 10px; }
+        .detail-card-header { padding: 15px; border-bottom: 1px solid var(--border-color); font-size: 15px; font-weight: 500; color: var(--text-main); background: white; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+        .detail-card-body { padding: 15px; background: white; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; font-size: 11px;}
+        
+        .details-desc { font-size: 13px; line-height: 1.6; color: #444; white-space: pre-wrap; }
         .details-media { display: flex; flex-wrap: wrap; gap: 15px; }
         .media-item { max-width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .media-link { display: inline-block; padding: 10px 15px; background: #f3f4f6; border-radius: 6px; color: var(--primary); text-decoration: none; }
+        
         .req-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-        .req-table td { padding: 8px 12px; border: 1px solid var(--border-color); }
+        .req-table td { padding: 10px 12px; border: 1px solid var(--border-color); }
         .req-table td:first-child { background: #fafafa; font-weight: bold; width: 150px; color: #555; }
 
         /* 模态框 */
@@ -164,38 +180,30 @@
 
     <main class="main-content">
         <div id="page-home" class="page active">
+            <h1 class="page-title" id="homeTitle">全部应用</h1>
             <div class="app-grid" id="appGrid"></div>
         </div>
 
         <div id="page-details" class="page">
-            <div class="settings-section" style="margin-bottom: 10px;">
-                <button class="btn btn-secondary btn-small" onclick="switchPage('home')">&#xE72B;</button>
-            </div>
             <div class="details-container" id="detailsContainer"></div>
         </div>
 
         <div id="page-settings" class="page">
+            <h1 class="page-title">设置</h1>
             <div class="settings-section">
                 <h2>数据管理</h2>
                 <input type="file" id="fileInput" accept=".json" onchange="handleFileSelect(event)">
                 <button class="btn" onclick="document.getElementById('fileInput').click()">导入JSON文件</button>
                 <button class="btn btn-secondary" onclick="exportData()">导出为JSON文件</button>
             </div>
+            
             <div class="settings-section">
-                <h2>软件管理</h2>
-                <button class="btn" onclick="openAppForm()">新增软件</button>
-                <button class="btn" onclick="switchPage('manage')">管理软件列表</button>
-            </div>
-        </div>
-
-        <div id="page-manage" class="page">
-            <div class="settings-section">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
                     <h2 style="margin: 0; border: none; padding: 0;">软件列表</h2>
-                    <button class="btn btn-secondary" onclick="switchPage('settings')">返回设置</button>
+                    <button class="btn" style="margin: 0;" onclick="openAppForm()">新增软件</button>
                 </div>
                 <table class="manage-list">
-                    <thead><tr><th>图标与名称</th><th>类型</th><th>操作</th></tr></thead>
+                    <thead><tr><th>图标与名称</th><th>类型</th><th>作者</th><th>操作</th></tr></thead>
                     <tbody id="manageTableBody"></tbody>
                 </table>
             </div>
@@ -204,57 +212,58 @@
         <div id="page-form" class="page">
             <div class="settings-section">
                 <div class="form-header">
-                    <h2 id="formTitle" style="margin:0; border:none; padding:0;">新增软件</h2>
+                    <h2 class="page-title" id="formTitle" style="margin:0; border:none; padding:0;">新增软件</h2>
                     <div>
                         <button class="btn btn-secondary" onclick="cancelForm()">取消</button>
-                        <button class="btn" onclick="saveAppForm()">保存数据</button>
+                        <button class="btn" style="margin-right: 0;" onclick="saveAppForm()">保存数据</button>
                     </div>
                 </div>
 
                 <div class="form-container">
                     <div class="form-group"><div class="form-label">应用名称（必填）</div><input type="text" id="f-name" class="form-control" placeholder="如：哔哩哔哩"></div>
+                    <div class="form-group"><div class="form-label">软件作者（必填）</div><input type="text" id="f-author" class="form-control" placeholder="如：独立开发者 / 公司名称"></div>
                     <div class="form-group"><div class="form-label">类型（必填）</div><input type="text" id="f-type" class="form-control" placeholder="应用/游戏/网页插件/office插件"></div>
                     <div class="form-group"><div class="form-label">LOGO</div><input type="text" id="f-logo" class="form-control" placeholder="请填写以https://开头的图片链接"></div>
                     <div class="form-group"><div class="form-label">介绍</div><textarea id="f-desc" class="form-control" placeholder="简单介绍一下这个应用"></textarea></div>
                     
                     <div class="form-group">
-                        <div class="form-label">介绍视频/图片<button class="btn btn-small" onclick="addDynamicItem('list-media', '', '类型,链接')">+ 添加媒体</button></div>
+                        <div class="form-label">介绍视频/图片<button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-media', '', '类型,链接')">&#xE710;</button></div>
                         <div id="list-media" class="dynamic-list"></div>
                         <small style="color: var(--text-muted); font-size: 12px;">格式: video/image,链接</small>
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">支持平台 <button class="btn btn-small" onclick="addDynamicItem('list-platforms', '', '如: Windows')">+ 添加平台</button></div>
+                        <div class="form-label">支持平台 <button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-platforms', '', '如: Windows')">&#xE710;</button></div>
                         <div id="list-platforms" class="dynamic-list"></div>
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">分组<button class="btn btn-small" onclick="addDynamicItem('list-groupTags', '', '如: 音乐、工具')">+ 添加分组</button></div>
+                        <div class="form-label">分组<button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-groupTags', '', '如: 音乐、工具')">&#xE710;</button></div>
                         <div id="list-groupTags" class="dynamic-list"></div>
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">标签<button class="btn btn-small" onclick="addDynamicItem('list-featureTags', '', '如: 开源、便携版')">+ 添加标签</button></div>
+                        <div class="form-label">标签<button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-featureTags', '', '如: 开源、便携版')">&#xE710;</button></div>
                         <div id="list-featureTags" class="dynamic-list"></div>
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">安装要求 <button class="btn btn-small" onclick="addReqItem()">+ 添加要求</button></div>
+                        <div class="form-label">安装要求 <button class="btn btn-small" style="margin-right: 0;" onclick="addReqItem()">&#xE710;</button></div>
                         <div id="list-reqs" class="dynamic-list"></div>
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">支持的语言 <button class="btn btn-small" onclick="addDynamicItem('list-langs', '', '如: zh-CN')">+ 添加语言</button></div>
+                        <div class="form-label">支持的语言 <button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-langs', '', '如: zh-CN')">&#xE710;</button></div>
                         <div id="list-langs" class="dynamic-list"></div>
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">下载链接<button class="btn btn-small" onclick="addDownloadItem()">+ 添加下载按钮</button></div>
+                        <div class="form-label">下载链接<button class="btn btn-small" style="margin-right: 0;" onclick="addDownloadItem()">&#xE710;</button></div>
                         <div id="list-downloads" class="dynamic-list"></div>
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">杂项<button class="btn btn-small" onclick="addMiscItem()">+ 添加杂项</button></div>
+                        <div class="form-label">杂项<button class="btn btn-small" style="margin-right: 0;" onclick="addMiscItem()">&#xE710;</button></div>
                         <div id="list-misc" class="dynamic-list"></div>
                     </div>
                 </div>
@@ -269,7 +278,7 @@
             <div class="btn-group">
                 <button class="btn" onclick="executeImport('overwrite')">覆盖原有</button>
                 <button class="btn" onclick="executeImport('merge')">合并数据</button>
-                <button class="btn btn-secondary" onclick="closeModal('importModal')">取消</button>
+                <button class="btn btn-secondary" style="margin-right: 0;" onclick="closeModal('importModal')">取消</button>
             </div>
         </div>
     </div>
@@ -277,52 +286,47 @@
     <script>
         let appData = JSON.parse(localStorage.getItem('appbox_data')) || [];
         let currentImportData = null;
-        let currentNav = 'all'; // 记录当前激活的导航菜单项
+        let currentNav = 'all'; 
+        let currentAuthorFilter = null; 
         let currentEditingIndex = null;
         let previousPage = 'home'; 
 
         function init() {
             renderSidebarTypes();
-            // 初始化时默认激活“全部应用”
             handleNavClick('all');
         }
 
         function switchPage(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById('page-' + pageId).classList.add('active');
-            if(pageId === 'manage') renderManageList();
+            if(pageId === 'settings') renderManageList(); 
             if(pageId === 'home') { previousPage = 'home'; renderAppGrid(); }
         }
 
-        // --- 全新的侧边栏导航逻辑 ---
-        
-        // 仅在数据变更时重新渲染按钮结构
         function renderSidebarTypes() {
             const navButtons = document.getElementById('navButtons');
             const types = [...new Set(appData.map(app => app.type || '未分类'))];
             
-            // 将设置与分类列表放在一起
             let html = `
                 <button class="nav-btn ${currentNav === 'settings' ? 'active' : ''}" onclick="handleNavClick('settings', this)">&#xE713;&nbsp;&nbsp;设置</button>
                 <button class="nav-btn ${currentNav === 'all' ? 'active' : ''}" onclick="handleNavClick('all', this)">&#xE71D;&nbsp;&nbsp;全部应用</button>
             `;
             types.forEach(type => { 
-                html += `<button class="nav-btn ${currentNav === type ? 'active' : ''}" onclick="handleNavClick('${type}', this)">${type}</button>`; 
+                if(type !== '未分类' && type.trim() !== '') {
+                    html += `<button class="nav-btn ${currentNav === type ? 'active' : ''}" onclick="handleNavClick('${type}', this)">${type}</button>`; 
+                }
             });
             
             navButtons.innerHTML = html;
-            // 等待 DOM 挂载完成后移动药丸指示器
             setTimeout(moveIndicator, 50);
         }
 
-        // 处理导航点击与药丸移动
         function handleNavClick(target, btnElement = null) {
             currentNav = target;
+            currentAuthorFilter = null; 
             
-            // 移除所有高亮
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
             
-            // 如果不是直接点击按钮触发的（例如点击 Logo），则主动寻找对应的 DOM
             if (!btnElement) {
                 btnElement = document.querySelector(`button[onclick*="'${target}'"]`);
             }
@@ -330,26 +334,33 @@
                 btnElement.classList.add('active');
             }
             
-            // 移动药丸指示器
             moveIndicator();
 
-            // 页面路由控制
             if (target === 'settings') {
                 switchPage('settings');
             } else {
-                document.getElementById('searchInput').value = ''; // 清空搜索框
-                switchPage('home'); // 回到首页并触发 renderAppGrid
+                document.getElementById('searchInput').value = ''; 
+                switchPage('home'); 
             }
         }
 
-        // 核心：计算指示器的高度并执行平滑位移
+        function filterByAuthor(author) {
+            currentAuthorFilter = author;
+            currentNav = 'author_filter'; 
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            moveIndicator();
+            
+            document.getElementById('searchInput').value = ''; 
+            switchPage('home');
+        }
+
         function moveIndicator() {
             const activeBtn = document.querySelector('.nav-btn.active');
             const indicator = document.getElementById('navIndicator');
             
             if (activeBtn && indicator) {
-                // 将药丸垂直居中对齐到按钮内部 (按钮高度 - 药丸高度14)/2
-                const topPos = activeBtn.offsetTop + (activeBtn.offsetHeight - 14) / 2;
+                const topPos = activeBtn.offsetTop + (activeBtn.offsetHeight - 16) / 2;
                 indicator.style.transform = `translateY(${topPos}px)`;
                 indicator.style.opacity = '1';
             } else if (indicator) {
@@ -364,15 +375,29 @@
 
         function renderAppGrid() {
             const grid = document.getElementById('appGrid');
+            const homeTitle = document.getElementById('homeTitle');
             const keyword = document.getElementById('searchInput').value.toLowerCase();
             grid.innerHTML = '';
             
+            // 处理动态标题
+            if (currentAuthorFilter) {
+                homeTitle.innerText = `由 ${currentAuthorFilter} 开发的所有应用`;
+            } else if (currentNav === 'all' || currentNav === 'settings') {
+                homeTitle.innerText = `全部应用`;
+            } else {
+                homeTitle.innerText = currentNav;
+            }
+
             let filteredApps = appData.map((app, index) => ({...app, _originalIndex: index})) 
                                       .filter(app => {
-                                          // 当导航不为 settings 且不为 all 时，视为类型过滤
-                                          const matchType = (currentNav === 'all' || currentNav === 'settings') || app.type === currentNav;
+                                          let match = true;
+                                          if (currentAuthorFilter) {
+                                              match = match && (app.author === currentAuthorFilter);
+                                          } else {
+                                              match = match && (currentNav === 'all' || currentNav === 'settings' || app.type === currentNav);
+                                          }
                                           const matchSearch = app.name.toLowerCase().includes(keyword) || (app.description && app.description.toLowerCase().includes(keyword));
-                                          return matchType && matchSearch;
+                                          return match && matchSearch;
                                       });
 
             if(filteredApps.length === 0) { grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999; margin-top: 50px;">暂无应用。</p>'; return; }
@@ -398,49 +423,76 @@
             const app = appData[index];
             const container = document.getElementById('detailsContainer');
             
-            const groupHtml = (app.groupTags || []).map(t => `<span class="app-tag">${t}</span>`).join('') || '<span style="color:#aaa; font-size:12px;">无</span>';
-            const featureHtml = (app.featureTags || []).map(t => `<span class="app-tag" style="background:#e0f2fe; color:var(--primary);">${t}</span>`).join('') || '<span style="color:#aaa; font-size:12px;">无</span>';
-            const platHtml = (app.platforms || []).join(' / ') || '未指定';
-            const langHtml = (app.languages || []).join(', ') || '未指定';
+            // 构建合并后的胶囊标签 HTML (类型、分组、特点 在同一行)
+            let combinedTagsHtml = '';
             
+            // 1. 类型（必填，灰色标签）
+            combinedTagsHtml += `<span class="app-tag" style="background:#f3f4f6; color:var(--text-muted);">${app.type}</span>`;
+            
+            // 2. 分组
+            if (app.groupTags && app.groupTags.length > 0) {
+                app.groupTags.forEach(t => {
+                    combinedTagsHtml += `<span class="app-tag" style="background:#f3f4f6; color:var(--text-muted);">${t}</span>`;
+                });
+            }
+            
+            // 3. 特点
+            if (app.featureTags && app.featureTags.length > 0) {
+                app.featureTags.forEach(t => {
+                    combinedTagsHtml += `<span class="app-tag" style="background:#e0f2fe; color:var(--primary);">${t}</span>`;
+                });
+            }
+            
+            // 4. 平台
+            let platHtml = '';
+            if (app.platforms && app.platforms.length > 0) {
+                app.platforms.forEach(p => {
+                    platHtml += `<span class="app-tag" style="font-size: 12px; font-weight: normal; background:#ececec; color:var(--text-muted);">${p}</span>`;
+                });
+            }
+            
+            // 5. 下载
             let dlHtml = '';
             const dlGroups = {};
-            
             (app.downloads || []).forEach(dlStr => {
                 const parts = dlStr.split(',');
-                let plat = (parts[0] || '').trim();
-                if (!plat) plat = '未分类';
-                const ver = (parts[1] || '').trim();
-                const text = (parts[2] || '下载').trim();
-                const color = (parts[3] || '#0078D7').trim();
-                const link = (parts.slice(4).join(',') || '#').trim();
-                
+                let plat = (parts[0] || '').trim() || '下载链接：';
                 const groupKey = plat.toLowerCase();
                 if (!dlGroups[groupKey]) dlGroups[groupKey] = { displayName: plat, items: [] };
-                dlGroups[groupKey].items.push({ ver, text, color, link });
+                dlGroups[groupKey].items.push({ 
+                    ver: (parts[1] || '').trim(), text: (parts[2] || '下载').trim(), 
+                    color: (parts[3] || '#0078D7').trim(), link: (parts.slice(4).join(',') || '#').trim() 
+                });
             });
 
-            const groupKeys = Object.keys(dlGroups);
-            if (groupKeys.length > 0) {
+            if (Object.keys(dlGroups).length > 0) {
                 dlHtml = '<div style="display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 5px;">';
-                groupKeys.forEach(key => {
+                Object.keys(dlGroups).forEach(key => {
                     const group = dlGroups[key];
                     let buttonsHtml = '';
                     group.items.forEach((item) => {
                         buttonsHtml += `
                             <div style="display: inline-flex; align-items: center; margin-right: 15px;">
-                                ${item.ver ? `<span class="app-tag" style="background: #dcdcdc; color: #4b5563; padding: 0px 8px 4px 8px; line-height: 32px; border-radius: 5px 0px 0px 5px; ">${item.ver}</span>` : ''}
-                                <a href="${item.link}" target="_blank" class="dl-btn" style="background-color: ${item.color};">
+                                ${item.ver ? `<span class="app-tag" style="background: #dcdcdc; color: #4b5563; padding: 0px 8px; height: 32px; line-height: 32px; border-radius: 5px 0px 0px 5px;">${item.ver}</span>` : ''}
+                                <a href="${item.link}" target="_blank" class="dl-btn" style="background-color: ${item.color}; border-radius: ${item.ver ? '0px 5px 5px 0px' : '5px'};">
                                     &#xE896; ${item.text}
                                 </a>
-                            </div>
-                        `;
+                            </div>`;
                     });
-                    dlHtml += `<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;"><span class="dl-plat-label">${group.displayName}:</span>${buttonsHtml}</div>`;
+                    dlHtml += `<div style="display: flex; align-items: center; flex-wrap: wrap; "><span class="dl-plat-label">${group.displayName}&nbsp;&nbsp;</span>${buttonsHtml}</div>`;
                 });
                 dlHtml += '</div>';
-            } else {
-                dlHtml = '<span style="color:#aaa; font-size:12px; margin-top: 5px;">暂无下载链接</span>';
+            }
+
+            // 底部主体内容的渲染（空白则不渲染）
+            let bodyCardsHtml = '';
+            
+            if (app.description) {
+                bodyCardsHtml += `
+                    <div class="detail-card">
+                        <div class="detail-card-header">软件介绍</div>
+                        <div class="detail-card-body"><div class="details-desc">${app.description}</div></div>
+                    </div>`;
             }
 
             let mediaHtml = '';
@@ -448,65 +500,76 @@
                 const type = mStr.split(',')[0].trim().toLowerCase();
                 const url = mStr.substring(mStr.indexOf(',') + 1).trim();
                 if(!url) return;
-                if(type === 'image') {
-                    mediaHtml += `<img src="${url}" class="media-item" style="max-height: 300px;" onerror="this.style.display='none'">`;
-                } else if(type === 'video') {
-                    mediaHtml += `<a href="${url}" target="_blank" class="media-link">🎬 观看介绍视频</a>`;
-                } else {
-                    mediaHtml += `<a href="${url}" target="_blank" class="media-link">🔗 访问媒体链接</a>`;
-                }
+                if(type === 'image') mediaHtml += `<img src="${url}" class="media-item" style="max-height: 300px;" onerror="this.style.display='none'">`;
+                else if(type === 'video') mediaHtml += `<a href="${url}" target="_blank" class="media-link">🎬 观看介绍视频</a>`;
+                else mediaHtml += `<a href="${url}" target="_blank" class="media-link">🔗 访问媒体链接</a>`;
             });
+            if (mediaHtml) {
+                bodyCardsHtml += `
+                    <div class="detail-card">
+                        <div class="detail-card-header">媒体展示</div>
+                        <div class="detail-card-body"><div class="details-media">${mediaHtml}</div></div>
+                    </div>`;
+            }
 
-            let reqHtml = '';
-            if(app.requirements && app.requirements.length > 0) {
-                reqHtml = `<table class="req-table"><tbody>`;
+            if (app.requirements && app.requirements.length > 0) {
+                let reqHtml = `<table class="req-table"><tbody>`;
                 app.requirements.forEach(req => {
                     const parts = req.split(',');
                     reqHtml += `<tr><td>${parts[0]||'未知要求'}</td><td>${parts.slice(1).join(',')||'-'}</td></tr>`;
                 });
                 reqHtml += `</tbody></table>`;
-            } else {
-                reqHtml = '<p style="color:#aaa; font-size:13px;">无特定要求</p>';
+                bodyCardsHtml += `
+                    <div class="detail-card">
+                        <div class="detail-card-header">安装要求</div>
+                        <div class="detail-card-body">${reqHtml}</div>
+                    </div>`;
             }
 
-            let miscHtml = '';
-            if(app.misc && app.misc.length > 0) {
-                miscHtml = `<table class="req-table"><tbody>`;
+            if (app.languages && app.languages.length > 0) {
+                bodyCardsHtml += `
+                    <div class="detail-card">
+                        <div class="detail-card-header">支持语言</div>
+                        <div class="detail-card-body"><p style="font-size:15px; color:#444;">${app.languages.join(', ')}</p></div>
+                    </div>`;
+            }
+
+            if (app.misc && app.misc.length > 0) {
+                let miscHtml = `<table class="req-table"><tbody>`;
                 app.misc.forEach(m => {
                     const parts = m.split(',');
                     let title = parts[0] || '其他';
                     let content = parts.slice(1).join(',') || '-';
-                    if(content.startsWith('http')) {
-                        content = `<a href="${content}" target="_blank" style="color: var(--primary); text-decoration: none;">${content}</a>`;
-                    }
+                    if(content.startsWith('http')) content = `<a href="${content}" target="_blank" style="color: var(--primary); text-decoration: none;">${content}</a>`;
                     miscHtml += `<tr><td>${title}</td><td>${content}</td></tr>`;
                 });
                 miscHtml += `</tbody></table>`;
+                bodyCardsHtml += `
+                    <div class="detail-card">
+                        <div class="detail-card-header">其他信息</div>
+                        <div class="detail-card-body">${miscHtml}</div>
+                    </div>`;
             }
 
+            // 最终拼接详情页
             container.innerHTML = `
-                <button class="btn details-edit-btn" onclick="openAppForm(${index})">✏️ 编辑</button>
-                <div class="details-top">
+                <div class="details-actions">
+                    <button class="btn btn-secondary" style="margin: 0;" onclick="switchPage('home')">&#xE72B;</button>
+                    <button class="btn" style="margin: 0;" onclick="openAppForm(${index})">&#xE70F; 编辑信息</button>
+                </div>
+                
+                <div class="details-top-card">
                     <img src="${app.logo || 'https://via.placeholder.com/120'}" class="details-logo" onerror="this.src='https://via.placeholder.com/120'">
                     <div class="details-info">
                         <h1 class="details-title">${app.name}</h1>
-                        <div class="details-row"><div class="details-label">类型:</div> <strong>${app.type}</strong></div>
-                        <div class="details-row"><div class="details-label">分组:</div> ${groupHtml}</div>
-                        <div class="details-row"><div class="details-label">特点:</div> ${featureHtml}</div>
-                        <div class="details-row"><div class="details-label">平台:</div> <span style="font-size:14px; color:#444;">${platHtml}</span></div>
-                        <div class="details-row" style="align-items: flex-start;"><div class="details-label" style="margin-top: 8px;">下载:</div> ${dlHtml}</div>
+                        <div class="details-author" onclick="filterByAuthor('${app.author || ''}')">${app.author || '未知'}</div>
+                        <div class="details-row">${combinedTagsHtml}</div>
+                        ${platHtml ? `<div class="details-row"><div class="details-label">适用于</div>${platHtml}</div>` : ''}
+                        ${dlHtml ? `<div class="details-row" style="align-items: flex-start;">${dlHtml}</div>` : ''}
                     </div>
                 </div>
-                <div class="details-body">
-                    <h3>📝 软件介绍</h3>
-                    <div class="details-desc">${app.description || '<span style="color:#aaa;">暂无介绍</span>'}</div>
-                    ${mediaHtml ? `<h3>🖼️ 媒体展示</h3><div class="details-media">${mediaHtml}</div>` : ''}
-                    <h3>⚙️ 安装要求</h3>
-                    ${reqHtml}
-                    <h3>🌐 支持语言</h3>
-                    <p style="font-size:14px; color:#444;">${langHtml}</p>
-                    ${miscHtml ? `<h3>🧩 其他信息</h3>${miscHtml}` : ''}
-                </div>
+                
+                ${bodyCardsHtml}
             `;
             
             switchPage('details');
@@ -519,7 +582,7 @@
             const container = document.getElementById(containerId);
             const div = document.createElement('div');
             div.className = 'dynamic-item';
-            div.innerHTML = `<input type="text" class="form-control" value="${value}" placeholder="${placeholder}"><button class="btn btn-danger btn-small" onclick="this.parentElement.remove()" style="margin:0;">&#xE894;</button>`;
+            div.innerHTML = `<input type="text" class="form-control" value="${value}" placeholder="${placeholder}"><button class="btn btn-danger btn-small" style="margin-right: 0;" onclick="this.parentElement.remove()">&#xE894;</button>`;
             container.appendChild(div);
         }
 
@@ -533,7 +596,7 @@
                 <input type="text" class="form-control dl-text" value="${text}" placeholder="按钮文字">
                 <input type="text" class="form-control dl-color" value="${color}" placeholder="颜色 (如 #0078D7)">
                 <input type="text" class="form-control dl-link" value="${link}" placeholder="下载链接 (https://...)">
-                <button class="btn btn-danger btn-small" onclick="this.parentElement.remove()" style="margin:0;">&#xE894;</button>
+                <button class="btn btn-danger btn-small" style="margin-right: 0;" onclick="this.parentElement.remove()">&#xE894;</button>
             `;
             container.appendChild(div);
         }
@@ -545,7 +608,7 @@
             div.innerHTML = `
                 <input type="text" class="form-control req-label" value="${label}" placeholder="标签 (如 gpu)">
                 <input type="text" class="form-control req-content" value="${content}" placeholder="内容 (如 RTX4060)">
-                <button class="btn btn-danger btn-small" onclick="this.parentElement.remove()" style="margin:0;">&#xE894;</button>
+                <button class="btn btn-danger btn-small" style="margin-right: 0;" onclick="this.parentElement.remove()">&#xE894;</button>
             `;
             container.appendChild(div);
         }
@@ -557,7 +620,7 @@
             div.innerHTML = `
                 <input type="text" class="form-control misc-title" value="${title}" placeholder="标题 (如 官方教程)">
                 <input type="text" class="form-control misc-content" value="${content}" placeholder="内容">
-                <button class="btn btn-danger btn-small" onclick="this.parentElement.remove()" style="margin:0;">&#xE894;</button>
+                <button class="btn btn-danger btn-small" style="margin-right: 0;" onclick="this.parentElement.remove()">&#xE894;</button>
             `;
             container.appendChild(div);
         }
@@ -600,19 +663,18 @@
         function cancelForm() {
             if(previousPage === 'details' && currentEditingIndex !== null) {
                 showAppDetails(currentEditingIndex);
-            } else if (previousPage === 'manage') {
-                switchPage('manage');
             } else {
-                switchPage('home');
+                switchPage('settings');
             }
         }
 
         function openAppForm(index = null) {
             currentEditingIndex = index;
             document.getElementById('formTitle').innerText = index === null ? '新增软件' : '编辑软件';
-            if(index === null) previousPage = 'manage'; 
+            if(index === null) previousPage = 'settings'; 
             
             document.getElementById('f-name').value = '';
+            document.getElementById('f-author').value = '';
             document.getElementById('f-type').value = '';
             document.getElementById('f-logo').value = '';
             document.getElementById('f-desc').value = '';
@@ -621,6 +683,7 @@
             if (index !== null) {
                 const app = appData[index];
                 document.getElementById('f-name').value = app.name || '';
+                document.getElementById('f-author').value = app.author || '';
                 document.getElementById('f-type').value = app.type || '';
                 document.getElementById('f-logo').value = app.logo || '';
                 document.getElementById('f-desc').value = app.description || '';
@@ -645,10 +708,6 @@
                     const parts = m.split(',');
                     addMiscItem(parts[0]||'', parts.slice(1).join(',')||'');
                 });
-
-            } else {
-                addDownloadItem('Windows', 'x64', '立即下载', '#0078D7', '');
-                addReqItem('系统', 'Windows 10 或以上');
             }
 
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -657,11 +716,13 @@
 
         function saveAppForm() {
             const name = document.getElementById('f-name').value.trim();
+            const author = document.getElementById('f-author').value.trim();
             const type = document.getElementById('f-type').value.trim();
-            if (!name || !type) { alert("App名字和类型是必填项！"); return; }
+            
+            if (!name || !author || !type) { alert("应用名称、软件作者和类型是必填项！"); return; }
 
             const newApp = {
-                name: name, type: type,
+                name: name, author: author, type: type,
                 logo: document.getElementById('f-logo').value.trim(),
                 description: document.getElementById('f-desc').value.trim(),
                 media: getDynamicValues('list-media'),
@@ -681,29 +742,30 @@
             }
 
             localStorage.setItem('appbox_data', JSON.stringify(appData));
-            renderSidebarTypes(); // 增加数据后重新渲染侧边栏（包含新增的类型）
+            renderSidebarTypes(); 
             
             if (previousPage === 'details' && currentEditingIndex !== null) {
                 showAppDetails(currentEditingIndex);
             } else {
-                switchPage('manage');
+                switchPage('settings');
             }
         }
 
         // --- 管理与导入导出逻辑 ---
         function renderManageList() {
-            previousPage = 'manage';
+            previousPage = 'settings';
             const tbody = document.getElementById('manageTableBody');
             tbody.innerHTML = '';
-            if(appData.length === 0) { tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #999;">暂无数据</td></tr>'; return; }
+            if(appData.length === 0) { tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #999; padding: 20px;">暂无数据</td></tr>'; return; }
             appData.forEach((app, index) => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td><img src="${app.logo || 'https://via.placeholder.com/32'}" onerror="this.src='https://via.placeholder.com/32'">${app.name || '未命名'}</td>
                     <td>${app.type || '无'}</td>
-                    <td>
+                    <td>${app.author || '未知'}</td>
+                    <td style="width: 160px;">
                         <button class="btn btn-small" onclick="openAppForm(${index})">&#xE70F; 编辑</button>
-                        <button class="btn btn-danger btn-small" onclick="deleteSoftware(${index})">&#xE894; 删除</button>
+                        <button class="btn btn-danger btn-small" style="margin-right: 0;" onclick="deleteSoftware(${index})">&#xE894; 删除</button>
                     </td>
                 `;
                 tbody.appendChild(tr);
@@ -715,7 +777,7 @@
                 appData.splice(index, 1);
                 localStorage.setItem('appbox_data', JSON.stringify(appData));
                 renderManageList(); 
-                renderSidebarTypes(); // 删除可能影响类型列表
+                renderSidebarTypes(); 
             }
         }
 
@@ -741,6 +803,7 @@
             localStorage.setItem('appbox_data', JSON.stringify(appData));
             closeModal('importModal'); 
             init();
+            switchPage('settings'); // 导入后停留在设置页以便查看结果
         }
 
         function exportData() {
