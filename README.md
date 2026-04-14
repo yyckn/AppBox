@@ -1,7 +1,9 @@
 # AppBox
 一个在线软件资源分享网站
 
-[在线访问](http://appbox.yyckn.fuwaki.icu/)
+[在线访问](https://appbox.rth1.xyz/)
 
 ## 导入数据
 出于用户隐私，我们**不存储任何用户数据**。网站只提供数据解析功能，应用数据由您自行导入或编辑，您可以导入其他人分享的json格式的数据包。
+
+[点击此处下载示例JSON数据包](https://github.com/yyckn/AppBox/blob/main/AppBox_Data.json)
