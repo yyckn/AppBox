@@ -6,18 +6,37 @@
     <title>AppBox</title>
     <style>
         body {
-            background-color: #f7f7f7;
             font-family: 'MiSans VF', 'MiSans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         :root {
             --primary: #0067c0;
             --bg-color: #f7f7f7;
             --sidebar-bg: #f3f3f3;
+            --text: #000000;
             --text-main: #333333;
-            --text-muted: #6b7280;
+            --text-muted: #676767;
             --border-color: #e7e7e7;
+            --card-border-color: #e5e5e5;
             --danger: #f02525;
             --main-text: #000000;
+            --card-bg: #ffffff;
+            --element-bg: #ececec;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #4cc2ff;
+                --bg-color: #2d2d2d;
+                --sidebar-bg: #202020;
+                --text: #ffffff;
+                --text-main: #ffffff;
+                --text-muted: #bdbdbd;
+                --border-color: #252525;
+                --card-border-color: #252525;
+                --danger: #f46762;
+                --main-text: #ffffff;
+                --card-bg: #202020;
+                --element-bg: #323232;
+            }
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe Fluent Icons', 'MiSans VF', 'MiSans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
         body { display: flex; height: 100vh; background-color: var(--bg-color); color: var(--text-main); }
@@ -26,7 +45,7 @@
         .sidebar { width: 320px; background-color: var(--sidebar-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 20px 15px 0 15px; flex-shrink: 0; }
         .logo { font-size: 18px; font-weight: 500; color: var(--main-text); margin-bottom: 20px; text-align: left; cursor: pointer; }
         .search-box { margin-bottom: 10px; }
-        .search-box input { width: 100%; padding: 0px 12px; line-height: 34px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; }
+        .search-box input { width: 100%; padding: 0px 12px; line-height: 34px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; background-color: var(--element-bg);}
         
         /* 导航栏与动画胶囊指示器 */
         .nav-container { 
@@ -66,9 +85,9 @@
             transition: background-color 0.2s; 
             position: relative;
         }
-        .nav-btn:hover { background-color: #e2e2e2; }
+        .nav-btn:hover { background-color: var(--element-bg); }
         .nav-btn.active { 
-            background-color: #ececec;
+            background-color: var(--element-bg);
         }
         
         /* 主内容区 */
@@ -82,24 +101,24 @@
 
         /* 卡片网格 */
         .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-        .app-card { background: white; border-radius: 8px; padding: 15px; border: 1px solid #e5e5e5; display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.2s; cursor: pointer; }
+        .app-card { background: var(--card-bg); border-radius: 8px; padding: 15px; border: 1px solid var(--card-border-color); display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.2s; cursor: pointer; }
         .app-card:hover { transform: translateY(-3px);}
         .app-icon { width: 64px; height: 64px; border-radius: 10px; margin-bottom: 8px; object-fit: cover; }
         .app-name { font-size: 16px; font-weight: 500; margin-bottom: 5px; }
         .app-type { font-size: 12px; color: var(--primary); background: #e0f2fe; padding: 2px 8px; border-radius: 12px; margin-bottom: 10px; }
         .app-tags { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; }
-        .app-tag { font-size: 12px; background: #ececec; color: var(--text-muted); padding: 2px 8px; border-radius: 5px; display: inline-block; }
+        .app-tag { font-size: 12px; background: var(--element-bg); color: var(--text-muted); padding: 2px 8px; border-radius: 5px; display: inline-block; }
 
         /* 设置 & 列表管理 */
         .settings-section { padding: 0px; margin-bottom: 15px;}
         .settings-section h2 { font-size: 15px; padding-bottom: 10px; font-weight: 500; }
-        .btn { height: 36px; min-width: 36px; padding: 0 10px; border: none; border-radius: 5px; cursor: pointer; color: white; background-color: var(--primary); transition: opacity 0.2s; margin-right: 10px; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
+        .btn { height: 36px; min-width: 36px; padding: 0 10px; border: none; border-radius: 5px; cursor: pointer; color: var(--text); background-color: var(--primary); transition: opacity 0.2s; margin-right: 10px; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
         .btn:hover { opacity: 0.9; }
         .btn-danger { background-color: var(--danger); }
-        .btn-secondary { background-color: var(--text-muted); }
+        .btn-secondary { background-color: var(--card-bg); }
         .btn-small { padding: 4px 8px; font-size: 12px; }
-        .manage-list { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); }
-        .manage-list th { background: #fafafa; font-weight: 600; color: #555; }
+        .manage-list { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); }
+        .manage-list th { background: var(--sidebar-bg); font-weight: 600; }
         .manage-list th, .manage-list td { text-align: left; padding: 12px 15px; border-bottom: 1px solid var(--border-color); }
         .manage-list tr:last-child td { border-bottom: none; }
         .manage-list img { width: 32px; height: 32px; border-radius: 6px; vertical-align: middle; margin-right: 10px; object-fit: cover; }
@@ -107,9 +126,9 @@
         /* 表单页面样式 */
         .form-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 5px; }
         .form-container { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
-        .form-group { background: #fafafa; padding: 15px; border-radius: 8px; border: 1px solid #f0f0f0; }
-        .form-label { display: flex; justify-content: space-between; align-items: center; font-weight: 500; margin-bottom: 10px; font-size: 14px; color: #111; }
-        .form-control { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; font-size: 14px; }
+        .form-group { background: var(--card-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--card-border-color); }
+        .form-label { display: flex; justify-content: space-between; align-items: center; font-weight: 500; margin-bottom: 10px; font-size: 14px; color: #111; color: var(--text); }
+        .form-control { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; font-size: 14px; background-color: var(--element-bg); color: var(--text);}
         .form-control:focus { border-color: var(--primary); }
         textarea.form-control { resize: vertical; min-height: 100px; }
         
@@ -130,7 +149,7 @@
         
         /* 顶部区块卡片 */
         .details-top-card { display: flex; gap: 30px; margin-bottom: 20px; position: relative; }
-        .details-logo { width: 120px; height: 120px; border-radius: 20px; object-fit: cover; background-color: #f7f7f7; }
+        .details-logo { width: 120px; height: 120px; border-radius: 20px; object-fit: cover; background-color: var(--bg-color); }
         .details-info { flex-grow: 1; display: flex; flex-direction: column; gap: 8px; }
         .details-title { font-size: 28px; font-weight: 500; color: var(--text-main); margin: 0; }
         .details-author { font-size: 13px; color: var(--text-muted); cursor: pointer; text-decoration: none; margin-bottom: 5px; }
@@ -141,25 +160,25 @@
         
         .dl-btn { padding: 0px 16px; height: 32px; border-radius: 0px 5px 5px 0px; text-decoration: none; color: white; font-weight: bold; font-size: 13px; transition: opacity 0.2s; display: inline-flex; align-items: center; gap: 5px; }
         .dl-btn:hover { opacity: 0.8; }
-        .dl-plat-label { font-weight: 500; color: #444; min-width: 80px; }
+        .dl-plat-label { font-weight: 500; color: var(--text-muted); min-width: 80px; }
         
         /* 详情页主体模块卡片 */
-        .detail-card { margin-bottom: 5px; background: white; border: 1px solid var(--border-color); border-radius: 10px; }
-        .detail-card-header { padding: 15px; border-bottom: 1px solid var(--border-color); font-size: 15px; font-weight: 500; color: var(--text-main); background: white; border-top-left-radius: 10px; border-top-right-radius: 10px; }
-        .detail-card-body { padding: 15px; background: white; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; font-size: 11px;}
+        .detail-card { margin-bottom: 5px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; }
+        .detail-card-header { padding: 15px; border-bottom: 1px solid var(--border-color); font-size: 15px; font-weight: 500; color: var(--text-main); background: var(--card-bg); border-top-left-radius: 10px; border-top-right-radius: 10px; }
+        .detail-card-body { padding: 15px; background: var(--card-bg); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; font-size: 11px;}
         
-        .details-desc { font-size: 13px; line-height: 1.6; color: #444; white-space: pre-wrap; }
-        .details-media { display: flex; flex-wrap: wrap; gap: 15px; }
-        .media-item { max-width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .details-desc { font-size: 13px; line-height: 1.6; color: var(--text); white-space: pre-wrap; }
+        .details-media { display: flex; flex-wrap: nowrap; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
+        .media-item { flex-shrink: 0; max-width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .media-link { display: inline-block; padding: 10px 15px; background: #f3f4f6; border-radius: 6px; color: var(--primary); text-decoration: none; }
         
         .req-table { width: 100%; border-collapse: collapse; font-size: 14px; }
         .req-table td { padding: 10px 12px; border: 1px solid var(--border-color); }
-        .req-table td:first-child { background: #fafafa; font-weight: bold; width: 150px; color: #555; }
+        .req-table td:first-child { background: var(--card-bg); font-weight: bold; width: 150px; color: var(--text-muted); }
 
         /* 模态框 */
         .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 1000; }
-        .modal { background: white; padding: 25px; border-radius: 8px; width: 400px; text-align: center; }
+        .modal { background: var(--card-bg); padding: 25px; border-radius: 8px; width: 400px; text-align: center; }
         .modal .btn-group { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
         #fileInput { display: none; }
     </style>
@@ -193,6 +212,7 @@
             <div class="settings-section">
                 <h2>数据管理</h2>
                 <input type="file" id="fileInput" accept=".json" onchange="handleFileSelect(event)">
+                <button class="btn" onclick="importBuiltIn()">导入网站内置数据源</button>
                 <button class="btn" onclick="document.getElementById('fileInput').click()">导入JSON文件</button>
                 <button class="btn btn-secondary" onclick="exportData()">导出为JSON文件</button>
             </div>
@@ -227,9 +247,8 @@
                     <div class="form-group"><div class="form-label">介绍</div><textarea id="f-desc" class="form-control" placeholder="简单介绍一下这个应用"></textarea></div>
                     
                     <div class="form-group">
-                        <div class="form-label">介绍视频/图片<button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-media', '', '类型,链接')">&#xE710;</button></div>
+                        <div class="form-label">介绍视频/图片<button class="btn btn-small" style="margin-right: 0;" onclick="addMediaItem()">&#xE710;</button></div>
                         <div id="list-media" class="dynamic-list"></div>
-                        <small style="color: var(--text-muted); font-size: 12px;">格式: video/image,链接</small>
                     </div>
 
                     <div class="form-group">
@@ -250,11 +269,6 @@
                     <div class="form-group">
                         <div class="form-label">安装要求 <button class="btn btn-small" style="margin-right: 0;" onclick="addReqItem()">&#xE710;</button></div>
                         <div id="list-reqs" class="dynamic-list"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="form-label">支持的语言 <button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-langs', '', '如: zh-CN')">&#xE710;</button></div>
-                        <div id="list-langs" class="dynamic-list"></div>
                     </div>
 
                     <div class="form-group">
@@ -408,7 +422,7 @@
                 card.className = 'app-card';
                 card.onclick = () => showAppDetails(app._originalIndex);
                 card.innerHTML = `
-                    <img src="${app.logo || 'https://via.placeholder.com/64'}" class="app-icon" onerror="this.src='https://via.placeholder.com/64'">
+                    <img src="${app.logo || 'https://timp.rth1.xyz/photo/defult.ico'}" class="app-icon" onerror="this.src='https://timp.rth1.xyz/photo/defult.ico'">
                     <div class="app-name">${app.name || '未知应用'}</div>
                     <div class="app-type">${app.type || '未分类'}</div>
                     <div class="app-tags">${tagsHtml}</div>
@@ -427,12 +441,12 @@
             let combinedTagsHtml = '';
             
             // 1. 类型（必填，灰色标签）
-            combinedTagsHtml += `<span class="app-tag" style="background:#f3f4f6; color:var(--text-muted);">${app.type}</span>`;
+            combinedTagsHtml += `<span class="app-tag" style="background: var(--card-bg); color:var(--text-muted);">${app.type}</span>`;
             
             // 2. 分组
             if (app.groupTags && app.groupTags.length > 0) {
                 app.groupTags.forEach(t => {
-                    combinedTagsHtml += `<span class="app-tag" style="background:#f3f4f6; color:var(--text-muted);">${t}</span>`;
+                    combinedTagsHtml += `<span class="app-tag" style="background: var(--card-bg); color:var(--text-muted);">${t}</span>`;
                 });
             }
             
@@ -447,7 +461,7 @@
             let platHtml = '';
             if (app.platforms && app.platforms.length > 0) {
                 app.platforms.forEach(p => {
-                    platHtml += `<span class="app-tag" style="font-size: 12px; font-weight: normal; background:#ececec; color:var(--text-muted);">${p}</span>`;
+                    platHtml += `<span class="app-tag" style="font-size: 12px; font-weight: normal; background: var(--element-bg); color:var(--text-muted);">${p}</span>`;
                 });
             }
             
@@ -497,12 +511,24 @@
 
             let mediaHtml = '';
             (app.media || []).forEach(mStr => {
-                const type = mStr.split(',')[0].trim().toLowerCase();
-                const url = mStr.substring(mStr.indexOf(',') + 1).trim();
+                const parts = mStr.split(',');
+                const type = parts[0].trim().toLowerCase();
+                const url = parts.slice(1).join(',').trim();
                 if(!url) return;
-                if(type === 'image') mediaHtml += `<img src="${url}" class="media-item" style="max-height: 300px;" onerror="this.style.display='none'">`;
-                else if(type === 'video') mediaHtml += `<a href="${url}" target="_blank" class="media-link">🎬 观看介绍视频</a>`;
-                else mediaHtml += `<a href="${url}" target="_blank" class="media-link">🔗 访问媒体链接</a>`;
+                
+                if(type === 'image') {
+                    mediaHtml += `<img src="${url}" class="media-item" style="max-height: 300px;" onerror="this.style.display='none'">`;
+                }
+                // 在此修改 iframe 的解析逻辑，加入了你要求的所有属性
+                else if(type === 'iframe') {
+                    mediaHtml += `<iframe src="${url}" class="media-item" style="border:none; height: 300px; width: 500px; max-width: 100%;" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>`;
+                }
+                else if(type === 'video') {
+                    mediaHtml += `<a href="${url}" target="_blank" class="media-link media-item" style="display:flex; align-items:center; height: 40px;">🎬 观看介绍视频</a>`;
+                }
+                else {
+                    mediaHtml += `<a href="${url}" target="_blank" class="media-link media-item" style="display:flex; align-items:center; height: 40px;">🔗 访问媒体链接</a>`;
+                }
             });
             if (mediaHtml) {
                 bodyCardsHtml += `
@@ -523,14 +549,6 @@
                     <div class="detail-card">
                         <div class="detail-card-header">安装要求</div>
                         <div class="detail-card-body">${reqHtml}</div>
-                    </div>`;
-            }
-
-            if (app.languages && app.languages.length > 0) {
-                bodyCardsHtml += `
-                    <div class="detail-card">
-                        <div class="detail-card-header">支持语言</div>
-                        <div class="detail-card-body"><p style="font-size:15px; color:#444;">${app.languages.join(', ')}</p></div>
                     </div>`;
             }
 
@@ -559,7 +577,7 @@
                 </div>
                 
                 <div class="details-top-card">
-                    <img src="${app.logo || 'https://via.placeholder.com/120'}" class="details-logo" onerror="this.src='https://via.placeholder.com/120'">
+                    <img src="${app.logo || 'https://timp.rth1.xyz/photo/defult.ico'}" class="details-logo" onerror="this.src='https://timp.rth1.xyz/photo/defult.ico'">
                     <div class="details-info">
                         <h1 class="details-title">${app.name}</h1>
                         <div class="details-author" onclick="filterByAuthor('${app.author || ''}')">${app.author || '未知'}</div>
@@ -583,6 +601,23 @@
             const div = document.createElement('div');
             div.className = 'dynamic-item';
             div.innerHTML = `<input type="text" class="form-control" value="${value}" placeholder="${placeholder}"><button class="btn btn-danger btn-small" style="margin-right: 0;" onclick="this.parentElement.remove()">&#xE894;</button>`;
+            container.appendChild(div);
+        }
+
+        // 新增：专用于媒体添加的下拉栏
+        function addMediaItem(type = 'image', url = '') {
+            const container = document.getElementById('list-media');
+            const div = document.createElement('div');
+            div.className = 'dynamic-item';
+            div.innerHTML = `
+                <select class="form-control" style="width: auto; flex-shrink: 0;">
+                    <option value="image" ${type === 'image' ? 'selected' : ''}>图片</option>
+                    <option value="video" ${type === 'video' ? 'selected' : ''}>视频</option>
+                    <option value="iframe" ${type === 'iframe' ? 'selected' : ''}>iframe</option>
+                </select>
+                <input type="text" class="form-control" value="${url}" placeholder="请输入链接">
+                <button class="btn btn-danger btn-small" style="margin-right: 0;" onclick="this.parentElement.remove()">&#xE894;</button>
+            `;
             container.appendChild(div);
         }
 
@@ -627,6 +662,16 @@
 
         function getDynamicValues(containerId) {
             return Array.from(document.getElementById(containerId).querySelectorAll('input')).map(input => input.value.trim()).filter(val => val !== '');
+        }
+
+        // 新增：获取媒体列表数据
+        function getMediaData() {
+            return Array.from(document.querySelectorAll('#list-media .dynamic-item')).map(item => {
+                const type = item.querySelector('select').value;
+                const url = item.querySelector('input').value.trim();
+                if(!url) return null;
+                return `${type},${url}`;
+            }).filter(Boolean);
         }
 
         function getDownloadsData() {
@@ -678,7 +723,7 @@
             document.getElementById('f-type').value = '';
             document.getElementById('f-logo').value = '';
             document.getElementById('f-desc').value = '';
-            ['list-media', 'list-platforms', 'list-groupTags', 'list-featureTags', 'list-langs', 'list-downloads', 'list-reqs', 'list-misc'].forEach(id => document.getElementById(id).innerHTML = '');
+            ['list-media', 'list-platforms', 'list-groupTags', 'list-featureTags', 'list-downloads', 'list-reqs', 'list-misc'].forEach(id => document.getElementById(id).innerHTML = '');
 
             if (index !== null) {
                 const app = appData[index];
@@ -688,11 +733,16 @@
                 document.getElementById('f-logo').value = app.logo || '';
                 document.getElementById('f-desc').value = app.description || '';
 
-                (app.media || []).forEach(val => addDynamicItem('list-media', val, '类型,链接'));
+                (app.media || []).forEach(val => {
+                    const parts = val.split(',');
+                    const type = parts[0].trim().toLowerCase();
+                    const url = parts.slice(1).join(',').trim();
+                    addMediaItem(type, url);
+                });
+                
                 (app.platforms || []).forEach(val => addDynamicItem('list-platforms', val));
                 (app.groupTags || []).forEach(val => addDynamicItem('list-groupTags', val));
                 (app.featureTags || []).forEach(val => addDynamicItem('list-featureTags', val));
-                (app.languages || []).forEach(val => addDynamicItem('list-langs', val));
                 
                 (app.downloads || []).forEach(dl => {
                     const parts = dl.split(',');
@@ -725,11 +775,10 @@
                 name: name, author: author, type: type,
                 logo: document.getElementById('f-logo').value.trim(),
                 description: document.getElementById('f-desc').value.trim(),
-                media: getDynamicValues('list-media'),
+                media: getMediaData(),
                 platforms: getDynamicValues('list-platforms'),
                 groupTags: getDynamicValues('list-groupTags'),
                 featureTags: getDynamicValues('list-featureTags'),
-                languages: getDynamicValues('list-langs'),
                 downloads: getDownloadsData(),
                 requirements: getReqsData(),
                 misc: getMiscData()
@@ -760,7 +809,7 @@
             appData.forEach((app, index) => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td><img src="${app.logo || 'https://via.placeholder.com/32'}" onerror="this.src='https://via.placeholder.com/32'">${app.name || '未命名'}</td>
+                    <td><img src="${app.logo || 'https://timp.rth1.xyz/photo/defult.ico'}" onerror="this.src='https://timp.rth1.xyz/photo/defult.ico'">${app.name || '未命名'}</td>
                     <td>${app.type || '无'}</td>
                     <td>${app.author || '未知'}</td>
                     <td style="width: 160px;">
@@ -778,6 +827,24 @@
                 localStorage.setItem('appbox_data', JSON.stringify(appData));
                 renderManageList(); 
                 renderSidebarTypes(); 
+            }
+        }
+
+        // 新增：导入内置数据源方法
+        async function importBuiltIn() {
+            try {
+                const response = await fetch('https://appbox.rth1.xyz/AppBox_Data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP 错误! 状态码: ${response.status}`);
+                }
+                const data = await response.json();
+                if (!Array.isArray(data)) {
+                    throw new Error("JSON 数据格式错误，根元素必须是数组");
+                }
+                currentImportData = data;
+                document.getElementById('importModal').style.display = 'flex';
+            } catch (error) {
+                alert("导入网站内置数据源失败: \n可能的原因：文件不存在或存在跨域(CORS)限制。\n错误详情：" + error.message);
             }
         }
 

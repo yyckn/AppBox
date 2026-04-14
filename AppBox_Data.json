@@ -1,7 +1,7 @@
 [
     {
         "name": "哔哩哔哩",
-        "author": "bilibili",
+        "author": "上海宽娱数码科技有限公司",
         "type": "应用",
         "logo": "https://static.pc.yyb.qq.com/icon/a35d1928bee38ea4d4ea99447de9677a.png?imageMogr2/format/webp",
         "description": "你想看的都在这里！",
@@ -25,9 +25,6 @@
         "featureTags": [
             "官方"
         ],
-        "languages": [
-            "简体中文"
-        ],
         "downloads": [
             "Windows,x64,官网下载,#fb88a5,https://dl.hdslb.com/mobile/fixed/bili_win/bili_win-install.exe",
             "Android,64位,官网下载,#fb88a5,https://dl.hdslb.com/mobile/latest/android64/iBiliPlayer-bili.apk",
@@ -47,16 +44,14 @@
         "description": "用于美化Bilibili网页的插件。此项目基于BewlyBewly开发，并在其基础上进行功能扩充和调整，并合并了一些其他拓展的功能。",
         "media": [],
         "platforms": [
-            "Chrome,Firefox"
+            "Chrome",
+            "Firefox"
         ],
         "groupTags": [
             "美化"
         ],
         "featureTags": [
             "开源"
-        ],
-        "languages": [
-            "简体中文"
         ],
         "downloads": [
             ",,Github Release,#0d1117,https://github.com/keleus/BewlyCat/releases/latest",
@@ -105,9 +100,6 @@
         ],
         "groupTags": [],
         "featureTags": [],
-        "languages": [
-            "العربية (ليبيا),Deutsch (Deutschland),English (United Kingdom),English (United States),magyar (Magyarország),Bahasa Indonesia (Indonesia),italiano (Italia),日本語 (日本),한국어 (대한민국),မြန်မာ (မြန်မာ),Nederlands (Nederland),polski (Polska),português (Brasil),pусский (Россия),ไทย (ไทย),Türkçe (Türkiye),українська (Україна),Tiếng Việt (Việt Nam),繁體中文 (台灣),粵語 (廣東)"
-        ],
         "downloads": [
             ",x64/arm64,官网下载,#0d6efd,https://www.officetool.plus/zh-cn/introduction/download.html",
             ",,Github Release,#000000,https://github.com/YerongAI/Office-Tool/releases/"
@@ -116,7 +108,8 @@
             "前置框架,需要系统有.Net10，下载链接：【x64】https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-x64.exe，【arm64】https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-arm64.exe"
         ],
         "misc": [
-            "官网,https://www.officetool.plus/zh-cn/"
+            "官网,https://www.officetool.plus/zh-cn/",
+            "语言,العربية (ليبيا),Deutsch (Deutschland),English (United Kingdom),English (United States),magyar (Magyarország),Bahasa Indonesia (Indonesia),italiano (Italia),日本語 (日本),한국어 (대한민국),မြန်မာ (မြန်မာ),Nederlands (Nederland),polski (Polska),português (Brasil),pусский (Россия),ไทย (ไทย),Türkçe (Türkiye),українська (Україна),Tiếng Việt (Việt Nam),繁體中文 (台灣),粵語 (廣東)"
         ]
     },
     {
@@ -138,15 +131,78 @@
             "iOS",
             "iPad"
         ],
-        "groupTags": [],
-        "featureTags": [
-            "开源"
+        "groupTags": [
+            "影视",
+            "娱乐"
         ],
-        "languages": [],
+        "featureTags": [
+            "开源",
+            "多人收藏"
+        ],
         "downloads": [
             ",,Github Release,#000000,https://github.com/bggRGjQaUbCoE/PiliPlus/releases/"
         ],
         "requirements": [],
+        "misc": [
+            "项目地址,https://github.com/bggRGjQaUbCoE/PiliPlus"
+        ]
+    },
+    {
+        "name": "抖音",
+        "author": "北京抖音科技有限公司",
+        "type": "应用",
+        "logo": "https://static.pc.yyb.qq.com/wupload2/9yBKmasI.png?imageMogr2/format/webp",
+        "description": "抖音让每一个人看见并连接更大的世界，鼓励表达、沟通和记录，激发创造，丰富人们的精神世界，让生活更美好。【小窗播放，自由切换】视频变小窗，精彩不占屏，学习娱乐两不误；全屏or小窗，随你所想，屏幕空间尽在掌握。【抖音视频，秒变壁纸】选择你喜欢的视频，设置为桌面壁纸，陪伴一天好心情。还可以点击“看抖音”、“看作者”，一键观看更省心。【实用内容，每日精选】生活妙招，科技新知，实用内容尽在抖音；抖音热榜，影视综艺，精彩内容个性推荐。一起来抖音电脑客户端，体验更多精彩！",
+        "media": [
+            "image,https://static.pc.yyb.qq.com/snapshot/299494826f52d0f64ad2d8a522cd205d.jpg?imageMogr2/thumbnail/784x/format/webp",
+            "image,https://static.pc.yyb.qq.com/snapshot/efd162da26220e2d36d9a60c03878e79.jpg?imageMogr2/thumbnail/784x/format/webp",
+            "image,https://static.pc.yyb.qq.com/snapshot/ce4c3e9f2055730b64bc7ee62eed1396.jpg?imageMogr2/thumbnail/784x/format/webp",
+            "image,https://static.pc.yyb.qq.com/snapshot/2b0ea479d66860f02866cff61457feb7.jpg?imageMogr2/thumbnail/784x/format/webp",
+            "image,https://static.pc.yyb.qq.com/snapshot/56881cfae45a8dc5c200609538d62fa5.jpg?imageMogr2/thumbnail/784x/format/webp"
+        ],
+        "platforms": [
+            "Windows",
+            "Android",
+            "iOS",
+            "iPadOS"
+        ],
+        "groupTags": [
+            "影视",
+            "生活",
+            "娱乐"
+        ],
+        "featureTags": [
+            "官方"
+        ],
+        "downloads": [
+            "Windows,,官网下载,#000000,https://www.douyin.com/downloadpage/pc",
+            "Windows,,Microsoft Store,#000000,https://apps.microsoft.com/detail/XPFFSRJ7Q4N302?hl=zh-Hans-CN&gl=CN&ocid=pdpshare",
+            "网页版,,立即使用,#1976c6,https://www.douyin.com/?recommend",
+            "Android,,官网下载,#000000,https://s.toutiao.com/UsMYE/",
+            "Mac,,官网下载,#000000,https://www.douyin.com/downloadpage/pc",
+            "iOS,,App Store,#000000,https://apps.apple.com/cn/app/%E6%8A%96%E9%9F%B3/id1142110895"
+        ],
+        "requirements": [],
+        "misc": []
+    },
+    {
+        "name": "来自设备制造商的 HEVC 视频扩展",
+        "author": "Microsoft",
+        "type": "驱动",
+        "logo": "",
+        "description": "来自设备制造商的 HEVC 视频扩展，为Windows10/11设置提供HEVC格式视频编解码适配。",
+        "media": [],
+        "platforms": [
+            "Windows"
+        ],
+        "groupTags": [],
+        "featureTags": [],
+        "downloads": [
+            ",,WPS 云盘,#ff211c,https://www.kdocs.cn/l/ch89cxy9CmK2"
+        ],
+        "requirements": [
+            "系统,Windows10 1907 及以上"
+        ],
         "misc": []
     }
 ]
