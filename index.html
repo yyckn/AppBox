@@ -22,6 +22,9 @@
             --main-text: #000000;
             --card-bg: #ffffff;
             --element-bg: #ececec;
+            --element-bg-hover: #ffffff;
+            --element-border-hover: #e7e7e7;
+            --border-bottom: #969b9a;
         }
         @media (prefers-color-scheme: dark) {
             :root {
@@ -37,6 +40,9 @@
                 --main-text: #ffffff;
                 --card-bg: #202020;
                 --element-bg: #323232;
+                --element-bg-hover: #1e1e1e;
+                --element-border-hover: #353535;
+                --border-bottom: #a1a2a2;
             }
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe Fluent Icons', 'MiSans VF', 'MiSans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
@@ -46,7 +52,9 @@
         .sidebar { width: 320px; background-color: var(--sidebar-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 20px 15px 0 15px; flex-shrink: 0; }
         .logo { font-size: 18px; font-weight: 500; color: var(--main-text); margin-bottom: 20px; text-align: left; cursor: pointer; }
         .search-box { margin-bottom: 10px; }
-        .search-box input { width: 100%; padding: 0px 12px; line-height: 34px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; background-color: var(--element-bg);}
+        .search-box input { width: 100%; padding: 0px 12px; line-height: 34px; border: 1px solid var(--border-color); border-bottom: 1px solid var(--border-bottom); border-radius: 4px; outline: none; background-color: var(--element-bg); }
+        .search-box input:focus { border: 1px solid var(--element-border-hover); border-bottom: 2px solid var(--primary); padding-bottom: -1px; background-color: var(--element-bg-hover); }
+        .search-box input:hover { background-color: var(--element-bg-hover); }
         
         /* 导航栏与动画胶囊指示器 */
         .nav-container { 
@@ -129,8 +137,9 @@
         .form-container { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
         .form-group { background: var(--card-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--card-border-color); }
         .form-label { display: flex; justify-content: space-between; align-items: center; font-weight: 500; margin-bottom: 10px; font-size: 14px; color: #111; color: var(--text); }
-        .form-control { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; font-size: 14px; background-color: var(--element-bg); color: var(--text);}
-        .form-control:focus { border-color: var(--primary); }
+        .form-control { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-bottom: 1px solid var(--border-bottom); border-radius: 4px; outline: none; font-size: 14px; background-color: var(--element-bg); color: var(--text);}
+        .form-control:focus { border: 1px solid var(--element-border-hover); border-bottom: 2px solid var(--primary); padding-bottom: -1px; background-color: var(--element-bg-hover); }
+        .form-control:hover { background-color: var(--element-bg-hover); }
         textarea.form-control { resize: vertical; min-height: 100px; }
         
         .dynamic-list { display: flex; flex-direction: column; gap: 8px; }
@@ -313,6 +322,24 @@
             await loadData();
             updateUIForCustomSource();
             renderSidebarTypes();
+            
+            // 检查 URL Hash 是否包含特定的应用名称
+            const hash = window.location.hash;
+            if (hash) {
+                // 去掉 # 并解码中文字符
+                const targetAppName = decodeURIComponent(hash.substring(1));
+                // 在应用列表中寻找匹配的应用索引
+                const targetIndex = appData.findIndex(app => app.name === targetAppName);
+                
+                if (targetIndex !== -1) {
+                    // 如果找到了，先初始化侧边栏为“全部”，然后直接进入应用详情页
+                    handleNavClick('all');
+                    showAppDetails(targetIndex);
+                    return; // 结束初始化，防止继续执行下面的 handleNavClick('all')
+                }
+            }
+            
+            // 如果没有 hash 或者没有匹配到应用名称，则默认展示全部应用
             handleNavClick('all');
         }
 
@@ -481,7 +508,7 @@
                 card.className = 'app-card';
                 card.onclick = () => showAppDetails(app._originalIndex);
                 card.innerHTML = `
-                    <img src="${app.logo || 'https://timp.rth1.xyz/photo/defult.ico'}" class="app-icon" onerror="this.src='https://timp.rth1.xyz/photo/defult.ico'">
+                    <img src="${app.logo || 'https://appbox.rth1.xyz/logo/application.png'}" class="app-icon" onerror="this.src='https://appbox.rth1.xyz/logo/application.png'">
                     <div class="app-name">${app.name || '未知应用'}</div>
                     <div class="app-type">${app.type || '未分类'}</div>
                     <div class="app-tags">${tagsHtml}</div>
@@ -591,7 +618,7 @@
             if (mediaHtml) {
                 bodyCardsHtml += `
                     <div class="detail-card">
-                        <div class="detail-card-header">媒体展示</div>
+                        <div class="detail-card-header">使用界面</div>
                         <div class="detail-card-body"><div class="details-media">${mediaHtml}</div></div>
                     </div>`;
             }
@@ -638,7 +665,7 @@
                 </div>
                 
                 <div class="details-top-card">
-                    <img src="${app.logo || 'https://timp.rth1.xyz/photo/defult.ico'}" class="details-logo" onerror="this.src='https://timp.rth1.xyz/photo/defult.ico'">
+                    <img src="${app.logo || 'https://appbox.rth1.xyz/logo/application.png'}" class="details-logo" onerror="this.src='https://appbox.rth1.xyz/logo/application.png'">
                     <div class="details-info">
                         <h1 class="details-title">${app.name}</h1>
                         <div class="details-author" onclick="filterByAuthor('${app.author || ''}')">${app.author || '未知'}</div>
@@ -869,7 +896,7 @@
             appData.forEach((app, index) => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td><img src="${app.logo || 'https://timp.rth1.xyz/photo/defult.ico'}" onerror="this.src='https://timp.rth1.xyz/photo/defult.ico'">${app.name || '未命名'}</td>
+                    <td><img src="${app.logo || 'https://appbox.rth1.xyz/logo/application.png'}" onerror="this.src='https://appbox.rth1.xyz/logo/application.png'">${app.name || '未命名'}</td>
                     <td>${app.type || '无'}</td>
                     <td>${app.author || '未知'}</td>
                     <td style="width: 160px;">
