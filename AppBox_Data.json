@@ -1,509 +1,949 @@
-[
-    {
-        "name": "哔哩哔哩",
-        "author": "上海宽娱数码科技有限公司",
-        "type": "应用",
-        "logo": "https://static.pc.yyb.qq.com/icon/a35d1928bee38ea4d4ea99447de9677a.png?imageMogr2/format/webp",
-        "description": "你想看的都在这里！",
-        "media": [
-            "image,https://pp.myapp.com/ma_pic2/0/shot_73622_1_1775808801/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_73622_2_1775808801/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_73622_3_1776071173/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_73622_4_1776071173/0"
-        ],
-        "platforms": [
-            "Windows",
-            "Android",
-            "Android TV",
-            "iOS",
-            "iPadOS",
-            "MacOS",
-            "HarmonyOS"
-        ],
-        "groupTags": [
-            "影音"
-        ],
-        "featureTags": [
-            "官方"
-        ],
-        "downloads": [
-            "Windows,x64,官网下载,#fb88a5,https://dl.hdslb.com/mobile/fixed/bili_win/bili_win-install.exe",
-            "Android,64位,官网下载,#fb88a5,https://dl.hdslb.com/mobile/latest/android64/iBiliPlayer-bili.apk",
-            "Windows,x64,Microsoft Store,#000000,ms-windows-store://pdp/?ProductId=XPDDVC6XTQQKMM&mode=mini",
-            "Android,32位,官网下载,#fb88a5,https://dl.hdslb.com/mobile/latest/iBiliPlayer-bili.apk"
-        ],
-        "requirements": [
-            "系统,Windows 10及以上，Android 7及以上"
-        ],
-        "misc": []
-    },
-    {
-        "name": "BewlyCat",
-        "author": "keleus",
-        "type": "浏览器插件",
-        "logo": "https://store-images.s-microsoft.com/image/apps.10160.4f0f020d-59a5-4490-bd7e-c9dc27b97c3f.c76c40e6-ec2c-40a5-a336-68812a08f274.2e15523f-f5f8-485e-b2e3-329bd72b4f99?mode=scale&h=100&q=90&w=100",
-        "description": "用于美化Bilibili网页的插件。此项目基于BewlyBewly开发，并在其基础上进行功能扩充和调整，并合并了一些其他拓展的功能。",
-        "media": [
-            "image,https://store-images.s-microsoft.com/image/apps.65456.4f0f020d-59a5-4490-bd7e-c9dc27b97c3f.c76c40e6-ec2c-40a5-a336-68812a08f274.b9601d40-c6b0-4249-bc2d-6fdec9829248"
-        ],
-        "platforms": [
-            "Chrome",
-            "Edge",
-            "Firefox"
-        ],
-        "groupTags": [
-            "美化"
-        ],
-        "featureTags": [
-            "开源"
-        ],
-        "downloads": [
-            ",,Github Release,#0d1117,https://github.com/keleus/BewlyCat/releases/latest",
-            ",,Microsoft Edge 扩展商店,#000000,https://microsoftedge.microsoft.com/addons/detail/bewlycat/aaammfjdfifgnfnbflolojihjfhdploj"
-        ],
-        "requirements": [],
-        "misc": []
-    },
-    {
-        "name": "HEU KMS Activator",
-        "author": "zbezj",
-        "type": "应用",
-        "logo": "",
-        "description": "提供多种方式激活Windows、Office，另外提供切换Windows版本等额外功能。",
-        "media": [
-            "image,https://www.aichunjing.cn/wp-content/uploads/2024/02/66ff7c6c9efc2121f9e416e9b981b971.png",
-            "image,http://www.aichunjing.cn/wp-content/uploads/2024/02/099f70ddd77aeb4d8fc30524cf84f596.gif"
-        ],
-        "platforms": [
-            "Windows"
-        ],
-        "groupTags": [
-            "工具"
-        ],
-        "featureTags": [
-            "便携版"
-        ],
-        "downloads": [
-            ",,Github Release,#000000,https://github.com/zbezj/HEU_KMS_Activator/releases/lastest"
-        ],
-        "requirements": [],
-        "misc": []
-    },
-    {
-        "name": "Office Tool Plus",
-        "author": "Yerong",
-        "type": "应用",
-        "logo": "https://www.officetool.plus/images/office-tool-plus-logo-large.webp",
-        "description": "Office Tool Plus 是一个强大且实用的 Office 部署工具。\n\nOffice Tool Plus 基于 Office 部署工具制作，可以很方便的部署 Office，其内置 Downloader 引擎可帮助您更快地下载 Office。你也可以使用 Office Tool Plus 的其他功能、小工具快捷、方便地激活和管理 Office 哦！\n\n支持下列产品：\n\nMicrosoft 365\nOffice 2016, 2019, 2021, 2024\nVisio 2016, 2019, 2021, 2024 & Visio Online Plan 2\nProject 2016, 2019, 2021, 2024 & Project Online Desktop Client\n无论你是个体还是团队，Office Tool Plus 都是你的得力小助手。\n\n功能：\n创建 Office 安装配置，支持导出到本地，或从本地或网络位置导入。\n下载 Office，支持所有通道的 Office，支持所有的 Office 语言。\n安装 Office，支持对现有的 Office 进行修改，例如产品、语言、应用程序的安装与卸载。\n创建 Office ISO，支持默认安装配置、静默安装配置、扩展安装脚本。\n激活 Office，支持在线激活、电话激活、KMS 激活。\n支持 Office 授权管理，包括许可证管理，密钥管理以及 KMS 管理。\n修改 Office 更新通道，支持在不重装 Office 的情况下升级/降级 Office.\n移除 Office，在 Office 无法正常卸载的情况下强制移除 Office，支持 Office 2003 - Office 最新版本。\n内置 Office 工具箱，包括重置设置，修复安装问题，修复激活问题等。\n转换 Office 文档，基于 Office COM，稳定、快速、可靠。\n自定义主题，打造你自己的专属 Office Tool Plus。",
-        "media": [
-            "image,https://otp.landian.vip/assets/images/zh-cn/hero-deploy.webp"
-        ],
-        "platforms": [
-            "Windows"
-        ],
-        "groupTags": [
-            "工具"
-        ],
-        "featureTags": [],
-        "downloads": [
-            ",x64/arm64,官网下载,#0d6efd,https://www.officetool.plus/zh-cn/introduction/download.html",
-            ",,Github Release,#000000,https://github.com/YerongAI/Office-Tool/releases/"
-        ],
-        "requirements": [
-            "前置框架,需要系统有.Net10，下载链接：【x64】https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-x64.exe，【arm64】https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-arm64.exe"
-        ],
-        "misc": [
-            "官网,https://www.officetool.plus/zh-cn/",
-            "语言,العربية (ليبيا),Deutsch (Deutschland),English (United Kingdom),English (United States),magyar (Magyarország),Bahasa Indonesia (Indonesia),italiano (Italia),日本語 (日本),한국어 (대한민국),မြန်မာ (မြန်မာ),Nederlands (Nederland),polski (Polska),português (Brasil),pусский (Россия),ไทย (ไทย),Türkçe (Türkiye),українська (Україна),Tiếng Việt (Việt Nam),繁體中文 (台灣),粵語 (廣東)"
-        ]
-    },
-    {
-        "name": "Piliplus",
-        "author": "HChaZZY",
-        "type": "应用",
-        "logo": "https://appbox.rth1.xyz/logo/PiliPlus.png",
-        "description": "使用Flutter开发的BiliBili第三方客户端",
-        "media": [
-            "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/510shots_so.png",
-            "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/174shots_so.png",
-            "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/850shots_so.png",
-            "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/main_screen.png"
-        ],
-        "platforms": [
-            "Android",
-            "Windows",
-            "Linux",
-            "iOS",
-            "iPad"
-        ],
-        "groupTags": [
-            "影音"
-        ],
-        "featureTags": [
-            "开源",
-            "多人收藏"
-        ],
-        "downloads": [
-            ",,Github Release,#000000,https://github.com/bggRGjQaUbCoE/PiliPlus/releases/"
-        ],
-        "requirements": [],
-        "misc": [
-            "项目地址,https://github.com/bggRGjQaUbCoE/PiliPlus"
-        ]
-    },
-    {
-        "name": "抖音",
-        "author": "字节跳动",
-        "type": "应用",
-        "logo": "https://static.pc.yyb.qq.com/wupload2/9yBKmasI.png?imageMogr2/format/webp",
-        "description": "抖音让每一个人看见并连接更大的世界，鼓励表达、沟通和记录，激发创造，丰富人们的精神世界，让生活更美好。【小窗播放，自由切换】视频变小窗，精彩不占屏，学习娱乐两不误；全屏or小窗，随你所想，屏幕空间尽在掌握。【抖音视频，秒变壁纸】选择你喜欢的视频，设置为桌面壁纸，陪伴一天好心情。还可以点击“看抖音”、“看作者”，一键观看更省心。【实用内容，每日精选】生活妙招，科技新知，实用内容尽在抖音；抖音热榜，影视综艺，精彩内容个性推荐。一起来抖音电脑客户端，体验更多精彩！",
-        "media": [
-            "image,https://static.pc.yyb.qq.com/snapshot/299494826f52d0f64ad2d8a522cd205d.jpg?imageMogr2/thumbnail/784x/format/webp",
-            "image,https://static.pc.yyb.qq.com/snapshot/efd162da26220e2d36d9a60c03878e79.jpg?imageMogr2/thumbnail/784x/format/webp",
-            "image,https://static.pc.yyb.qq.com/snapshot/ce4c3e9f2055730b64bc7ee62eed1396.jpg?imageMogr2/thumbnail/784x/format/webp",
-            "image,https://static.pc.yyb.qq.com/snapshot/2b0ea479d66860f02866cff61457feb7.jpg?imageMogr2/thumbnail/784x/format/webp",
-            "image,https://static.pc.yyb.qq.com/snapshot/56881cfae45a8dc5c200609538d62fa5.jpg?imageMogr2/thumbnail/784x/format/webp"
-        ],
-        "platforms": [
-            "Windows",
-            "Android",
-            "iOS",
-            "iPadOS",
-            "MacOS",
-            "HarmonyOS"
-        ],
-        "groupTags": [
-            "影音",
-            "生活"
-        ],
-        "featureTags": [
-            "官方"
-        ],
-        "downloads": [
-            "Windows,,官网下载,#000000,https://www.douyin.com/downloadpage/pc",
-            "Windows,,Microsoft Store,#000000,https://apps.microsoft.com/detail/XPFFSRJ7Q4N302?hl=zh-Hans-CN&gl=CN&ocid=pdpshare",
-            "网页版,,立即使用,#1976c6,https://www.douyin.com/?recommend",
-            "Android,,官网下载,#000000,https://s.toutiao.com/UsMYE/",
-            "Mac,,官网下载,#000000,https://www.douyin.com/downloadpage/pc",
-            "iOS,,App Store,#000000,https://apps.apple.com/cn/app/%E6%8A%96%E9%9F%B3/id1142110895"
-        ],
-        "requirements": [],
-        "misc": []
-    },
-    {
-        "name": "来自设备制造商的 HEVC 视频扩展",
-        "author": "Microsoft",
-        "type": "驱动",
-        "logo": "",
-        "description": "来自设备制造商的 HEVC 视频扩展，为Windows10/11设置提供HEVC格式视频编解码适配。",
-        "media": [],
-        "platforms": [
-            "Windows"
-        ],
-        "groupTags": [],
-        "featureTags": [],
-        "downloads": [
-            ",,WPS 云盘,#ff211c,https://www.kdocs.cn/l/ch89cxy9CmK2"
-        ],
-        "requirements": [
-            "系统,Windows10 1907 及以上"
-        ],
-        "misc": []
-    },
-    {
-        "name": "网易爆米花",
-        "author": "网易",
-        "type": "应用",
-        "logo": "https://pp.myapp.com/ma_icon/0/icon_54397981_1775635239/256",
-        "description": "智能媒体库，全能播放器。\n\n网易资深团队倾力开发，28 年技术沉淀，诚意打磨出品——你永远可以相信网易爆米花。\n\n聚合影片资源，智能识别影片信息、封面海报，无需下载视频，流畅在线播放，跨平台跨设备同步，优雅打造私人影视库。",
-        "media": [
-            "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_1_1775635239/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_2_1775635239/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_3_1775635239/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_4_1775635239/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_5_1775635239/0"
-        ],
-        "platforms": [
-            "Windows",
-            "Android",
-            "Android TV",
-            "iOS",
-            "MacOS",
-            "iPadOS",
-            "Apple TV"
-        ],
-        "groupTags": [
-            "影音"
-        ],
-        "featureTags": [
-            "官方"
-        ],
-        "downloads": [
-            ",,官网下载,#0078D7,https://bmh.163.com/download/",
-            "iOS,,Apple Store,#000000,https://apps.apple.com/cn/app/%E7%BD%91%E6%98%93%E7%88%86%E7%B1%B3%E8%8A%B1-%E6%99%BA%E8%83%BD%E5%AA%92%E4%BD%93%E5%BA%93-%E5%85%A8%E8%83%BD%E4%BA%91%E7%9B%98%E7%BD%91%E7%9B%98%E6%92%AD%E6%94%BE%E5%99%A8/id6480252695"
-        ],
-        "requirements": [
-            "系统,iOS14及以上，tvOS17及以上，Android 5.0及以上，macOS13及以上，Windows10以上(x64)"
-        ],
-        "misc": []
-    },
-    {
-        "name": "开心消消乐",
-        "author": "乐元素",
-        "type": "游戏",
-        "logo": "https://pp.myapp.com/ma_icon/0/icon_10556677_1775542018/256",
-        "description": "《开心消消乐》，以三消游戏的方式，让国民连接在一起！开心消消乐，8亿玩家的共同选择!\n【玩法丰富，创意无限】\n9大关卡类型、60余种障碍设计、9000多个精心设计的关卡(持续更新中)，每一关都竭力给您带来超爽的消除体验。乐在其中，其乐无穷!\n【随时随地都能玩】\n无需下载，点击即玩，开启手机，快乐一触即发！消除无聊、消除烦恼、消除距离，就在消消乐!\n【上手简单，有趣休闲】休闲三消玩法，轻移指尖，即享畅快！消消乐的粉丝全年龄覆盖;是一款超级受玩家欢迎的游戏，男女老少都能玩！\n【场景清新，特效华丽】\n清新的藤蔓场景，明晰的面板设计，华丽爽快的特效效果，还有萌动有趣的小动物们，定会陪您度过欢乐休闲时光~",
-        "media": [
-            "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_1_1775542018/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_2_1775542018/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_3_1775542018/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_4_1775542018/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_5_1775542018/0"
-        ],
-        "platforms": [
-            "Android",
-            "微信小程序",
-            "快应用"
-        ],
-        "groupTags": [
-            "休闲"
-        ],
-        "featureTags": [
-            "官方"
-        ],
-        "downloads": [
-            "Android,由腾讯应用宝提供下载服务,立即下载,#0078D7,https://imtt2.dd.qq.com/sjy.00008/sjy.00002/16891/apk/D28DC2BA0EF6397EAE159222B048A429.apk?fsname=com.happyelements.AndroidAnimal.qq_159.apk"
-        ],
-        "requirements": [],
-        "misc": []
-    },
-    {
-        "name": "WPS Office",
-        "author": "金山办公",
-        "type": "应用",
-        "logo": "https://pp.myapp.com/ma_icon/0/icon_134041_1776074611/256",
-        "description": "WPS Office是一站式AI智能办公助手，支持移动和电脑多端协作，全端无广告，帮你高效完成文档智能创作和润色、PPT高效制作、PDF文档阅读和编辑、文件拍照扫描，稻壳模版库支持海量模版，覆盖丰富办公场景。\n\n安卓端办公软件，个人版免费使用\n用户多:全球用户600,000,000\n排名高:全球APP总榜同类产品榜首\n体积小:只安装一个应用即可打开所有格式文档\n云办公:免费云空间，安全高效，可以在任何设备.上及时查看和编辑\n\n远程办公推荐\n-远程会议，多人音频会议，对同份文档进行讨论、标记重点\n-多人编辑，大家一起写同一份文档\n-共享文件夹，快速收集异地同事文件，永不过期\n-WPS表单，远程打卡、信息统计分析工具\n\nWPS文字\n-新建文字文档，并提供信纸、简历、合同等模板-打开26种文字格式文档，包括加密文档\n-智能适应手机屏幕阅读\n-支持智能排版，文字段落、对象属性设置，插入图片等编辑功能\n-支持语音朗读，将文字转化为声音信息\n\nWPS表格\n-新建电子表格，并提供财务、课程表等模板-打开13种表格格式文档，包括加密文档\n-公式输入编辑器，解决手机输入法输入函数难的问题-背板支持选择区域后快速查看计算结果，及选择电话号码可以直接拨号\n\nWPS演示\n-新建幻灯片，并提供商务、教学、论文答辩等模板-打开和播放11种演示格式文档，包括加密文档-新CPU，提供30项流畅动画的设置\n-支持文字段落、对象属性设置，插入图片、音频视频等编辑功能\n-WPS会议功能，支持多台设备同步播放当前幻灯片\n\nPDF\n-打开和播放PDF格式文档\n-手机拍照扫描文档，生成图片或PDF文件\n-签名、水印功能、标注、插入文字、PDF转Word/PPT/Excel等功能\n\nOFD\n-支持打开 OFD 格式文档，如发票、公函、商务合同等\n-支持 OFD 文档打印\n-支持查看 OFD 文档信息/缩略图/目录/语义\n目前支持安卓版13.4版本及以上",
-        "media": [
-            "image,https://pp.myapp.com/ma_pic2/0/shot_134041_1_1776074611/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_134041_2_1776074611/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_134041_3_1776074611/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_134041_4_1776074611/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_134041_5_1776074611/0"
-        ],
-        "platforms": [
-            "Android",
-            "Windows",
-            "iOS",
-            "MacOS",
-            "iPadOS",
-            "Linux",
-            "HarmonyOS"
-        ],
-        "groupTags": [
-            "办公"
-        ],
-        "featureTags": [
-            "官方"
-        ],
-        "downloads": [
-            ",,官网下载,#0078D7,https://www.wps.cn/"
-        ],
-        "requirements": [],
-        "misc": []
-    },
-    {
-        "name": "小米电脑管家",
-        "author": "小米",
-        "type": "应用",
-        "logo": "https://notebook.cdn.pc.mi.com/notebook-fe--pc-mi-com-next/static/_next/static/media/logo.0352bf86.png",
-        "description": "小米电脑管家是一款运行在Windows11设备上，并能和小米设备之间进行文件互传、数据流转和桌面共享等跨端协同和控制的应用。\n使用小米电脑管家需要小米手机为小米澎湃OS2或以后版本，并确保“跨屏协同服务”版本号不低于16.00.50，以及“小米互传”不低于3.3.0。(可在手机设置-应用设置查看应用版本号）。 \n\n如果应用低于最低版本号要求，可前往应用商店-我的-应用升级，在升级列表升级跨屏协同服务和小米互传。关于所持机型具体是否支持具体功能，还请在小米电脑管家官网（ https://pc.mi.com/pc-manager-help ）详细查看，感谢您的支持与等待。\n\n*官方版本仅支持Xiaomi/Redmi品牌的笔记本使用，其他Windows11设备请下载破解版，破解版不保证所有功能可用且可能存在问题，请以实际运行为准。",
-        "media": [
-            "image,https://notebook.cdn.pc.mi.com/notebook-fe--pc-mi-com-next/static/_next/static/media/q4.d86a63f4.png"
-        ],
-        "platforms": [
-            "Windows"
-        ],
-        "groupTags": [
-            "互联",
-            "办公"
-        ],
-        "featureTags": [
-            "官方",
-            "破解版"
-        ],
-        "downloads": [
-            "Windows,,官网下载（仅限小米/红米笔记本使用）,#ec6617,https://pc.mi.com/pc-manager-help",
-            "Windows,由 WPS云盘 提供下载服务,破解版,#0078D7,https://www.kdocs.cn/l/csajoIkAsUzd"
-        ],
-        "requirements": [
-            "系统,Windows11及以上"
-        ],
-        "misc": [
-            "破解版使用教程,1.解压ZIP文件。2.确保“小米电脑管家.exe”和“wtsapi32.dll”文件在同一文件夹，双击打开“小米电脑管家.exe”安装。"
-        ]
-    },
-    {
-        "name": "微信",
-        "author": "腾讯科技",
-        "type": "应用",
-        "logo": "https://static.pc.yyb.qq.com/icon/33ba997259ea354c84509fb9cc3418e7.png?imageMogr2/format/webp",
-        "description": "微信，超过10亿人使用，能够通过网络给好友发送文字消息、表情和图片，还可以传送文件，与朋友视频聊天，让你的沟通更方便。 并提供有多种语言界面。",
-        "media": [
-            "image,https://static.pc.yyb.qq.com/snapshot/5d0ef0f2d0648c8fef7d11e20eb709d0.png?imageMogr2/thumbnail/945.7777777777777x/format/webp",
-            "image,https://static.pc.yyb.qq.com/snapshot/54ae1a88e891a04bcaf9253200861350.png?imageMogr2/thumbnail/784x/format/webp",
-            "image,https://static.pc.yyb.qq.com/snapshot/c959473e41f21924160af18b28c68259.png?imageMogr2/thumbnail/945.7777777777777x/format/webp"
-        ],
-        "platforms": [
-            "Windows",
-            "Android",
-            "Android Wear",
-            "Linux",
-            "iOS",
-            "iPadOS",
-            "MacOS",
-            "WatchOS",
-            "HarmonyOS"
-        ],
-        "groupTags": [
-            "社交"
-        ],
-        "featureTags": [
-            "官方"
-        ],
-        "downloads": [
-            "Windows,x64/x86,官网下载,#2aae67,https://pc.weixin.qq.com/",
-            "Android,,官网下载,#2aae67,https://weixin.qq.com/",
-            "iOS,,App Store,#000000,https://apps.apple.com/cn/app/id414478124",
-            "Windows,UWP,Microsoft Store,#000000,ms-windows-store://pdp/?ProductId=9nrj2w1gnl09&mode=mini",
-            "iPadOS,,App Store,#000000,https://apps.apple.com/cn/app/id414478124?platform=ipad",
-            "MacOS,,官网下载,#2aae67,https://mac.weixin.qq.com/",
-            "MacOS,,App Store,#000000,https://apps.apple.com/cn/app/id836500024?mt=12",
-            "Linux,x86/arm/LoongArch,官网下载,#2aae67,https://linux.weixin.qq.com/"
-        ],
-        "requirements": [
-            "系统,Windows7及以上，Android4及以上"
-        ],
-        "misc": []
-    },
-    {
-        "name": "Groove Music",
-        "author": "Microsoft",
-        "type": "应用",
-        "logo": "",
-        "description": "",
-        "media": [],
-        "platforms": [],
-        "groupTags": [
-            "影音"
-        ],
-        "featureTags": [
-            "官方"
-        ],
-        "downloads": [],
-        "requirements": [],
-        "misc": []
-    },
-    {
-        "name": "LocalSend",
-        "author": "Tien Do Nam",
-        "type": "应用",
-        "logo": "https://localsend.org/_nuxt/logo-512.aU8Z13Dx.png",
-        "description": "在局域网内快速分享文本、图片、文件，无需上传云端，快速、私密、离线。",
-        "media": [
-            "image,https://localsend.org/img/hero-image-desktop.webp",
-            "image,https://localsend.org/img/screenshot-phone-1.webp"
-        ],
-        "platforms": [
-            "Windows",
-            "MacOS",
-            "Linux",
-            "Android",
-            "iOS"
-        ],
-        "groupTags": [
-            "工具"
-        ],
-        "featureTags": [
-            "开源",
-            "超百万人使用"
-        ],
-        "downloads": [
-            ",,官网下载,#0078D7,https://localsend.org/zh-CN/download",
-            "iOS,,App Store,#000000,https://apps.apple.com/us/app/id1661733229",
-            "Android,,Google Play,#000000,https://play.google.com/store/apps/details?id=org.localsend.localsend_app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-        ],
-        "requirements": [],
-        "misc": [
-            "官网,https://localsend.org/"
-        ]
-    },
-    {
-        "name": "豆包输入法",
-        "author": "字节跳动",
-        "type": "应用",
-        "logo": "https://pp.myapp.com/ma_icon/0/icon_54584247_1776074613/256",
-        "description": "「豆包输入法」 豆包同款语音输入\n\n【特色功能说明】\n「语音输入」\n使用豆包同款语音大模型，语音输入又快又准，支持多方言、英语及中英混输；快速说话、轻声说话均可精准识别，无网弱网环境下也能流畅使用，同时提供点击输入、长按输入等多种操作方式。\n\n「键盘输入」\n提供了9键、26键、26键双拼、手写的键盘输入方式。有强大的纠错和简拼能力。推荐大家尝试长句的输入，准确率翻倍！\n\n「智能联想」\n结合上下文，秒懂你所想！我们有文字、标点符号、emoji、公式、日期的联想能力。提升输入效率的终极方式是点点点！\n\n「常用输入工具」\n支持了剪贴板、常用语、键盘调节、翻译等常用工具，助力提升输入效率。\n\n【用户反馈】\n有任何疑问和意见,欢迎随时联系我们\n用户反馈入口：豆包输入法键盘 - 左上角工具箱 - 用户反馈\n\n欢迎下载体验！",
-        "media": [
-            "image,https://pp.myapp.com/ma_pic2/0/shot_54584247_1_1776074613/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_54584247_2_1776074613/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_54584247_3_1776074613/0",
-            "image,https://pp.myapp.com/ma_pic2/0/shot_54584247_4_1776074613/0"
-        ],
-        "platforms": [
-            "Android",
-            "iOS"
-        ],
-        "groupTags": [
-            "输入法"
-        ],
-        "featureTags": [
-            "官方"
-        ],
-        "downloads": [
-            "Android,,官网下载,#0078D7,https://lf3-static.bytednsdoc.com/obj/eden-cn/upozlaeh7nuvknuhd/ime/app/android/doubaoime_v1.3.4_100304010_official_release.apk",
-            "iOS,,App Store,#000000,https://apps.apple.com/cn/app/id6752316550"
-        ],
-        "requirements": [],
-        "misc": [
-            "官网,https://shurufa.doubao.com/"
-        ]
-    },
-    {
-        "name": "Watt Toolkit（Steam++）",
-        "author": "江苏蒸汽凡星科技有限公司",
-        "type": "应用",
-        "logo": "https://steampp.net/svg/logo.png",
-        "description": "「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。",
-        "media": [
-            "image,https://steampp.net/images/home/js.webp",
-            "image,https://steampp.net/images/home/jb.webp",
-            "image,https://steampp.net/images/home/lp.webp",
-            "image,https://steampp.net/images/home/kc.webp"
-        ],
-        "platforms": [
-            "Windows",
-            "MacOS",
-            "Linux",
-            "Android",
-            "UWP"
-        ],
-        "groupTags": [
-            "工具"
-        ],
-        "featureTags": [
-            "多人收藏"
-        ],
-        "downloads": [
-            ",x64,Github Release,#000000,https://github.com/BeyondDimension/SteamTools/releases/",
-            ",,官方下载,#0078D7,https://steampp.net/download",
-            "Windows,,Microsoft Store,#0078D7,ms-windows-store://pdp/?ProductId=9mtcfhs560ng&mode=mini"
-        ],
-        "requirements": [
-            "系统,Windows10及以上",
-            "CPU架构,x64"
-        ],
-        "misc": [
-            "官网,"
-        ]
-    }
-]
+{
+    "version": 2,
+    "apps": [
+        {
+            "name": "哔哩哔哩",
+            "author": "上海宽娱数码科技有限公司",
+            "type": "应用",
+            "logo": "https://static.pc.yyb.qq.com/icon/a35d1928bee38ea4d4ea99447de9677a.png?imageMogr2/format/webp",
+            "bannerUrl": "",
+            "bannerColor": "#0067c0",
+            "description": "你想看的都在这里！",
+            "media": [
+                "image,https://pp.myapp.com/ma_pic2/0/shot_73622_1_1775808801/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_73622_2_1775808801/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_73622_3_1776071173/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_73622_4_1776071173/0"
+            ],
+            "platforms": [
+                "Windows",
+                "Android",
+                "Android TV",
+                "MacOS",
+                "iPadOS",
+                "iOS",
+                "HarmonyOS"
+            ],
+            "groupTags": [
+                "影音"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                "Windows,x64,官网下载,#fb88a5,https://dl.hdslb.com/mobile/fixed/bili_win/bili_win-install.exe",
+                "Android,64位,官网下载,#fb88a5,https://dl.hdslb.com/mobile/latest/android64/iBiliPlayer-bili.apk",
+                "Windows,x64,Microsoft Store,#000000,ms-windows-store://pdp/?ProductId=XPDDVC6XTQQKMM&mode=mini",
+                "Android,32位,官网下载,#fb88a5,https://dl.hdslb.com/mobile/latest/iBiliPlayer-bili.apk",
+                "网页版,,网页版（推荐）,#0078D7,https://www.bilibili.com/"
+            ],
+            "requirements": [
+                "系统,Windows 10及以上，Android 7及以上"
+            ],
+            "misc": [
+                "官网,https://www.bilibili.com/"
+            ],
+            "relatedApps": [
+                "Piliplus",
+                "BewlyCat"
+            ],
+            "tutorial": ""
+        },
+        {
+            "name": "BewlyCat",
+            "author": "keleus",
+            "type": "浏览器插件",
+            "logo": "https://store-images.s-microsoft.com/image/apps.10160.4f0f020d-59a5-4490-bd7e-c9dc27b97c3f.c76c40e6-ec2c-40a5-a336-68812a08f274.2e15523f-f5f8-485e-b2e3-329bd72b4f99?mode=scale&h=100&q=90&w=100",
+            "bannerUrl": "",
+            "bannerColor": "#0067c0",
+            "description": "用于美化Bilibili网页的插件。此项目基于BewlyBewly开发，并在其基础上进行功能扩充和调整，并合并了一些其他拓展的功能。",
+            "media": [
+                "image,https://store-images.s-microsoft.com/image/apps.65456.4f0f020d-59a5-4490-bd7e-c9dc27b97c3f.c76c40e6-ec2c-40a5-a336-68812a08f274.b9601d40-c6b0-4249-bc2d-6fdec9829248"
+            ],
+            "platforms": [
+                "Chrome",
+                "Edge",
+                "Firefox"
+            ],
+            "groupTags": [
+                "美化"
+            ],
+            "featureTags": [
+                "开源"
+            ],
+            "downloads": [
+                ",,Github Release,#0d1117,https://github.com/keleus/BewlyCat/releases/latest",
+                "Edge,,Microsoft Edge 扩展商店,#000000,https://microsoftedge.microsoft.com/addons/detail/bewlycat/aaammfjdfifgnfnbflolojihjfhdploj",
+                "Firefox,,Firefox ADD-ONS,#281749,https://addons.mozilla.org/en-US/firefox/addon/bewlycat/",
+                "Chrome,,Chrome 扩展商店,#0078D7,https://chromewebstore.google.com/detail/bewlycat/oopkfefbgecikmfbbapnlpjidoomhjpl"
+            ],
+            "requirements": [],
+            "misc": [
+                "项目地址,https://github.com/keleus/BewlyCat/"
+            ],
+            "relatedApps": [
+                "哔哩哔哩",
+                "Piliplus"
+            ],
+            "tutorial": ""
+        },
+        {
+            "name": "HEU KMS Activator",
+            "author": "zbezj",
+            "type": "应用",
+            "logo": "",
+            "description": "提供多种方式激活Windows、Office，另外提供切换Windows版本等额外功能。",
+            "media": [
+                "image,https://www.aichunjing.cn/wp-content/uploads/2024/02/66ff7c6c9efc2121f9e416e9b981b971.png",
+                "image,http://www.aichunjing.cn/wp-content/uploads/2024/02/099f70ddd77aeb4d8fc30524cf84f596.gif"
+            ],
+            "platforms": [
+                "Windows"
+            ],
+            "groupTags": [
+                "工具"
+            ],
+            "featureTags": [
+                "便携版"
+            ],
+            "downloads": [
+                ",,Github Release,#000000,https://github.com/zbezj/HEU_KMS_Activator/releases/lastest"
+            ],
+            "requirements": [],
+            "misc": []
+        },
+        {
+            "name": "Office Tool Plus",
+            "author": "Yerong",
+            "type": "应用",
+            "logo": "https://www.officetool.plus/images/office-tool-plus-logo-large.webp",
+            "description": "Office Tool Plus 是一个强大且实用的 Office 部署工具。\n\nOffice Tool Plus 基于 Office 部署工具制作，可以很方便的部署 Office，其内置 Downloader 引擎可帮助您更快地下载 Office。你也可以使用 Office Tool Plus 的其他功能、小工具快捷、方便地激活和管理 Office 哦！\n\n支持下列产品：\n\nMicrosoft 365\nOffice 2016, 2019, 2021, 2024\nVisio 2016, 2019, 2021, 2024 & Visio Online Plan 2\nProject 2016, 2019, 2021, 2024 & Project Online Desktop Client\n无论你是个体还是团队，Office Tool Plus 都是你的得力小助手。\n\n功能：\n创建 Office 安装配置，支持导出到本地，或从本地或网络位置导入。\n下载 Office，支持所有通道的 Office，支持所有的 Office 语言。\n安装 Office，支持对现有的 Office 进行修改，例如产品、语言、应用程序的安装与卸载。\n创建 Office ISO，支持默认安装配置、静默安装配置、扩展安装脚本。\n激活 Office，支持在线激活、电话激活、KMS 激活。\n支持 Office 授权管理，包括许可证管理，密钥管理以及 KMS 管理。\n修改 Office 更新通道，支持在不重装 Office 的情况下升级/降级 Office.\n移除 Office，在 Office 无法正常卸载的情况下强制移除 Office，支持 Office 2003 - Office 最新版本。\n内置 Office 工具箱，包括重置设置，修复安装问题，修复激活问题等。\n转换 Office 文档，基于 Office COM，稳定、快速、可靠。\n自定义主题，打造你自己的专属 Office Tool Plus。",
+            "media": [
+                "image,https://otp.landian.vip/assets/images/zh-cn/hero-deploy.webp"
+            ],
+            "platforms": [
+                "Windows"
+            ],
+            "groupTags": [
+                "工具"
+            ],
+            "featureTags": [],
+            "downloads": [
+                ",x64/arm64,官网下载,#0d6efd,https://www.officetool.plus/zh-cn/introduction/download.html",
+                ",,Github Release,#000000,https://github.com/YerongAI/Office-Tool/releases/"
+            ],
+            "requirements": [
+                "前置框架,需要系统有.Net10，下载链接：【x64】https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-x64.exe，【arm64】https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-arm64.exe"
+            ],
+            "misc": [
+                "官网,https://www.officetool.plus/zh-cn/",
+                "语言,العربية (ليبيا),Deutsch (Deutschland),English (United Kingdom),English (United States),magyar (Magyarország),Bahasa Indonesia (Indonesia),italiano (Italia),日本語 (日本),한국어 (대한민국),မြန်မာ (မြန်မာ),Nederlands (Nederland),polski (Polska),português (Brasil),pусский (Россия),ไทย (ไทย),Türkçe (Türkiye),українська (Україна),Tiếng Việt (Việt Nam),繁體中文 (台灣),粵語 (廣東)"
+            ]
+        },
+        {
+            "name": "Piliplus",
+            "author": "HChaZZY",
+            "type": "应用",
+            "logo": "https://appbox.rth1.xyz/logo/PiliPlus.png",
+            "description": "使用Flutter开发的BiliBili第三方客户端",
+            "media": [
+                "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/510shots_so.png",
+                "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/174shots_so.png",
+                "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/850shots_so.png",
+                "image,https://github.com/bggRGjQaUbCoE/PiliPlus/raw/main/assets/screenshots/main_screen.png"
+            ],
+            "platforms": [
+                "Android",
+                "Windows",
+                "Linux",
+                "iOS",
+                "iPad"
+            ],
+            "groupTags": [
+                "影音"
+            ],
+            "featureTags": [
+                "开源",
+                "多人收藏"
+            ],
+            "downloads": [
+                ",,Github Release,#000000,https://github.com/bggRGjQaUbCoE/PiliPlus/releases/"
+            ],
+            "requirements": [],
+            "misc": [
+                "项目地址,https://github.com/bggRGjQaUbCoE/PiliPlus"
+            ]
+        },
+        {
+            "name": "抖音",
+            "author": "北京抖音信息服务有限公司",
+            "type": "应用",
+            "logo": "https://static.pc.yyb.qq.com/wupload2/9yBKmasI.png?imageMogr2/format/webp",
+            "description": "抖音让每一个人看见并连接更大的世界，鼓励表达、沟通和记录，激发创造，丰富人们的精神世界，让生活更美好。【小窗播放，自由切换】视频变小窗，精彩不占屏，学习娱乐两不误；全屏or小窗，随你所想，屏幕空间尽在掌握。【抖音视频，秒变壁纸】选择你喜欢的视频，设置为桌面壁纸，陪伴一天好心情。还可以点击“看抖音”、“看作者”，一键观看更省心。【实用内容，每日精选】生活妙招，科技新知，实用内容尽在抖音；抖音热榜，影视综艺，精彩内容个性推荐。一起来抖音电脑客户端，体验更多精彩！",
+            "media": [
+                "image,https://static.pc.yyb.qq.com/snapshot/299494826f52d0f64ad2d8a522cd205d.jpg?imageMogr2/thumbnail/784x/format/webp",
+                "image,https://static.pc.yyb.qq.com/snapshot/efd162da26220e2d36d9a60c03878e79.jpg?imageMogr2/thumbnail/784x/format/webp",
+                "image,https://static.pc.yyb.qq.com/snapshot/ce4c3e9f2055730b64bc7ee62eed1396.jpg?imageMogr2/thumbnail/784x/format/webp",
+                "image,https://static.pc.yyb.qq.com/snapshot/2b0ea479d66860f02866cff61457feb7.jpg?imageMogr2/thumbnail/784x/format/webp",
+                "image,https://static.pc.yyb.qq.com/snapshot/56881cfae45a8dc5c200609538d62fa5.jpg?imageMogr2/thumbnail/784x/format/webp"
+            ],
+            "platforms": [
+                "Windows",
+                "Android",
+                "iOS",
+                "iPadOS",
+                "MacOS",
+                "HarmonyOS"
+            ],
+            "groupTags": [
+                "影音",
+                "生活"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                "Windows,,官网下载,#000000,https://www.douyin.com/downloadpage/pc",
+                "Windows,,Microsoft Store,#000000,https://apps.microsoft.com/detail/XPFFSRJ7Q4N302?hl=zh-Hans-CN&gl=CN&ocid=pdpshare",
+                "网页版,,网页版,#1976c6,https://www.douyin.com/?recommend",
+                "Android,,官网下载,#000000,https://s.toutiao.com/UsMYE/",
+                "Mac,,官网下载,#000000,https://www.douyin.com/downloadpage/pc",
+                "iOS,,App Store,#000000,https://apps.apple.com/cn/app/%E6%8A%96%E9%9F%B3/id1142110895"
+            ],
+            "requirements": [],
+            "misc": []
+        },
+        {
+            "name": "来自设备制造商的 HEVC 视频扩展",
+            "author": "Microsoft",
+            "type": "驱动",
+            "logo": "",
+            "description": "来自设备制造商的 HEVC 视频扩展，为Windows10/11设置提供HEVC格式视频编解码适配。",
+            "media": [],
+            "platforms": [
+                "Windows"
+            ],
+            "groupTags": [],
+            "featureTags": [],
+            "downloads": [
+                ",,WPS 云盘,#ff211c,https://www.kdocs.cn/l/ch89cxy9CmK2"
+            ],
+            "requirements": [
+                "系统,Windows10 1907 及以上"
+            ],
+            "misc": []
+        },
+        {
+            "name": "网易爆米花",
+            "author": "网易",
+            "type": "应用",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_54397981_1775635239/256",
+            "description": "智能媒体库，全能播放器。\n\n网易资深团队倾力开发，28 年技术沉淀，诚意打磨出品——你永远可以相信网易爆米花。\n\n聚合影片资源，智能识别影片信息、封面海报，无需下载视频，流畅在线播放，跨平台跨设备同步，优雅打造私人影视库。",
+            "media": [
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_1_1775635239/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_2_1775635239/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_3_1775635239/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_4_1775635239/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54397981_5_1775635239/0"
+            ],
+            "platforms": [
+                "Windows",
+                "Android",
+                "Android TV",
+                "iOS",
+                "MacOS",
+                "iPadOS",
+                "Apple TV"
+            ],
+            "groupTags": [
+                "影音"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                ",,官网下载,#0078D7,https://bmh.163.com/download/",
+                "iOS,,Apple Store,#000000,https://apps.apple.com/cn/app/%E7%BD%91%E6%98%93%E7%88%86%E7%B1%B3%E8%8A%B1-%E6%99%BA%E8%83%BD%E5%AA%92%E4%BD%93%E5%BA%93-%E5%85%A8%E8%83%BD%E4%BA%91%E7%9B%98%E7%BD%91%E7%9B%98%E6%92%AD%E6%94%BE%E5%99%A8/id6480252695"
+            ],
+            "requirements": [
+                "系统,iOS14及以上，tvOS17及以上，Android 5.0及以上，macOS13及以上，Windows10以上(x64)"
+            ],
+            "misc": []
+        },
+        {
+            "name": "开心消消乐",
+            "author": "乐元素",
+            "type": "游戏",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_10556677_1775542018/256",
+            "bannerUrl": "https://appbox.rth1.xyz/poster/开心消消乐-poster01.jpg",
+            "bannerColor": "#6fcdff",
+            "description": "《开心消消乐》，以三消游戏的方式，让国民连接在一起！开心消消乐，8亿玩家的共同选择!\n【玩法丰富，创意无限】\n9大关卡类型、60余种障碍设计、9000多个精心设计的关卡(持续更新中)，每一关都竭力给您带来超爽的消除体验。乐在其中，其乐无穷!\n【随时随地都能玩】\n无需下载，点击即玩，开启手机，快乐一触即发！消除无聊、消除烦恼、消除距离，就在消消乐!\n【上手简单，有趣休闲】休闲三消玩法，轻移指尖，即享畅快！消消乐的粉丝全年龄覆盖;是一款超级受玩家欢迎的游戏，男女老少都能玩！\n【场景清新，特效华丽】\n清新的藤蔓场景，明晰的面板设计，华丽爽快的特效效果，还有萌动有趣的小动物们，定会陪您度过欢乐休闲时光~",
+            "media": [
+                "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_1_1775542018/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_2_1775542018/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_3_1775542018/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_4_1775542018/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_10556677_5_1775542018/0",
+                "video,https://vff.happyelements.cn/ffvideo/2024/be71f26db1a4b0c0e3632d63535b09bd.mp4"
+            ],
+            "platforms": [
+                "Android",
+                "iOS",
+                "快应用",
+                "微信小程序"
+            ],
+            "groupTags": [
+                "休闲"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                "Android,,官网下载,#0078D7,https://sanimaltcdmobile.happyelements.cn/download.jsp?platform=he&source=spread_index",
+                "iOS,,App Store,#000000,https://apps.apple.com/cn/app/id791532221"
+            ],
+            "requirements": [],
+            "misc": [
+                "适龄提示,8+",
+                "官网,https://kxxxl.leyuansu.com/"
+            ],
+            "relatedApps": [],
+            "tutorial": ""
+        },
+        {
+            "name": "WPS Office",
+            "author": "金山办公",
+            "type": "应用",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_134041_1776074611/256",
+            "description": "WPS Office是一站式AI智能办公助手，支持移动和电脑多端协作，全端无广告，帮你高效完成文档智能创作和润色、PPT高效制作、PDF文档阅读和编辑、文件拍照扫描，稻壳模版库支持海量模版，覆盖丰富办公场景。\n\n安卓端办公软件，个人版免费使用\n用户多:全球用户600,000,000\n排名高:全球APP总榜同类产品榜首\n体积小:只安装一个应用即可打开所有格式文档\n云办公:免费云空间，安全高效，可以在任何设备.上及时查看和编辑\n\n远程办公推荐\n-远程会议，多人音频会议，对同份文档进行讨论、标记重点\n-多人编辑，大家一起写同一份文档\n-共享文件夹，快速收集异地同事文件，永不过期\n-WPS表单，远程打卡、信息统计分析工具\n\nWPS文字\n-新建文字文档，并提供信纸、简历、合同等模板-打开26种文字格式文档，包括加密文档\n-智能适应手机屏幕阅读\n-支持智能排版，文字段落、对象属性设置，插入图片等编辑功能\n-支持语音朗读，将文字转化为声音信息\n\nWPS表格\n-新建电子表格，并提供财务、课程表等模板-打开13种表格格式文档，包括加密文档\n-公式输入编辑器，解决手机输入法输入函数难的问题-背板支持选择区域后快速查看计算结果，及选择电话号码可以直接拨号\n\nWPS演示\n-新建幻灯片，并提供商务、教学、论文答辩等模板-打开和播放11种演示格式文档，包括加密文档-新CPU，提供30项流畅动画的设置\n-支持文字段落、对象属性设置，插入图片、音频视频等编辑功能\n-WPS会议功能，支持多台设备同步播放当前幻灯片\n\nPDF\n-打开和播放PDF格式文档\n-手机拍照扫描文档，生成图片或PDF文件\n-签名、水印功能、标注、插入文字、PDF转Word/PPT/Excel等功能\n\nOFD\n-支持打开 OFD 格式文档，如发票、公函、商务合同等\n-支持 OFD 文档打印\n-支持查看 OFD 文档信息/缩略图/目录/语义\n目前支持安卓版13.4版本及以上",
+            "media": [
+                "image,https://pp.myapp.com/ma_pic2/0/shot_134041_1_1776074611/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_134041_2_1776074611/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_134041_3_1776074611/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_134041_4_1776074611/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_134041_5_1776074611/0"
+            ],
+            "platforms": [
+                "Android",
+                "Windows",
+                "iOS",
+                "MacOS",
+                "iPadOS",
+                "Linux",
+                "HarmonyOS"
+            ],
+            "groupTags": [
+                "办公"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                ",,官网下载,#0078D7,https://www.wps.cn/"
+            ],
+            "requirements": [],
+            "misc": []
+        },
+        {
+            "name": "小米电脑管家",
+            "author": "小米",
+            "type": "应用",
+            "logo": "https://notebook.cdn.pc.mi.com/notebook-fe--pc-mi-com-next/static/_next/static/media/logo.0352bf86.png",
+            "bannerUrl": "",
+            "bannerColor": "#0067c0",
+            "description": "小米电脑管家是一款运行在Windows11设备上，并能和小米设备之间进行文件互传、数据流转和桌面共享等跨端协同和控制的应用。\n使用小米电脑管家需要小米手机为小米澎湃OS2或以后版本，并确保“跨屏协同服务”版本号不低于16.00.50，以及“小米互传”不低于3.3.0。(可在手机设置-应用设置查看应用版本号）。 \n\n如果应用低于最低版本号要求，可前往应用商店-我的-应用升级，在升级列表升级跨屏协同服务和小米互传。关于所持机型具体是否支持具体功能，还请在小米电脑管家官网（ https://pc.mi.com/pc-manager-help ）详细查看，感谢您的支持与等待。\n\n*官方版本仅支持Xiaomi/Redmi品牌的笔记本使用，其他Windows11设备请下载破解版，破解版不保证所有功能可用且可能存在问题，请以实际运行为准。",
+            "media": [
+                "image,https://notebook.cdn.pc.mi.com/notebook-fe--pc-mi-com-next/static/_next/static/media/q4.d86a63f4.png"
+            ],
+            "platforms": [
+                "Windows"
+            ],
+            "groupTags": [
+                "互联",
+                "办公"
+            ],
+            "featureTags": [
+                "官方",
+                "破解版"
+            ],
+            "downloads": [
+                "Windows,,官网下载（仅限小米/红米笔记本使用）,#ec6617,https://pc.mi.com/pc-manager-help",
+                "Windows,v5.5,破解版（WPS云盘）,#0078D7,https://www.kdocs.cn/l/csajoIkAsUzd"
+            ],
+            "requirements": [
+                "系统,Windows11及以上"
+            ],
+            "misc": [
+                "破解版使用教程,1.解压ZIP文件。2.确保“小米电脑管家.exe”和“wtsapi32.dll”文件在同一文件夹，双击打开“小米电脑管家.exe”安装。"
+            ],
+            "relatedApps": [],
+            "tutorial": ""
+        },
+        {
+            "name": "微信",
+            "author": "腾讯科技有限公司",
+            "type": "应用",
+            "logo": "https://static.pc.yyb.qq.com/icon/33ba997259ea354c84509fb9cc3418e7.png?imageMogr2/format/webp",
+            "bannerUrl": "",
+            "bannerColor": "#0067c0",
+            "description": "微信，超过10亿人使用，能够通过网络给好友发送文字消息、表情和图片，还可以传送文件，与朋友视频聊天，让你的沟通更方便。 并提供有多种语言界面。",
+            "media": [
+                "image,https://static.pc.yyb.qq.com/snapshot/5d0ef0f2d0648c8fef7d11e20eb709d0.png?imageMogr2/thumbnail/945.7777777777777x/format/webp",
+                "image,https://static.pc.yyb.qq.com/snapshot/54ae1a88e891a04bcaf9253200861350.png?imageMogr2/thumbnail/784x/format/webp",
+                "image,https://static.pc.yyb.qq.com/snapshot/c959473e41f21924160af18b28c68259.png?imageMogr2/thumbnail/945.7777777777777x/format/webp"
+            ],
+            "platforms": [
+                "Windows",
+                "Android",
+                "Android Wear",
+                "Linux",
+                "iOS",
+                "iPadOS",
+                "MacOS",
+                "WatchOS",
+                "HarmonyOS"
+            ],
+            "groupTags": [
+                "社交"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                "Windows,x64/x86,官网下载,#2aae67,https://pc.weixin.qq.com/",
+                "Android,,官网下载,#2aae67,https://weixin.qq.com/",
+                "iOS,,App Store,#000000,https://apps.apple.com/cn/app/id414478124",
+                "Windows,UWP,Microsoft Store,#000000,ms-windows-store://pdp/?ProductId=9nrj2w1gnl09&mode=mini",
+                "iPadOS,,App Store,#000000,https://apps.apple.com/cn/app/id414478124?platform=ipad",
+                "MacOS,,官网下载,#2aae67,https://mac.weixin.qq.com/",
+                "MacOS,,App Store,#000000,https://apps.apple.com/cn/app/id836500024?mt=12",
+                "Linux,x86/arm/LoongArch,官网下载,#2aae67,https://linux.weixin.qq.com/"
+            ],
+            "requirements": [
+                "系统,Windows7及以上，Android4及以上"
+            ],
+            "misc": [],
+            "relatedApps": [],
+            "tutorial": ""
+        },
+        {
+            "name": "LocalSend",
+            "author": "Tien Do Nam",
+            "type": "应用",
+            "logo": "https://localsend.org/_nuxt/logo-512.aU8Z13Dx.png",
+            "description": "在局域网内快速分享文本、图片、文件，无需上传云端，快速、私密、离线。",
+            "media": [
+                "image,https://localsend.org/img/hero-image-desktop.webp",
+                "image,https://localsend.org/img/screenshot-phone-1.webp"
+            ],
+            "platforms": [
+                "Windows",
+                "MacOS",
+                "Linux",
+                "Android",
+                "iOS"
+            ],
+            "groupTags": [
+                "工具"
+            ],
+            "featureTags": [
+                "开源",
+                "超百万人使用"
+            ],
+            "downloads": [
+                ",,官网下载,#0078D7,https://localsend.org/zh-CN/download",
+                "iOS,,App Store,#000000,https://apps.apple.com/us/app/id1661733229",
+                "Android,,Google Play,#000000,https://play.google.com/store/apps/details?id=org.localsend.localsend_app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
+                "网页版,,网页版,#0078D7,https://web.localsend.org/"
+            ],
+            "requirements": [],
+            "misc": [
+                "官网,https://localsend.org/",
+                "项目地址,https://github.com/localsend/localsend"
+            ]
+        },
+        {
+            "name": "豆包输入法",
+            "author": "北京抖音信息服务有限公司",
+            "type": "应用",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_54584247_1776074613/256",
+            "description": "「豆包输入法」 豆包同款语音输入\n\n【特色功能说明】\n「语音输入」\n使用豆包同款语音大模型，语音输入又快又准，支持多方言、英语及中英混输；快速说话、轻声说话均可精准识别，无网弱网环境下也能流畅使用，同时提供点击输入、长按输入等多种操作方式。\n\n「键盘输入」\n提供了9键、26键、26键双拼、手写的键盘输入方式。有强大的纠错和简拼能力。推荐大家尝试长句的输入，准确率翻倍！\n\n「智能联想」\n结合上下文，秒懂你所想！我们有文字、标点符号、emoji、公式、日期的联想能力。提升输入效率的终极方式是点点点！\n\n「常用输入工具」\n支持了剪贴板、常用语、键盘调节、翻译等常用工具，助力提升输入效率。\n\n【用户反馈】\n有任何疑问和意见,欢迎随时联系我们\n用户反馈入口：豆包输入法键盘 - 左上角工具箱 - 用户反馈\n\n欢迎下载体验！",
+            "media": [
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54584247_1_1776074613/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54584247_2_1776074613/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54584247_3_1776074613/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54584247_4_1776074613/0"
+            ],
+            "platforms": [
+                "Android",
+                "iOS"
+            ],
+            "groupTags": [
+                "输入法"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                "Android,,官网下载,#0078D7,https://lf3-static.bytednsdoc.com/obj/eden-cn/upozlaeh7nuvknuhd/ime/app/android/doubaoime_v1.3.4_100304010_official_release.apk",
+                "iOS,,App Store,#000000,https://apps.apple.com/cn/app/id6752316550"
+            ],
+            "requirements": [],
+            "misc": [
+                "官网,https://shurufa.doubao.com/"
+            ]
+        },
+        {
+            "name": "Watt Toolkit（Steam++）",
+            "author": "江苏蒸汽凡星科技有限公司",
+            "type": "应用",
+            "logo": "https://steampp.net/svg/logo.png",
+            "description": "「Watt Toolkit」是一个开源跨平台的多功能 Steam 工具箱。",
+            "media": [
+                "image,https://steampp.net/images/home/js.webp",
+                "image,https://steampp.net/images/home/jb.webp",
+                "image,https://steampp.net/images/home/lp.webp",
+                "image,https://steampp.net/images/home/kc.webp"
+            ],
+            "platforms": [
+                "Windows",
+                "MacOS",
+                "Linux",
+                "Android",
+                "UWP"
+            ],
+            "groupTags": [
+                "工具"
+            ],
+            "featureTags": [
+                "多人收藏"
+            ],
+            "downloads": [
+                ",x64,Github Release,#000000,https://github.com/BeyondDimension/SteamTools/releases/",
+                ",,官方下载,#0078D7,https://steampp.net/download",
+                "Windows,,Microsoft Store,#0078D7,ms-windows-store://pdp/?ProductId=9mtcfhs560ng&mode=mini"
+            ],
+            "requirements": [
+                "系统,Windows10及以上",
+                "CPU架构,x64"
+            ],
+            "misc": [
+                "官网,https://steampp.net/"
+            ]
+        },
+        {
+            "name": "豆包",
+            "author": "北京抖音信息服务有限公司",
+            "type": "应用",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_54330344_1775642611/256",
+            "description": "豆包是随时帮忙的 AI 助手。看不懂的信息它能解释，遇到疑问随时提问，想做一道菜、了解新概念或获取灵感，都能快速得到清晰答案；无论是查资料、规划出行还是安排生活，豆包都能抓住重点，把复杂问题变简单。\n\n在学习和工作中，豆包可以讲解题目、批改作业、拆解知识点，也能总结资料、分析数据、写代码，并生成文档和 PPT，高效完成报告和项目。\n\n想表达创意？通过「豆包 P 图」用说话就能快速修图和编辑图片，一句话完成换背景、风格转换或创意改图；它同样支持图片和视频生成，基于 Seedance 模型轻松制作具有大片质感的视频，让创意直观呈现。\n\n豆包配备先进语音输入和语音通话，识别准确、响应自然，对话流畅；结合拍照识图，你可以用最直观的方式获取信息。打开就能问，随时得到帮助。\n\n豆包的特色 →\n■ 简单清爽的界面设计\n■ 强大的联网搜索能力\n■ 便捷而且准确的语音输入\n■ 自然且接近人声的语音输出\n■ 如专家一般的研究级智能模型\n\n喜欢豆包的大家怎么说 →\n■ “界面很简洁”\n■ “语音识别极其准确”\n■ “在学习方面的好帮手”\n■ “豆包拓宽了自己的知识边界”\n■ “问东西很方便，还能语音回答”\n■ “AI 的感情很丰富，不只是文字对话”\n■ “就像请的家教一样，什么都可以服务”\n■ “效率高、质量好、特别智能”\n\n请注意，豆包作为一款 AI，虽然我们已经尽力提高其准确性和可靠性，但仍有可能出现误解或误导的情况。我们建议用户在使用豆包获取信息时，结合其他来源进行参考。我们非常欢迎用户提供反馈和建议，以帮助我们不断改进。",
+            "media": [
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54330344_1_1775642611/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54330344_2_1775642611/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54330344_3_1775642611/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54330344_4_1775642611/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54330344_5_1775642611/0"
+            ],
+            "platforms": [
+                "Windows",
+                "Android",
+                "iOS",
+                "iPadOS"
+            ],
+            "groupTags": [
+                "AI",
+                "工具"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                ",,网页版（推荐）,#0078D7,https://www.doubao.com/chat/",
+                "Windows,,官网下载,#9BB6CC,https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao_pc/2.2.3/1025/Doubao_online_installer.exe",
+                "Windows,,Microsoft Store,#000000,ms-windows-store://pdp/?ProductId=XP99JW18TLBK06&mode=mini"
+            ],
+            "requirements": [],
+            "misc": [
+                "官网,https://www.doubao.com/"
+            ]
+        },
+        {
+            "name": "百度网盘",
+            "author": "北京度友科技有限公司",
+            "type": "应用",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_116071_1775725091/256",
+            "description": "百度网盘是一款省心、好用的超级云存储产品，已为超过7亿用户提供云服务，空间超大，支持多类型文件的备份、分享、查看和处理，自建多个数据存储中心，更有两项国际安全认证ISO27001＆ISO27018为用户数据安全提供护航，如果您想备份文件数据，释放手机空间，分享文件或是在线操作，选百度网盘就对了！\n【超级省心的数据备份】\n除照片、文档、视频等常见格式外，还支持微信文件、手机应用、手机短信、通话记录等数据的备份，支持自动备份，省心又省力，结合超大空间，彻底摆脱手机空间限制！\n【超级好用的数据服务】\n提供多种在线服务，照片：智能分类、照片故事等；视频：在线观看、倍速播放、高清画质等；文档：在线编辑、格式转换、文字识别等。数十种服务等你发掘，直接网盘内完成操作，好用！\n【超级实用的会员特权】\n加入百度网盘超级会员，提供超大空间、极速下载、在线解压等23项实用特权，时间越久越尊贵，可享16T空间等成长福利！\n百度网盘，让美好永远陪伴。\n如果你有任何建议或问题,欢迎评论留言或直接联系我们：\n邮箱: netdisk-bugs@baidu.com\n新浪官网微博：@百度网盘\n微信：@百度网盘服务号",
+            "media": [
+                "image,https://pp.myapp.com/ma_pic2/0/shot_116071_1_1775725091/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_116071_2_1775725091/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_116071_3_1775725091/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_116071_4_1775725091/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_116071_5_1775725091/0"
+            ],
+            "platforms": [
+                "Windows",
+                "Adnroid",
+                "iOS",
+                "MacOS",
+                "Adnroid TV"
+            ],
+            "groupTags": [
+                "网盘"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                ",,官网下载,#0078D7,https://pan.baidu.com/download"
+            ],
+            "requirements": [],
+            "misc": []
+        },
+        {
+            "name": "DeepSeek",
+            "author": "杭州深度求索人工智能基础技术研究有限公司",
+            "type": "应用",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_54449159_1776240845/256",
+            "description": "DeepSeek 官方推出的 AI 助手，免费体验与全球领先 AI 模型的互动交流。\n搭载 DeepSeek 最新旗舰模型，用更快的速度、更加全面强大的功能为你答疑解惑，助力高效美好的生活。\n\n联系我们：\n官方公众号：DeepSeek\n官方邮箱：service@deepseek.com\n\nDeepseek，您的最佳AI助手！\nDeepSeek 作为个人AI助手，不仅能够提升用户的工作效率和生活质量，还能通过智能化和个性化的服务，成为用户生活中的得力伙伴。无论是日常任务管理、学习辅助，还是创意支持，DeepSeek 都能为用户提供强大的帮助。\n\n1. 个性化服务\n\n能够根据用户的习惯、偏好和历史行为提供定制化建议和服务。\n\n学习用户的使用模式，不断优化交互体验。\n\n2. 多任务处理能力\n\n可以同时处理多种任务，如日程管理、信息查询、语言翻译、内容生成等。\n\n帮助用户高效完成日常工作和生活中的琐事。\n\n3. 自然语言理解\n\n支持自然语言交互，能够理解复杂的指令和上下文。\n\n提供流畅的对话体验，像与真人交流一样自然。\n\n4. 高效学习与知识整合\n\n能够快速学习新知识，整合多领域信息，为用户提供准确、全面的答案。\n\n适合用于学习、研究或解决专业问题。\n\n5. 实时响应与高可用性\n\n提供即时响应，满足用户对快速反馈的需求。\n\n24/7 全天候可用，随时为用户提供支持。\n\n6. 隐私与安全\n\n注重用户隐私保护，采用加密技术确保数据安全。\n\n用户可以放心分享个人信息和需求。\n\n7. 跨平台支持\n\n支持多种设备和平台（如手机、电脑、智能家居设备），方便用户随时随地使用。\n\n与其他应用程序无缝集成，提升使用效率。\n\n8. 情感识别与交互\n\n能够识别用户的情感状态，提供更贴心的回应。\n\n在用户需要时提供鼓励、安慰或建议，增强交互的温暖感。\n\n9. 创造力与内容生成\n\n支持创意内容生成，如写作、绘画、编程等，帮助用户激发灵感。\n\n提供高质量的内容建议，如文章、邮件、演讲稿等。\n\n10. 成本效益\n\n作为个人助手，DeepSeek 可以提供多种专业服务（如翻译、辅导、咨询），节省用户的时间和金钱。",
+            "media": [
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54449159_1_1776240845/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54449159_2_1776240845/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54449159_3_1776240845/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54449159_4_1776240845/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54449159_5_1776240845/0"
+            ],
+            "platforms": [
+                "Windows",
+                "Android",
+                "iOS"
+            ],
+            "groupTags": [
+                "AI"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                "Android,,官网下载,#4d6bfe,https://download.deepseek.com/apk/deepseek.apk",
+                "iOS,,App Store,#000000,https://apps.apple.com/cn/app/id6737597349",
+                "网页版,,网页版,#0078D7,https://chat.deepseek.com/"
+            ],
+            "requirements": [],
+            "misc": []
+        },
+        {
+            "name": "UU远程",
+            "author": "网易",
+            "type": "应用",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_54289764_1773970265/256",
+            "description": "UU远程支持手机、平板、Mac与PC等多设备远控电脑，满足远程办公、远程游戏和远程协助需求。凭借高速直连和超低延迟，提供流畅的本地操控体验，支持 4K 144 帧显示，兼容键鼠、手柄和多点触控，让用户畅玩各类游戏。近期推出远程开机、多屏控制、UI 升级、高速文件传输、强防窥、HDR支持等功能，以及支持Mac被控功能，全面提升办公效率。\n\n产品特色：\n【远程办公，随时助力职场救急】\n远程开机实现无痕连接工作流程。支持多屏远控，高效切屏提升生产力。4:4:4 真彩模式精准还原屏幕细节，设计图形更清晰。文件传输不限数量、格式与大小，跨端高速发送。毫秒级响应带来本地般办公体验。\n\n【远程游戏，4K 144帧随心玩】\n超低延迟让你随时跨端畅玩PC游戏。4K蓝光144帧，还原高清高帧游戏画面。支持百款定制化云键盘方案，多款游戏手柄即插即用，移动端也能畅玩3A大作！\n\n【远程协助，ID与验证码安全连接】\nID与验证码连接，跨端协作快捷方便。验证码刷新、被控弹窗提示及一键禁止远程协助，安全协作无后顾之忧。“最近连接历史”提示，助力更快捷唤起远程协助对象。",
+            "media": [
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54289764_1_1773970265/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54289764_2_1773970265/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54289764_3_1773970265/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54289764_4_1773970265/0",
+                "image,https://pp.myapp.com/ma_pic2/0/shot_54289764_5_1773970265/0"
+            ],
+            "platforms": [
+                "Windows",
+                "Android",
+                "MacOS",
+                "iOS",
+                "Android TV"
+            ],
+            "groupTags": [
+                "互联"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                ",,官网下载,#04e8ff,https://uuyc.163.com/",
+                "iOS,,App Store,#000000,https://apps.apple.com/cn/app/id1642306791"
+            ],
+            "requirements": [],
+            "misc": [
+                "官网,https://uuyc.163.com/"
+            ]
+        },
+        {
+            "name": "Global Speed",
+            "author": "polywock",
+            "type": "浏览器插件",
+            "logo": "https://store-images.s-microsoft.com/image/apps.35119.15e3df65-6a3a-4d56-bdd7-426e560aa288.aa1cd371-6505-488e-832d-c3b4c9d570f2.67164a17-0927-49bd-b9cd-d6ec25f6d190?mode=scale&h=100&q=90&w=100",
+            "description": "全面掌控你的在线视频与音频。加速、减速、回放并自定义在腾讯视频、爱奇艺、优酷、哔哩哔哩、百度网盘、QQ音乐等各大平台的播放。不论是学习资料，还是追剧、听歌，都能畅快掌控。\n\n⚡ 通用速度控制\n- 一次设置，全站通用，自动应用于所有视频和音频\n- 支持自定义网址规则，在特定网站自动应用喜好速度\n- 兼容腾讯视频、爱奇艺、优酷、哔哩哔哩、百度网盘、QQ音乐、网易云音乐等主流平台\n\n⌨️ 强大的媒体快捷键\n- 通过可自定义的快捷键轻松调整播放速度\n- 快退/快进、逐帧分析、音量增减等功能一应俱全\n- 支持多种触发模式，包括右键菜单、全局快捷键；即使在使用其他应用时，也能轻松控制后台音乐或画中画视频\n\n🎨 实时滤镜与效果\n- 视频画面太暗？一键提升亮度并调整对比度\n- 声音太小？音量最高可增强至600%\n- 通过音高变换，让歌曲和节目焕然一新（可以调得低沉如达斯·维达，也可以尖细如卡通小松鼠）\n- 可为滤镜和特效分配快捷键，随时一键切换\n\n🔒 隐私优先\n- 零追踪，零数据收集\n- 完全开源，代码托管于 GitHub: https://github.com/polywock/globalSpeed",
+            "media": [
+                "image,https://store-images.s-microsoft.com/image/apps.25897.15e3df65-6a3a-4d56-bdd7-426e560aa288.97c2a40f-cdc1-44e8-a847-b7b40ff8753f.2787ffcd-e3c0-4696-9347-5fc1abf67a9b"
+            ],
+            "platforms": [
+                "Chrome",
+                "Edge",
+                "Firefox"
+            ],
+            "groupTags": [
+                "工具"
+            ],
+            "featureTags": [
+                "开源"
+            ],
+            "downloads": [
+                ",,Microsoft Edge 扩展商店,#000000,https://microsoftedge.microsoft.com/addons/detail/mjhlabbcmjflkpjknnicihkfnmbdfced",
+                ",,Github Release,#000000,https://github.com/polywock/globalSpeed/releases/"
+            ],
+            "requirements": [],
+            "misc": [
+                "支持的语言,English (United States)、Español、日本語、한국어、русский、简体中文、繁体中文、Português、Türkçe、italiano、Tiếng Việt、Bahasa Indonesia、français、العربية、українська、polski、Bahasa Melayu、Deutsch、ไทย",
+                "项目地址,https://github.com/polywock/globalSpeed"
+            ]
+        },
+        {
+            "name": "Dark Reader",
+            "author": "alexanderby",
+            "type": "浏览器插件",
+            "logo": "https://store-images.s-microsoft.com/image/apps.40118.83fc96a2-b898-46e3-a713-2f984864c25e.68a0cf81-b148-479b-a2fd-e3f40739da1f.009b03c8-8af2-4355-bb91-95095df180e9?mode=scale&h=100&q=90&w=100",
+            "description": "这款护眼扩展通过为网站动态创建暗色主题来启用夜间模式。Dark Reader 会反转明亮的颜色，使其呈现高对比度效果，便于夜间阅读。\n\n您可以调整亮度、对比度、棕褐色滤镜、暗色模式、字体设置和忽略列表。\n\nDark Reader Plus 提供付费版高级用户界面和可自定义颜色主题。\n\n请阅读使用条款：https://darkreader.org/terms/\n\nDark Reader 无广告，也不会向任何地方发送用户的数据：https://darkreader.org/privacy/\n\n安装前请禁用类似的扩展。祝您浏览愉快！",
+            "media": [
+                "image,https://store-images.s-microsoft.com/image/apps.48304.83fc96a2-b898-46e3-a713-2f984864c25e.c45c014f-1dc3-4202-9935-807b2298bae6.9ca80fcb-939a-4ef0-8944-8a0f36215a87",
+                "image,https://store-images.s-microsoft.com/image/apps.12786.83fc96a2-b898-46e3-a713-2f984864c25e.c45c014f-1dc3-4202-9935-807b2298bae6.f3dbba21-829e-4b1d-a7ae-1f8bd6edf534",
+                "image,https://store-images.s-microsoft.com/image/apps.45920.83fc96a2-b898-46e3-a713-2f984864c25e.c45c014f-1dc3-4202-9935-807b2298bae6.e7cd8768-1557-4b7d-ae6d-f191cb432189"
+            ],
+            "platforms": [
+                "Chrome",
+                "Edge",
+                "Firefox",
+                "Safari"
+            ],
+            "groupTags": [
+                "美化",
+                "无障碍"
+            ],
+            "featureTags": [
+                "超百万人使用"
+            ],
+            "downloads": [
+                "Edge,,Microsoft Edge 扩展商店,#000000,https://microsoftedge.microsoft.com/addons/detail/dark-reader/ifoakfbpdcdoeenechcleahebpibofpc",
+                "Firefox,,Firefox ADD-ONS,#281749,https://addons.mozilla.org/en-US/firefox/addon/darkreader/",
+                "Safari,,App Store,#0078D7,https://apps.apple.com/us/app/dark-reader-for-safari/id1438243180",
+                "Chrome,,Chrome 扩展商店,#0078D7,https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh"
+            ],
+            "requirements": [],
+            "misc": [
+                "官网,https://darkreader.org/"
+            ]
+        },
+        {
+            "name": "光影魔术手",
+            "author": "深圳市迅雷网络技术有限公司",
+            "type": "应用",
+            "logo": "https://www.gymss.cn/images/og.png",
+            "description": "光影魔术手是迅雷公司旗下的图像处理软件。AI 智能抠图、人像美容、智能调色、批处理、证件照排版冲印等功能强大、简便易用。轻松实现大师级调色，一键秒改千图。备受用户好评，是摄影爱好者的装机必备。",
+            "media": [
+                "image,https://static.neoimaging.cn/official-website/static-resources/home/intro-1.png",
+                "image,https://static.neoimaging.cn/official-website/static-resources/home/intro-2.png",
+                "image,https://static.neoimaging.cn/official-website/static-resources/home/intro-3.png",
+                "image,https://static.neoimaging.cn/official-website/static-resources/home/intro-4.png",
+                "image,https://static.neoimaging.cn/official-website/static-resources/home/intro-5.png"
+            ],
+            "platforms": [
+                "Windows"
+            ],
+            "groupTags": [
+                "工具",
+                "图像编辑"
+            ],
+            "featureTags": [],
+            "downloads": [
+                "Windows,,官网下载,#0078D7,https://www.gymss.cn/introduction"
+            ],
+            "requirements": [
+                "系统,新版：Windows7及以上，旧版：WindowsXP及以上"
+            ],
+            "misc": [
+                "官网,https://www.gymss.cn/"
+            ]
+        },
+        {
+            "name": "微PE工具箱",
+            "author": "UEPON",
+            "type": "应用",
+            "logo": "https://www.wepe.com.cn/images/download/u54.png",
+            "description": "",
+            "media": [
+                "image,https://www.wepe.com.cn/img/1.png",
+                "image,https://www.wepe.com.cn/img/2.png",
+                "image,https://www.wepe.com.cn/img/3.png",
+                "image,https://www.wepe.com.cn/img/4.png",
+                "image,https://www.wepe.com.cn/img/5.png"
+            ],
+            "platforms": [
+                "Windows"
+            ],
+            "groupTags": [
+                "工具"
+            ],
+            "featureTags": [
+                "超百万人使用"
+            ],
+            "downloads": [
+                ",,官网下载,#0078D7,https://www.wepe.com.cn/download.html"
+            ],
+            "requirements": [],
+            "misc": [
+                "官网,https://www.wepe.com.cn/"
+            ],
+            "relatedApps": []
+        },
+        {
+            "name": "Redmi G Pro 27U 2025 HDR认证",
+            "author": "小米",
+            "type": "驱动",
+            "logo": "",
+            "bannerUrl": "",
+            "bannerColor": "#0067c0",
+            "description": "",
+            "media": [],
+            "platforms": [
+                "Windows"
+            ],
+            "groupTags": [],
+            "featureTags": [],
+            "downloads": [],
+            "requirements": [
+                "系统,Windows10及以上版本",
+                "显卡,Nvidia、Intel"
+            ],
+            "misc": [],
+            "relatedApps": [],
+            "tutorial": ""
+        },
+        {
+            "name": "115-Desktop",
+            "author": "Shimily-3",
+            "type": "应用",
+            "logo": "https://appbox.rth1.xyz/logo/115-Desktop.ico",
+            "bannerUrl": "",
+            "bannerColor": "#0067c0",
+            "description": "115-Desktop 是一款基于 115 网盘开放平台 API 开发的第三方桌面客户端，采用现代化的 UI 设计和先进的技术架构，为用户提供流畅、高效的云存储管理体验。",
+            "media": [
+                "image,https://camo.githubusercontent.com/e8445f6bd38a903c11f5c60f42f146f87eee97520d9edcc49502e98dc17b7dfc/68747470733a2f2f692e696d6775722e636f6d2f4d644b5a3174362e706e67",
+                "image,https://camo.githubusercontent.com/550ab0b24255ef07df78e17d55f9e59423e098e0516c4ae0685b0d6d8f24a13a/68747470733a2f2f692e696d6775722e636f6d2f3577337259736f2e706e67"
+            ],
+            "platforms": [
+                "Windows",
+                "MacOS"
+            ],
+            "groupTags": [],
+            "featureTags": [
+                "付费",
+                "买断制"
+            ],
+            "downloads": [
+                "Windows/Mac,部分功能需付费使用,官网下载,#0078D7,https://115-desktop.feishu.cn/wiki/CLuiwivFjiKDSTk9QuzcXXDbn6f"
+            ],
+            "requirements": [
+                "系统,Windows 1809及以上版本，Mac（Indel芯片或Apple芯片）"
+            ],
+            "misc": [
+                "项目地址,https://github.com/Shimily-3/115-Desktop",
+                "收费项目,高级功能需购买激活码，具体功能详见：https://115-desktop.feishu.cn/wiki/SH0aw3Vmtiz3bBkody2c7E6Jnpf"
+            ],
+            "relatedApps": [],
+            "tutorial": ""
+        },
+        {
+            "name": "洛克王国：世界",
+            "author": "腾讯科技有限公司",
+            "type": "游戏",
+            "logo": "https://game.gtimg.cn/images/rocom/act/a20240717nrc/icons/nrcYuan.png",
+            "bannerUrl": "https://appbox.rth1.xyz/poster/%E6%B4%9B%E5%85%8B%E7%8E%8B%E5%9B%BD%EF%BC%9A%E4%B8%96%E7%95%8C-poster01.jpg",
+            "bannerColor": "#87ba43",
+            "description": "《洛克王国：世界》正式定档2026年3月26日！\n《洛克王国：世界》是腾讯魔方工作室群自主研发的年度大作，基于童年回忆“洛克王国”IP，集精灵收集对战与开放世界体验于一体，致力于打造一个充满回忆与期待的新洛克王国！不卖精灵更不抽精灵，400+精灵免费捉！多体系战斗，对战博弈无穷乐趣！多端互通自由社交，自己耍还是找搭子任选！魔法、奇景、孵蛋、闯关、偷菜、打扮，在这里，只需按你喜欢的方式游玩，这就是洛克王国世界。\n魔法学院的钟声已经敲响，一起见证你作为新生魔法师的蜕变吧!\n\n用户评论(155)",
+            "media": [
+                "iframe,https://player.bilibili.com/player.html?isOutside=true&aid=116289779600493&bvid=BV1hNQSB9EiY&cid=36999529000&p=1",
+                "image,https://game.gtimg.cn/images/rocom/act/a20250812preview/web/part3-avif/part3-img1.avif",
+                "image,https://game.gtimg.cn/images/rocom/act/a20250812preview/web/part3-avif/part3-img2.avif",
+                "image,https://game.gtimg.cn/images/rocom/act/a20250812preview/web/part3-avif/part3-img3.avif",
+                "image,https://game.gtimg.cn/images/rocom/act/a20250812preview/web/part3-avif/part3-img4.avif",
+                "image,https://game.gtimg.cn/images/rocom/act/a20250812preview/web/part3-avif/part3-img5.avif",
+                "image,https://game.gtimg.cn/images/rocom/act/a20250812preview/web/part3-avif/part3-img6.avif",
+                "image,https://game.gtimg.cn/images/rocom/act/a20250812preview/web/part3-avif/part3-img7.avif"
+            ],
+            "platforms": [
+                "Windows",
+                "Android",
+                "iOS"
+            ],
+            "groupTags": [
+                "角色扮演",
+                "开放世界",
+                "养成"
+            ],
+            "featureTags": [
+                "官方"
+            ],
+            "downloads": [
+                "Windows/Android,,官网下载,#f9be48,https://rocom.qq.com/",
+                "iOS,,Apple Store,#000000,"
+            ],
+            "requirements": [
+                "系统,iOS17及以上，Android10及以上，HarmonyOS5及以上，Windows10及以上(x64)",
+                "处理器（推荐）,Apple A14以上，骁龙8gen1及以上，天玑9000及以上，麒麟9010及以上，Intel Core i7-9700及以上，AMD Ryzen 5 3600x及以上",
+                "硬盘空间,移动端（iOS、Android、HarmonyOS）：大约需要30GB，Windows：大约需要45GB",
+                "内存,iOS：6GB及以上，Android：8GB及以上，HarmonyOS：8GB及以上，Windows：16GB及以上",
+                "显卡,NVIDIA GeForce RTX2060及以上 / AMD Radeon RX6600及以上",
+                "DirectX,12及以上"
+            ],
+            "misc": [
+                "官网,https://rocom.qq.com/"
+            ],
+            "relatedApps": [],
+            "tutorial": ""
+        },
+        {
+            "name": "Clash Meta for Android",
+            "author": "MetaCubeX",
+            "type": "应用",
+            "logo": "https://clashmetas.com.cn/wp-content/uploads/clashx-meta-logo.png",
+            "bannerUrl": "",
+            "bannerColor": "#0067c0",
+            "description": "基于原版Clash内核开发的Android客户端。\n\n注意：此项目已停更。",
+            "media": [],
+            "platforms": [
+                "Android"
+            ],
+            "groupTags": [
+                "工具"
+            ],
+            "featureTags": [
+                "开源"
+            ],
+            "downloads": [
+                "Android,,Github Release,#000000,https://github.com/MetaCubeX/ClashMetaForAndroid/releases",
+                "Android,v2.11.27,官方release备份（WPS云盘）,#0078D7,【金山文档 | WPS云文档】 cmfa-2.11.27-meta-universal-release https://www.kdocs.cn/l/cjDA7XVEpFsd"
+            ],
+            "requirements": [],
+            "misc": [
+                "项目主页,https://github.com/MetaCubeX/ClashMetaForAndroid"
+            ],
+            "relatedApps": [],
+            "tutorial": ""
+        }
+    ],
+    "collections": [
+        {
+            "title": "网盘",
+            "description": "介绍",
+            "apps": [
+                "百度网盘",
+                "115-Desktop"
+            ]
+        },
+        {
+            "title": "Clash",
+            "description": "",
+            "apps": [
+                "Clash Meta for Android"
+            ]
+        }
+    ]
+}

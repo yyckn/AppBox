@@ -49,10 +49,10 @@
         body { display: flex; height: 100vh; background-color: var(--bg-color); color: var(--text-main); }
         
         /* 侧边栏 */
-        .sidebar { width: 320px; background-color: var(--sidebar-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 20px 15px 0 15px; flex-shrink: 0; }
+        .sidebar { width: 320px; background-color: var(--sidebar-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 20px 15px 0 15px; flex-shrink: 0; z-index: 20; }
         .logo { font-size: 18px; font-weight: 500; color: var(--main-text); margin-bottom: 20px; text-align: left; cursor: pointer; }
         .search-box { margin-bottom: 10px; }
-        .search-box input { width: 100%; padding: 0px 12px; line-height: 34px; border: 1px solid var(--border-color); border-bottom: 1px solid var(--border-bottom); border-radius: 4px; outline: none; background-color: var(--element-bg); }
+        .search-box input { width: 100%; padding: 0px 12px; line-height: 34px; border: 1px solid var(--border-color); border-bottom: 1px solid var(--border-bottom); border-radius: 4px; outline: none; background-color: var(--element-bg); color: var(--text); }
         .search-box input:focus { border: 1px solid var(--element-border-hover); border-bottom: 2px solid var(--primary); padding-bottom: -1px; background-color: var(--element-bg-hover); }
         .search-box input:hover { background-color: var(--element-bg-hover); }
         
@@ -100,7 +100,7 @@
         }
         
         /* 主内容区 */
-        .main-content { flex-grow: 1; padding: 30px; overflow-y: auto; }
+        .main-content { flex-grow: 1; padding: 30px; overflow-y: auto; position: relative; }
         .page { display: none; animation: fadeIn 0.3s; }
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
@@ -123,8 +123,8 @@
         .settings-section h2 { font-size: 15px; padding-bottom: 10px; font-weight: 500; }
         .btn { height: 36px; min-width: 36px; padding: 0 10px; border: none; border-radius: 5px; cursor: pointer; color: var(--text); background-color: var(--primary); transition: opacity 0.2s; margin-right: 10px; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
         .btn:hover { opacity: 0.9; }
-        .btn-danger { background-color: var(--danger); }
-        .btn-secondary { background-color: var(--card-bg); }
+        .btn-danger { background-color: var(--danger); color: white; }
+        .btn-secondary { background-color: var(--card-bg); border: 1px solid var(--border-color); }
         .btn-small { padding: 4px 8px; font-size: 12px; }
         .manage-list { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); }
         .manage-list th { background: var(--sidebar-bg); font-weight: 600; }
@@ -136,7 +136,7 @@
         .form-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 5px; }
         .form-container { display: flex; flex-direction: column; gap: 20px; max-width: 900px; margin: 0 auto; }
         .form-group { background: var(--card-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--card-border-color); }
-        .form-label { display: flex; justify-content: space-between; align-items: center; font-weight: 500; margin-bottom: 10px; font-size: 14px; color: #111; color: var(--text); }
+        .form-label { display: flex; justify-content: space-between; align-items: center; font-weight: 500; margin-bottom: 10px; font-size: 14px; color: var(--text); }
         .form-control { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-bottom: 1px solid var(--border-bottom); border-radius: 4px; outline: none; font-size: 14px; background-color: var(--element-bg); color: var(--text);}
         .form-control:focus { border: 1px solid var(--element-border-hover); border-bottom: 2px solid var(--primary); padding-bottom: -1px; background-color: var(--element-bg-hover); }
         .form-control:hover { background-color: var(--element-bg-hover); }
@@ -151,13 +151,18 @@
         .grid-reqs { grid-template-columns: 1fr 3fr auto; }
         .grid-misc { grid-template-columns: 1fr 3fr auto; }
 
-        /* 详情页全新的卡片分离样式 */
-        .details-container { background: transparent; padding: 0; position: relative; max-width: 1000px; margin: 0 auto; }
+        /* 横幅海报相关样式 */
+        .banner-container { position: absolute; top: -30px; left: 0px; width: 100%; height: 500px; z-index: 0; overflow: hidden; pointer-events: none; }
+        .banner-layer-1 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .banner-layer-2 { position: absolute; height: 100%; z-index: 2; left: 50%; transform: translateX(-50%); }
+        .banner-img { height: 500px; width: auto; max-width: none; display: block; }
+        .banner-grad-left { position: absolute; left: 0; top: 0; bottom: 0; width: 50px; z-index: 3; }
+        .banner-grad-right { position: absolute; right: 0; top: 0; bottom: 0; width: 50px; z-index: 3; }
+        .banner-layer-4 { position: absolute; top: 0; left: 0; width: 100%; height: 500px; z-index: 4; background: linear-gradient(to bottom, #00000000 0%, #00000000 150px, var(--bg-color) 500px); }
         
-        /* 详情页顶部操作栏 */
+        /* 详情页样式 */
+        .details-container { background: transparent; padding: 0; position: relative; max-width: 1000px; margin: 0 auto; z-index: 10; transition: margin-top 0.3s; }
         .details-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        
-        /* 顶部区块卡片 */
         .details-top-card { display: flex; gap: 30px; margin-bottom: 20px; position: relative; }
         .details-logo { width: 120px; height: 120px; border-radius: 20px; object-fit: cover; background-color: var(--bg-color); }
         .details-info { flex-grow: 1; display: flex; flex-direction: column; gap: 8px; }
@@ -168,12 +173,11 @@
         .details-row { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 2px; }
         .details-label { font-size: 12px; color: var(--text-muted); flex-shrink: 0; }
         
-        .dl-btn { padding: 0px 16px; height: 32px; border-radius: 0px 5px 5px 0px; text-decoration: none; color: white; font-weight: bold; font-size: 13px; transition: opacity 0.2s; display: inline-flex; align-items: center; gap: 5px; }
+        .dl-btn { padding: 0px 16px; height: 32px; border-radius: 0px 5px 5px 0px; text-decoration: none; color: white; font-weight: bold; font-size: 13px; transition: opacity 0.2s; display: inline-flex; align-items: center; gap: 5px; pointer-events: auto; }
         .dl-btn:hover { opacity: 0.8; }
         .dl-plat-label { font-weight: 500; color: var(--text-muted); min-width: 80px; }
         
-        /* 详情页主体模块卡片 */
-        .detail-card { margin-bottom: 5px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; }
+        .detail-card { margin-bottom: 5px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; pointer-events: auto; }
         .detail-card-header { padding: 15px; border-bottom: 1px solid var(--border-color); font-size: 15px; font-weight: 500; color: var(--text-main); background: var(--card-bg); border-top-left-radius: 10px; border-top-right-radius: 10px; }
         .detail-card-body { padding: 15px; background: var(--card-bg); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; font-size: 11px;}
         
@@ -209,11 +213,17 @@
 
     <main class="main-content">
         <div id="page-home" class="page active">
-            <h1 class="page-title" id="homeTitle">全部应用</h1>
+            <h1 class="page-title" id="homeTitle">全部类型</h1>
             <div class="app-grid" id="appGrid"></div>
         </div>
 
+        <div id="page-collections" class="page">
+            <h1 class="page-title">所有合集</h1>
+            <div class="app-grid" id="collectionGrid"></div>
+        </div>
+
         <div id="page-details" class="page">
+            <div id="bannerContainer" class="banner-container" style="display: none;"></div>
             <div class="details-container" id="detailsContainer"></div>
         </div>
 
@@ -239,6 +249,17 @@
                     <tbody id="manageTableBody"></tbody>
                 </table>
             </div>
+
+            <div class="settings-section" id="manageCollectionSection" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <h2 style="margin: 0; border: none; padding: 0;">合集列表</h2>
+                    <button class="btn" style="margin: 0;" onclick="openCollectionForm()">新增合集</button>
+                </div>
+                <table class="manage-list">
+                    <thead><tr><th>合集标题</th><th>合集介绍</th><th>操作</th></tr></thead>
+                    <tbody id="manageCollectionTableBody"></tbody>
+                </table>
+            </div>
         </div>
 
         <div id="page-form" class="page">
@@ -256,6 +277,15 @@
                     <div class="form-group"><div class="form-label">软件作者（必填）</div><input type="text" id="f-author" class="form-control" placeholder="如：独立开发者 / 公司名称"></div>
                     <div class="form-group"><div class="form-label">类型（必填）</div><input type="text" id="f-type" class="form-control" placeholder="应用/游戏/网页插件/office插件"></div>
                     <div class="form-group"><div class="form-label">LOGO</div><input type="text" id="f-logo" class="form-control" placeholder="请填写以https://开头的图片链接"></div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">横幅海报</div>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <input type="text" id="f-banner-color" class="form-control" style="width: 120px;" placeholder="填写颜色，如: #0067c0">
+                            <input type="text" id="f-banner-url" class="form-control" placeholder="海报图片链接，如: https://...">
+                        </div>
+                    </div>
+
                     <div class="form-group"><div class="form-label">介绍</div><textarea id="f-desc" class="form-control" placeholder="简单介绍一下这个应用"></textarea></div>
                     
                     <div class="form-group">
@@ -264,18 +294,18 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">支持平台 <button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-platforms', '', '如: Windows')">&#xE710;</button></div>
-                        <div id="list-platforms" class="dynamic-list"></div>
+                        <div class="form-label">支持平台</div>
+                        <input type="text" id="f-platforms" class="form-control" placeholder="多个平台请用逗号分隔，如: Windows, Linux">
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">分组<button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-groupTags', '', '如: 音乐、工具')">&#xE710;</button></div>
-                        <div id="list-groupTags" class="dynamic-list"></div>
+                        <div class="form-label">分组</div>
+                        <input type="text" id="f-groupTags" class="form-control" placeholder="多个请用逗号分隔，如: 音乐, 工具">
                     </div>
 
                     <div class="form-group">
-                        <div class="form-label">标签<button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-featureTags', '', '如: 开源、便携版')">&#xE710;</button></div>
-                        <div id="list-featureTags" class="dynamic-list"></div>
+                        <div class="form-label">标签</div>
+                        <input type="text" id="f-featureTags" class="form-control" placeholder="多个请用逗号分隔，如: 开源, 便携版">
                     </div>
 
                     <div class="form-group">
@@ -292,9 +322,37 @@
                         <div class="form-label">杂项<button class="btn btn-small" style="margin-right: 0;" onclick="addMiscItem()">&#xE710;</button></div>
                         <div id="list-misc" class="dynamic-list"></div>
                     </div>
+                    
+                    <div class="form-group">
+                        <div class="form-label">相关应用<button class="btn btn-small" style="margin-right: 0;" onclick="addDynamicItem('list-related', '', '如: 哔哩哔哩概念版')">&#xE710;</button></div>
+                        <div id="list-related" class="dynamic-list"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">使用教程</div>
+                        <textarea id="f-tutorial" class="form-control" placeholder="填写该应用的使用教程..."></textarea>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div id="page-collection-form" class="page">
+            <div class="settings-section">
+                <div class="form-header">
+                    <h2 class="page-title" id="colFormTitle" style="margin:0; border:none; padding:0;">新增合集</h2>
+                    <div>
+                        <button class="btn btn-secondary" onclick="cancelCollectionForm()">取消</button>
+                        <button class="btn" style="margin-right: 0;" onclick="saveCollectionForm()">保存数据</button>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form-group"><div class="form-label">列表标题（必填）</div><input type="text" id="fc-title" class="form-control" placeholder="输入合集标题"></div>
+                    <div class="form-group"><div class="form-label">列表介绍</div><textarea id="fc-desc" class="form-control" placeholder="简单介绍一下这个合集"></textarea></div>
+                    <div class="form-group"><div class="form-label">列表应用</div><input type="text" id="fc-apps" class="form-control" placeholder="多个应用名称请用逗号分隔，如：微信, QQ"></div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <div class="modal-overlay" id="importModal">
@@ -311,11 +369,14 @@
 
     <script>
         let appData = [];
-        let isCustomDataSource = localStorage.getItem('appbox_custom_source') === 'true'; // 读取自定义数据源状态，默认 false
+        let collectionData = JSON.parse(localStorage.getItem('appbox_collections')) || []; 
+        let isCustomDataSource = localStorage.getItem('appbox_custom_source') === 'true'; 
         let currentImportData = null;
         let currentNav = 'all'; 
         let currentAuthorFilter = null; 
+        let currentCollectionFilter = null; 
         let currentEditingIndex = null;
+        let currentCollectionEditingIndex = null;
         let previousPage = 'home'; 
 
         async function init() {
@@ -323,37 +384,38 @@
             updateUIForCustomSource();
             renderSidebarTypes();
             
-            // 检查 URL Hash 是否包含特定的应用名称
             const hash = window.location.hash;
             if (hash) {
-                // 去掉 # 并解码中文字符
                 const targetAppName = decodeURIComponent(hash.substring(1));
-                // 在应用列表中寻找匹配的应用索引
                 const targetIndex = appData.findIndex(app => app.name === targetAppName);
                 
                 if (targetIndex !== -1) {
-                    // 如果找到了，先初始化侧边栏为“全部”，然后直接进入应用详情页
                     handleNavClick('all');
                     showAppDetails(targetIndex);
-                    return; // 结束初始化，防止继续执行下面的 handleNavClick('all')
+                    return; 
                 }
             }
             
-            // 如果没有 hash 或者没有匹配到应用名称，则默认展示全部应用
             handleNavClick('all');
         }
 
-        // 核心数据加载逻辑
         async function loadData() {
             if (isCustomDataSource) {
-                // 如果开启了自定义数据源，则从本地存储读取
                 appData = JSON.parse(localStorage.getItem('appbox_data')) || [];
             } else {
-                // 如果是内置数据源状态（关闭状态），直接从网络请求，不写入本地存储
                 try {
                     const response = await fetch('AppBox_Data.json');
                     if (!response.ok) throw new Error(`HTTP 错误! 状态码: ${response.status}`);
-                    appData = await response.json();
+                    const fetched = await response.json();
+                    
+                    if (Array.isArray(fetched)) {
+                        appData = fetched;
+                    } else if (fetched.apps && Array.isArray(fetched.apps)) {
+                        appData = fetched.apps;
+                        if (fetched.collections) collectionData = fetched.collections;
+                    } else {
+                        appData = [];
+                    }
                 } catch (error) {
                     console.error("加载内置数据源失败:", error);
                     alert("加载内置数据源失败，请检查网络连接。");
@@ -362,7 +424,6 @@
             }
         }
 
-        // 切换数据源状态并刷新视图
         async function toggleCustomDataSource() {
             isCustomDataSource = !isCustomDataSource;
             localStorage.setItem('appbox_custom_source', isCustomDataSource);
@@ -371,7 +432,6 @@
             updateUIForCustomSource();
             renderSidebarTypes();
             
-            // 停留在当前视图并重新渲染数据
             if (currentNav === 'settings') {
                 switchPage('settings'); 
             } else {
@@ -379,27 +439,32 @@
             }
         }
 
-        // 专门负责更新“自定义数据源”导致的界面显隐
         function updateUIForCustomSource() {
             const btn = document.getElementById('toggleCustomSourceBtn');
             const extraActions = document.getElementById('customSourceActions');
             const manageSection = document.getElementById('manageAppListSection');
+            const manageColSection = document.getElementById('manageCollectionSection');
             
             if (isCustomDataSource) {
                 btn.innerText = '关闭自定义数据源';
                 extraActions.style.display = 'inline-block';
                 manageSection.style.display = 'block';
+                manageColSection.style.display = 'block';
             } else {
                 btn.innerText = '启用自定义数据源';
                 extraActions.style.display = 'none';
                 manageSection.style.display = 'none';
+                manageColSection.style.display = 'none';
             }
         }
 
         function switchPage(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById('page-' + pageId).classList.add('active');
-            if(pageId === 'settings') renderManageList(); 
+            if(pageId === 'settings') {
+                renderManageList(); 
+                renderCollectionManageList();
+            }
             if(pageId === 'home') { previousPage = 'home'; renderAppGrid(); }
         }
 
@@ -408,14 +473,15 @@
             const types = [...new Set(appData.map(app => app.type || '未分类'))];
             
             let html = `
-                <button class="nav-btn ${currentNav === 'settings' ? 'active' : ''}" onclick="handleNavClick('settings', this)">&#xE713;&nbsp;&nbsp;设置</button>
-                <button class="nav-btn ${currentNav === 'all' ? 'active' : ''}" onclick="handleNavClick('all', this)">&#xE71D;&nbsp;&nbsp;全部</button>
+                <button class="nav-btn ${currentNav === 'all' ? 'active' : ''}" onclick="handleNavClick('all', this)">&#xE71D;&nbsp;&nbsp;全部类型&nbsp;&nbsp;&#xE70D;</button>
             `;
             types.forEach(type => { 
                 if(type !== '未分类' && type.trim() !== '') {
-                    html += `<button class="nav-btn ${currentNav === type ? 'active' : ''}" onclick="handleNavClick('${type}', this)">${type}</button>`; 
+                    html += `<button class="nav-btn ${currentNav === type ? 'active' : ''}" onclick="handleNavClick('${type}', this)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${type}</button>`; 
                 }
             });
+            html += `<button class="nav-btn ${currentNav === 'collections' ? 'active' : ''}" onclick="handleNavClick('collections', this)">&#xE8F1;&nbsp;&nbsp;合集</button>`;
+            html += `<button class="nav-btn ${currentNav === 'settings' ? 'active' : ''}" onclick="handleNavClick('settings', this)">&#xE713;&nbsp;&nbsp;设置</button>`;
             
             navButtons.innerHTML = html;
             setTimeout(moveIndicator, 50);
@@ -424,6 +490,7 @@
         function handleNavClick(target, btnElement = null) {
             currentNav = target;
             currentAuthorFilter = null; 
+            currentCollectionFilter = null;
             
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
             
@@ -438,6 +505,9 @@
 
             if (target === 'settings') {
                 switchPage('settings');
+            } else if (target === 'collections') {
+                switchPage('collections');
+                renderCollectionGrid();
             } else {
                 document.getElementById('searchInput').value = ''; 
                 switchPage('home'); 
@@ -447,6 +517,19 @@
         function filterByAuthor(author) {
             currentAuthorFilter = author;
             currentNav = 'author_filter'; 
+            currentCollectionFilter = null;
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            moveIndicator();
+            
+            document.getElementById('searchInput').value = ''; 
+            switchPage('home');
+        }
+
+        function filterByCollection(index) {
+            currentCollectionFilter = index;
+            currentNav = 'collection_view';
+            currentAuthorFilter = null;
             
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
             moveIndicator();
@@ -479,26 +562,30 @@
             const keyword = document.getElementById('searchInput').value.toLowerCase();
             grid.innerHTML = '';
             
-            // 处理动态标题
             if (currentAuthorFilter) {
                 homeTitle.innerText = `由 ${currentAuthorFilter} 开发的所有应用`;
+            } else if (currentCollectionFilter !== null) {
+                homeTitle.innerText = `合集：${collectionData[currentCollectionFilter].title}`;
             } else if (currentNav === 'all' || currentNav === 'settings') {
-                homeTitle.innerText = `全部应用`;
+                homeTitle.innerText = `全部类型`;
             } else {
                 homeTitle.innerText = currentNav;
             }
 
             let filteredApps = appData.map((app, index) => ({...app, _originalIndex: index})) 
-                                      .filter(app => {
-                                          let match = true;
-                                          if (currentAuthorFilter) {
-                                              match = match && (app.author === currentAuthorFilter);
-                                          } else {
-                                              match = match && (currentNav === 'all' || currentNav === 'settings' || app.type === currentNav);
-                                          }
-                                          const matchSearch = app.name.toLowerCase().includes(keyword) || (app.description && app.description.toLowerCase().includes(keyword));
-                                          return match && matchSearch;
-                                      });
+                .filter(app => {
+                    let match = true;
+                    if (currentAuthorFilter) {
+                        match = match && (app.author === currentAuthorFilter);
+                    } else if (currentCollectionFilter !== null) {
+                        const colApps = collectionData[currentCollectionFilter].apps || [];
+                        match = match && colApps.includes(app.name);
+                    } else {
+                        match = match && (currentNav === 'all' || currentNav === 'settings' || currentNav === 'collections' || app.type === currentNav);
+                    }
+                    const matchSearch = app.name.toLowerCase().includes(keyword) || (app.description && app.description.toLowerCase().includes(keyword));
+                    return match && matchSearch;
+                });
 
             if(filteredApps.length === 0) { grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999; margin-top: 50px;">暂无应用。</p>'; return; }
 
@@ -517,33 +604,63 @@
             });
         }
 
-        // --- 软件详情页逻辑 ---
+        function renderCollectionGrid() {
+            const grid = document.getElementById('collectionGrid');
+            grid.innerHTML = '';
+            if(collectionData.length === 0) { grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999; margin-top: 50px;">暂无合集数据。</p>'; return; }
+            collectionData.forEach((col, index) => {
+                const card = document.createElement('div');
+                card.className = 'app-card';
+                card.onclick = () => filterByCollection(index);
+                card.innerHTML = `
+                    <div style="width: 64px; height: 64px; border-radius: 10px; margin-bottom: 8px; background: var(--element-bg); display:flex; align-items:center; justify-content:center; font-size: 32px; color: var(--primary);">&#xE8F1;</div>
+                    <div class="app-name">${col.title}</div>
+                    <div class="app-tags" style="margin-top: 5px;"><span class="app-tag">${(col.apps||[]).length} 个应用</span></div>
+                    <div class="app-type" style="color:var(--text-muted); background:transparent; margin-top:5px; font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:100%;">${col.description || ''}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
         function showAppDetails(index) {
             previousPage = 'details'; 
             const app = appData[index];
             const container = document.getElementById('detailsContainer');
+            const bannerContainer = document.getElementById('bannerContainer');
             
-            // 构建合并后的胶囊标签 HTML (类型、分组、特点 在同一行)
+            if (app.bannerUrl) {
+                const themeColor = app.bannerColor || '#0067c0';
+                bannerContainer.innerHTML = `
+                    <div class="banner-layer-1" style="background-color: ${themeColor};"></div>
+                    <div class="banner-layer-2">
+                        <img src="${app.bannerUrl}" class="banner-img">
+                        <div class="banner-grad-left" style="background: linear-gradient(to right, ${themeColor}, #00000000);"></div>
+                        <div class="banner-grad-right" style="background: linear-gradient(to left, ${themeColor}, #00000000);"></div>
+                    </div>
+                    <div class="banner-layer-4"></div>
+                `;
+                bannerContainer.style.display = 'block';
+                container.style.marginTop = '250px'; 
+            } else {
+                bannerContainer.innerHTML = '';
+                bannerContainer.style.display = 'none';
+                container.style.marginTop = '0';
+            }
+
             let combinedTagsHtml = '';
-            
-            // 1. 类型（必填，灰色标签）
             combinedTagsHtml += `<span class="app-tag" style="background: var(--card-bg); color:var(--text-muted);">${app.type}</span>`;
             
-            // 2. 分组
             if (app.groupTags && app.groupTags.length > 0) {
                 app.groupTags.forEach(t => {
                     combinedTagsHtml += `<span class="app-tag" style="background: var(--card-bg); color:var(--text-muted);">${t}</span>`;
                 });
             }
-            
-            // 3. 特点
             if (app.featureTags && app.featureTags.length > 0) {
                 app.featureTags.forEach(t => {
                     combinedTagsHtml += `<span class="app-tag" style="background:#e0f2fe; color:var(--primary);">${t}</span>`;
                 });
             }
             
-            // 4. 平台
             let platHtml = '';
             if (app.platforms && app.platforms.length > 0) {
                 app.platforms.forEach(p => {
@@ -551,7 +668,6 @@
                 });
             }
             
-            // 5. 下载
             let dlHtml = '';
             const dlGroups = {};
             (app.downloads || []).forEach(dlStr => {
@@ -584,7 +700,6 @@
                 dlHtml += '</div>';
             }
 
-            // 底部主体内容的渲染（空白则不渲染）
             let bodyCardsHtml = '';
             
             if (app.description) {
@@ -595,26 +710,36 @@
                     </div>`;
             }
 
-            let mediaHtml = '';
-            (app.media || []).forEach(mStr => {
+            let parsedMedia = (app.media || []).map(mStr => {
                 const parts = mStr.split(',');
-                const type = parts[0].trim().toLowerCase();
-                const url = parts.slice(1).join(',').trim();
-                if(!url) return;
-                
-                if(type === 'image') {
-                    mediaHtml += `<img src="${url}" class="media-item" style="max-height: 300px;" onerror="this.style.display='none'">`;
+                return {
+                    type: parts[0].trim().toLowerCase(),
+                    url: parts.slice(1).join(',').trim()
+                };
+            }).filter(m => m.url);
+
+            parsedMedia.sort((a, b) => {
+                const isAMediaFirst = (a.type === 'video' || a.type === 'iframe') ? 0 : 1;
+                const isBMediaFirst = (b.type === 'video' || b.type === 'iframe') ? 0 : 1;
+                return isAMediaFirst - isBMediaFirst;
+            });
+
+            let mediaHtml = '';
+            parsedMedia.forEach(m => {
+                if (m.type === 'image') {
+                    mediaHtml += `<img src="${m.url}" class="media-item" style="max-height: 300px;" onerror="this.style.display='none'">`;
                 }
-                else if(type === 'iframe') {
-                    mediaHtml += `<iframe src="${url}" class="media-item" style="border:none; height: 300px; width: 500px; max-width: 100%;" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>`;
+                else if (m.type === 'iframe') {
+                    mediaHtml += `<iframe src="${m.url}" class="media-item" style="border:none; height: 300px; width: 500px; max-width: 100%;" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>`;
                 }
-                else if(type === 'video') {
-                    mediaHtml += `<a href="${url}" target="_blank" class="media-link media-item" style="display:flex; align-items:center; height: 40px;">🎬 观看介绍视频</a>`;
+                else if (m.type === 'video') {
+                    mediaHtml += `<video src="${m.url}" class="media-item" style="max-height: 300px; width: auto;" controls muted></video>`;
                 }
                 else {
-                    mediaHtml += `<a href="${url}" target="_blank" class="media-link media-item" style="display:flex; align-items:center; height: 40px;">🔗 访问媒体链接</a>`;
+                    mediaHtml += `<a href="${m.url}" target="_blank" class="media-link media-item" style="display:flex; align-items:center; height: 40px;">🔗 访问媒体链接</a>`;
                 }
             });
+            
             if (mediaHtml) {
                 bodyCardsHtml += `
                     <div class="detail-card">
@@ -654,13 +779,44 @@
                     </div>`;
             }
 
-            // 判断是否开启自定义数据源，决定是否显示“编辑”按钮
-            const editBtnHtml = isCustomDataSource ? `<button class="btn" style="margin: 0;" onclick="openAppForm(${index})">&#xE70F; 编辑信息</button>` : '';
+            if (app.relatedApps && app.relatedApps.length > 0) {
+                let relatedCardsHtml = '';
+                app.relatedApps.forEach(rAppName => {
+                    const rIndex = appData.findIndex(a => a.name === rAppName);
+                    if(rIndex !== -1) {
+                        const rApp = appData[rIndex];
+                        const rTagsHtml = (rApp.groupTags || []).map(tag => `<span class="app-tag">${tag}</span>`).join('');
+                        relatedCardsHtml += `
+                            <div class="app-card" style="cursor: pointer; background: var(--bg-color); box-shadow: none;" onclick="showAppDetails(${rIndex})">
+                                <img src="${rApp.logo || 'https://appbox.rth1.xyz/logo/application.png'}" class="app-icon" onerror="this.src='https://appbox.rth1.xyz/logo/application.png'">
+                                <div class="app-name">${rApp.name || '未知'}</div>
+                                <div class="app-type">${rApp.type || '未分类'}</div>
+                                <div class="app-tags">${rTagsHtml}</div>
+                            </div>`;
+                    }
+                });
+                if(relatedCardsHtml) {
+                    bodyCardsHtml += `
+                        <div class="detail-card">
+                            <div class="detail-card-header">相关应用</div>
+                            <div class="detail-card-body"><div class="app-grid">${relatedCardsHtml}</div></div>
+                        </div>`;
+                }
+            }
 
-            // 最终拼接详情页
+            if (app.tutorial) {
+                bodyCardsHtml += `
+                    <div class="detail-card">
+                        <div class="detail-card-header">使用教程</div>
+                        <div class="detail-card-body"><div class="details-desc">${app.tutorial}</div></div>
+                    </div>`;
+            }
+
+            const editBtnHtml = isCustomDataSource ? `<button class="btn" style="margin: 0; pointer-events: auto;" onclick="openAppForm(${index})">&#xE70F; 编辑信息</button>` : '';
+
             container.innerHTML = `
                 <div class="details-actions">
-                    <button class="btn btn-secondary" style="margin: 0;" onclick="switchPage('home')">&#xE72B;</button>
+                    <button class="btn btn-secondary" style="margin: 0; pointer-events: auto;" onclick="switchPage('home')">&#xE72B;</button>
                     ${editBtnHtml}
                 </div>
                 
@@ -668,7 +824,7 @@
                     <img src="${app.logo || 'https://appbox.rth1.xyz/logo/application.png'}" class="details-logo" onerror="this.src='https://appbox.rth1.xyz/logo/application.png'">
                     <div class="details-info">
                         <h1 class="details-title">${app.name}</h1>
-                        <div class="details-author" onclick="filterByAuthor('${app.author || ''}')">${app.author || '未知'}</div>
+                        <div class="details-author" style="pointer-events: auto;" onclick="filterByAuthor('${app.author || ''}')">${app.author || '未知'}</div>
                         <div class="details-row">${combinedTagsHtml}</div>
                         ${platHtml ? `<div class="details-row"><div class="details-label">适用于</div>${platHtml}</div>` : ''}
                         ${dlHtml ? `<div class="details-row" style="align-items: flex-start;">${dlHtml}</div>` : ''}
@@ -681,9 +837,6 @@
             switchPage('details');
         }
 
-
-        // --- 表单相关逻辑 ---
-
         function addDynamicItem(containerId, value = '', placeholder = '') {
             const container = document.getElementById(containerId);
             const div = document.createElement('div');
@@ -692,7 +845,6 @@
             container.appendChild(div);
         }
 
-        // 专用于媒体添加的下拉栏
         function addMediaItem(type = 'image', url = '') {
             const container = document.getElementById('list-media');
             const div = document.createElement('div');
@@ -749,7 +901,7 @@
         }
 
         function getDynamicValues(containerId) {
-            return Array.from(document.getElementById(containerId).querySelectorAll('input')).map(input => input.value.trim()).filter(val => val !== '');
+            return Array.from(document.getElementById(containerId).querySelectorAll('input[type="text"]')).map(input => input.value.trim()).filter(val => val !== '');
         }
 
         function getMediaData() {
@@ -809,8 +961,16 @@
             document.getElementById('f-author').value = '';
             document.getElementById('f-type').value = '';
             document.getElementById('f-logo').value = '';
+            document.getElementById('f-banner-url').value = '';
+            document.getElementById('f-banner-color').value = '#0067c0';
             document.getElementById('f-desc').value = '';
-            ['list-media', 'list-platforms', 'list-groupTags', 'list-featureTags', 'list-downloads', 'list-reqs', 'list-misc'].forEach(id => document.getElementById(id).innerHTML = '');
+            
+            document.getElementById('f-platforms').value = '';
+            document.getElementById('f-groupTags').value = '';
+            document.getElementById('f-featureTags').value = '';
+            document.getElementById('f-tutorial').value = '';
+
+            ['list-media', 'list-downloads', 'list-reqs', 'list-misc', 'list-related'].forEach(id => document.getElementById(id).innerHTML = '');
 
             if (index !== null) {
                 const app = appData[index];
@@ -818,7 +978,14 @@
                 document.getElementById('f-author').value = app.author || '';
                 document.getElementById('f-type').value = app.type || '';
                 document.getElementById('f-logo').value = app.logo || '';
+                document.getElementById('f-banner-url').value = app.bannerUrl || '';
+                document.getElementById('f-banner-color').value = app.bannerColor || '#0067c0';
                 document.getElementById('f-desc').value = app.description || '';
+                
+                document.getElementById('f-platforms').value = (app.platforms || []).join(', ');
+                document.getElementById('f-groupTags').value = (app.groupTags || []).join(', ');
+                document.getElementById('f-featureTags').value = (app.featureTags || []).join(', ');
+                document.getElementById('f-tutorial').value = app.tutorial || '';
 
                 (app.media || []).forEach(val => {
                     const parts = val.split(',');
@@ -826,10 +993,6 @@
                     const url = parts.slice(1).join(',').trim();
                     addMediaItem(type, url);
                 });
-                
-                (app.platforms || []).forEach(val => addDynamicItem('list-platforms', val));
-                (app.groupTags || []).forEach(val => addDynamicItem('list-groupTags', val));
-                (app.featureTags || []).forEach(val => addDynamicItem('list-featureTags', val));
                 
                 (app.downloads || []).forEach(dl => {
                     const parts = dl.split(',');
@@ -845,6 +1008,8 @@
                     const parts = m.split(',');
                     addMiscItem(parts[0]||'', parts.slice(1).join(',')||'');
                 });
+
+                (app.relatedApps || []).forEach(val => addDynamicItem('list-related', val));
             }
 
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -858,17 +1023,27 @@
             
             if (!name || !author || !type) { alert("应用名称、软件作者和类型是必填项！"); return; }
 
+            const platforms = document.getElementById('f-platforms').value.split(/[,，]/).map(s => s.trim()).filter(Boolean);
+            const groupTags = document.getElementById('f-groupTags').value.split(/[,，]/).map(s => s.trim()).filter(Boolean);
+            const featureTags = document.getElementById('f-featureTags').value.split(/[,，]/).map(s => s.trim()).filter(Boolean);
+            const tutorial = document.getElementById('f-tutorial').value.trim();
+            const bannerColor = document.getElementById('f-banner-color').value.trim() || '#0067c0';
+
             const newApp = {
                 name: name, author: author, type: type,
                 logo: document.getElementById('f-logo').value.trim(),
+                bannerUrl: document.getElementById('f-banner-url').value.trim(),
+                bannerColor: bannerColor,
                 description: document.getElementById('f-desc').value.trim(),
                 media: getMediaData(),
-                platforms: getDynamicValues('list-platforms'),
-                groupTags: getDynamicValues('list-groupTags'),
-                featureTags: getDynamicValues('list-featureTags'),
+                platforms: platforms,
+                groupTags: groupTags,
+                featureTags: featureTags,
                 downloads: getDownloadsData(),
                 requirements: getReqsData(),
-                misc: getMiscData()
+                misc: getMiscData(),
+                relatedApps: getDynamicValues('list-related'),
+                tutorial: tutorial
             };
 
             if (currentEditingIndex === null) {
@@ -887,7 +1062,6 @@
             }
         }
 
-        // --- 管理与导入导出逻辑 ---
         function renderManageList() {
             previousPage = 'settings';
             const tbody = document.getElementById('manageTableBody');
@@ -917,6 +1091,77 @@
             }
         }
 
+        function openCollectionForm(index = null) {
+            currentCollectionEditingIndex = index;
+            document.getElementById('colFormTitle').innerText = index === null ? '新增合集' : '编辑合集';
+            
+            document.getElementById('fc-title').value = '';
+            document.getElementById('fc-desc').value = '';
+            document.getElementById('fc-apps').value = '';
+
+            if (index !== null) {
+                const col = collectionData[index];
+                document.getElementById('fc-title').value = col.title || '';
+                document.getElementById('fc-desc').value = col.description || '';
+                document.getElementById('fc-apps').value = (col.apps || []).join(', ');
+            }
+
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-collection-form').classList.add('active');
+        }
+
+        function cancelCollectionForm() {
+            switchPage('settings');
+        }
+
+        function saveCollectionForm() {
+            const title = document.getElementById('fc-title').value.trim();
+            if (!title) { alert("列表标题是必填项！"); return; }
+
+            const apps = document.getElementById('fc-apps').value.split(/[,，]/).map(s => s.trim()).filter(Boolean);
+            
+            const newCol = {
+                title: title,
+                description: document.getElementById('fc-desc').value.trim(),
+                apps: apps
+            };
+
+            if (currentCollectionEditingIndex === null) {
+                collectionData.push(newCol);
+            } else {
+                collectionData[currentCollectionEditingIndex] = newCol;
+            }
+
+            localStorage.setItem('appbox_collections', JSON.stringify(collectionData));
+            switchPage('settings');
+        }
+
+        function renderCollectionManageList() {
+            const tbody = document.getElementById('manageCollectionTableBody');
+            tbody.innerHTML = '';
+            if(collectionData.length === 0) { tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #999; padding: 20px;">暂无合集数据</td></tr>'; return; }
+            collectionData.forEach((col, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${col.title || '未命名'}</td>
+                    <td>${col.description || '无'}</td>
+                    <td style="width: 160px;">
+                        <button class="btn btn-small" onclick="openCollectionForm(${index})">&#xE70F; 编辑</button>
+                        <button class="btn btn-danger btn-small" style="margin-right: 0;" onclick="deleteCollection(${index})">&#xE894; 删除</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function deleteCollection(index) {
+            if(confirm(`确定要删除合集 "${collectionData[index].title}" 吗？`)) {
+                collectionData.splice(index, 1);
+                localStorage.setItem('appbox_collections', JSON.stringify(collectionData));
+                renderCollectionManageList(); 
+            }
+        }
+
         function handleFileSelect(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -924,33 +1169,50 @@
             reader.onload = function(e) {
                 try {
                     const parsed = JSON.parse(e.target.result);
-                    if (!Array.isArray(parsed)) throw new Error("Root not array");
-                    currentImportData = parsed;
+                    if (Array.isArray(parsed)) {
+                        currentImportData = { apps: parsed, collections: [] };
+                    } else if (parsed.apps && Array.isArray(parsed.apps)) {
+                        currentImportData = parsed;
+                    } else {
+                        throw new Error("Invalid format");
+                    }
                     document.getElementById('importModal').style.display = 'flex';
-                } catch (err) { alert("JSON 格式错误！"); }
+                } catch (err) { alert("JSON 格式错误或文件损坏！"); }
             };
             reader.readAsText(file);
             event.target.value = ''; 
         }
 
         async function executeImport(mode) {
-            if (mode === 'overwrite') appData = currentImportData;
-            else if (mode === 'merge') appData = appData.concat(currentImportData);
+            if (mode === 'overwrite') {
+                appData = currentImportData.apps || [];
+                collectionData = currentImportData.collections || [];
+            }
+            else if (mode === 'merge') {
+                appData = appData.concat(currentImportData.apps || []);
+                collectionData = collectionData.concat(currentImportData.collections || []);
+            }
             
-            // 导入数据说明此时一定是“自定义数据源”的状态，直接保存到本地
             localStorage.setItem('appbox_data', JSON.stringify(appData));
+            localStorage.setItem('appbox_collections', JSON.stringify(collectionData));
             closeModal('importModal'); 
             
-            // 重新初始化并停留在设置页
             await loadData();
             renderSidebarTypes();
             handleNavClick('settings');
         }
 
         function exportData() {
-            if (appData.length === 0) return alert("暂无数据可导出！");
+            if (appData.length === 0 && collectionData.length === 0) return alert("暂无数据可导出！");
+            
+            const exportObj = {
+                version: 2,
+                apps: appData,
+                collections: collectionData
+            };
+            
             const a = document.createElement('a');
-            a.href = URL.createObjectURL(new Blob([JSON.stringify(appData, null, 4)], { type: "application/json" }));
+            a.href = URL.createObjectURL(new Blob([JSON.stringify(exportObj, null, 4)], { type: "application/json" }));
             a.download = "AppBox_Data.json"; a.click();
         }
 
